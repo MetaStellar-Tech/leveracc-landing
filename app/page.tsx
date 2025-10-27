@@ -1,16 +1,12 @@
 'use client';
 
-import React, { useMemo, useState, useEffect } from "react";
+import Image from "next/image";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Twitter, Github, MessageCircle, BookOpen, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-/**
- * Minimal landing page inspired by jigsaw.build
- * — ultra–simple layout
- * — centered hero, sparse nav
- * — clean light theme
- * — optional waitlist modal
- */
+import background from "./static/background.png";
+import logoIcon from "./static/icon.png";
 
 const CONFIG = {
   projectName: "LeverAcc",
@@ -19,90 +15,30 @@ const CONFIG = {
     "Seamlessly breaks through HyperCore's leverage limits. Trade with 200x leverage and earn secure yields.",
   links: {
     twitter: "https://x.com/leveracc_xyz",
-    discord: "", // TBD
+    discord: "",
     github: "https://github.com/MetaStellar-Tech",
     gitbook: "https://leveracc.gitbook.io/leveracc-docs/",
     email: "vv@leveracc.xyz",
   },
   waitlist: {
     enabled: true,
-    webhookUrl: "", // optional endpoint
+    webhookUrl: "",
   },
 };
 
-function WaveBackground() {
-  const [t, setT] = useState(0);
-
-  useEffect(() => {
-    let raf = 0;
-    const loop = () => {
-      // Decrease phase so waves travel left -> right
-      setT((p) => (p - 0.012) % (Math.PI * 2));
-      raf = requestAnimationFrame(loop);
-    };
-    raf = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(raf);
-  }, []);
-
-  const w = 1440;
-  const h = 900;
-  const points = 80;
-
-  const makePath = (phase: number, amp: number, freq: number, base: number) => {
-    const step = w / points;
-    let d = `M 0 ${h} L 0 ${base}`;
-    for (let i = 0; i <= points; i++) {
-      const x = i * step;
-      const px = (i / points) * Math.PI * 2 * freq;
-      const y =
-        base +
-        Math.sin(px + phase) * amp +
-        Math.sin(px * 0.5 + phase * 1.4) * amp * 0.4 +
-        Math.sin(px * 2 + phase * 0.7) * amp * 0.15;
-      d += ` L ${x.toFixed(1)} ${y.toFixed(1)}`;
-    }
-    d += ` L ${w} ${h} Z`;
-    return d;
-  };
-
-  return (
-    <svg
-      aria-hidden="true"
-      className="pointer-events-none absolute inset-0 z-0"
-      viewBox={`0 0 ${w} ${h}`}
-      preserveAspectRatio="none"
-    >
-      <defs>
-        <linearGradient id="wave1" x1="0" y1="0" x2={w} y2="0" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#8b5cf6" />
-          <stop offset="50%" stopColor="#06b6d4" />
-          <stop offset="100%" stopColor="#22c55e" />
-        </linearGradient>
-        <linearGradient id="wave2" x1="0" y1="0" x2={w} y2="0" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#f472b6" />
-          <stop offset="100%" stopColor="#60a5fa" />
-        </linearGradient>
-        <linearGradient id="wave3" x1="0" y1="0" x2={w} y2="0" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#f59e0b" />
-          <stop offset="100%" stopColor="#06b6d4" />
-        </linearGradient>
-        <filter id="blur20" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="10" />
-        </filter>
-      </defs>
-
-      <path d={makePath(t * 1.0, 48, 1.2, 360)} fill="url(#wave1)" opacity="0.45" filter="url(#blur20)" />
-      <path d={makePath(t * 0.8 + 1.2, 36, 1.6, 405)} fill="url(#wave2)" opacity="0.35" filter="url(#blur20)" />
-      <path d={makePath(t * 1.4 + 2.4, 28, 2.3, 450)} fill="url(#wave3)" opacity="0.28" filter="url(#blur20)" />
-    </svg>
-  );
-}
-
 export default function App() {
   return (
-    <div className="min-h-screen relative overflow-hidden bg-[#0f172a] text-white">
-      <WaveBackground />
-      <div className="relative z-10">
+    <div className="relative min-h-screen overflow-hidden bg-[#070116] text-white antialiased">
+      <Image
+        src={background}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="pointer-events-none select-none object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-[#060021]/18 to-[#100430]/45" />
+      <div className="relative z-10 flex min-h-screen flex-col">
         <NavBar />
         <Hero />
         <Footer />
@@ -113,30 +49,31 @@ export default function App() {
 
 function NavBar() {
   return (
-    <header className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 py-6 xl:max-w-none xl:px-16">
-      <div className="flex items-center justify-between">
+    <header className="px-4 py-6 sm:px-8 lg:px-12">
+      <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between">
         <div className="flex items-center gap-3">
-          <LogoMark />
-          <span className="text-sm font-medium tracking-tight">{CONFIG.projectName}</span>
+          <LogoMark size={28} />
+          <span className="text-lg font-semibold tracking-tight text-white/90">LeverAcc</span>
         </div>
-        <nav className="hidden md:flex items-center gap-4 text-sm text-white/70">
+        <nav className="hidden items-center gap-6 text-[11px] uppercase tracking-[0.34em] text-white/65 md:flex">
           {CONFIG.links.github && (
-            <a className="hover:text-white transition" href={CONFIG.links.github} target="_blank" rel="noreferrer">GitHub</a>
+            <a className="transition hover:text-white" href={CONFIG.links.github} target="_blank" rel="noreferrer">
+              GitHub
+            </a>
           )}
           {CONFIG.links.twitter && (
-            <a className="hover:text-white transition" href={CONFIG.links.twitter} target="_blank" rel="noreferrer">X</a>
+            <a className="transition hover:text-white" href={CONFIG.links.twitter} target="_blank" rel="noreferrer">
+              X
+            </a>
           )}
           {CONFIG.links.email && (
-            <a className="hover:text-white transition" href={`mailto:${CONFIG.links.email}`} target="_blank" rel="noreferrer">Email</a>
-          )}
-          {CONFIG.links.discord && (
             <a
-              className="inline-flex items-center gap-2 rounded-md px-3.5 py-2 text-sm font-medium bg-black text-white hover:bg-neutral-800 ring-1 ring-white/15 transition"
-              href={CONFIG.links.discord}
+              className="transition hover:text-white"
+              href={`mailto:${CONFIG.links.email}`}
               target="_blank"
               rel="noreferrer"
             >
-              Discord
+              Email
             </a>
           )}
         </nav>
@@ -147,70 +84,76 @@ function NavBar() {
 
 function Hero() {
   return (
-    <main className="mx-auto max-w-5xl px-4 pt-16 pb-28 text-center">
-      <motion.h1
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-5xl md:text-7xl font-semibold tracking-tight"
-      >
-        {CONFIG.projectName}
-      </motion.h1>
-      <motion.p
-        initial={{ opacity: 0, y: 4 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="mt-5 text-lg text-white/70"
-      >
-        {CONFIG.tagline}
-      </motion.p>
-      <motion.p
-        initial={{ opacity: 0, y: 4 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.15 }}
-        className="mt-3 text-base text-white/70"
-      >
-        {CONFIG.heroSubcopy}
-      </motion.p>
-
+    <main className="mx-auto flex w-full max-w-[1400px] grow flex-col justify-center px-4 pb-20 pt-8 sm:px-8 lg:px-12">
       <motion.div
-        initial={{ opacity: 0, y: 4 }}
+        initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="mt-10 flex items-center justify-center gap-3"
+        transition={{ duration: 0.6 }}
+        className="max-w-xl space-y-6 text-left md:max-w-2xl"
       >
-        {CONFIG.waitlist.enabled && <WaitlistButton size="lg" />}
-        {CONFIG.links.gitbook && (
-          <a
-            href={CONFIG.links.gitbook}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-md border border-white/20 px-4 py-2.5 text-sm text-white hover:bg-white/10 transition"
-          >
-            <BookOpen className="w-4 h-4" /> GitBook
-          </a>
-        )}
+        <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
+          <span className="mr-2 text-white">Lever</span>
+          <span className="bg-gradient-to-r from-[#2ef7ff] via-[#29efc4] to-[#68ff9d] bg-clip-text text-transparent">
+            Acc
+          </span>
+        </h1>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-lg text-white/80 md:text-xl"
+        >
+          {CONFIG.tagline}
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="text-base text-white/60 md:text-lg"
+        >
+          {CONFIG.heroSubcopy}
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          className="flex flex-wrap items-center gap-4 pt-4"
+        >
+          {CONFIG.waitlist.enabled && <WaitlistButton size="lg" />}
+          {CONFIG.links.gitbook && (
+            <a
+              href={CONFIG.links.gitbook}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm font-medium text-white/80 backdrop-blur-sm transition hover:border-white/60 hover:text-white"
+            >
+              GitBook <ArrowRight className="h-4 w-4" />
+            </a>
+          )}
+        </motion.div>
       </motion.div>
-
-      
     </main>
   );
 }
 
 function Footer() {
   return (
-    <footer className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 py-10 border-t border-white/10 text-sm text-white/70 xl:max-w-none xl:px-16">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-2">
-          <LogoMark />
+    <footer className="px-4 pb-5 sm:px-8 lg:px-12">
+      <div className="mx-auto flex w-full max-w-[1400px] flex-col gap-3 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-3">
+          <LogoMark size={22} />
           <span>©MetaStellar Technology Ltd. All rights reserved.</span>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-6 uppercase tracking-[0.26em]">
           {CONFIG.links.gitbook && (
-            <a className="hover:text-white transition" href={CONFIG.links.gitbook} target="_blank" rel="noreferrer">Docs</a>
+            <a className="transition hover:text-white" href={CONFIG.links.gitbook} target="_blank" rel="noreferrer">
+              Docs
+            </a>
           )}
           {CONFIG.links.github && (
-            <a className="hover:text-white transition" href={CONFIG.links.github} target="_blank" rel="noreferrer">GitHub</a>
+            <a className="transition hover:text-white" href={CONFIG.links.github} target="_blank" rel="noreferrer">
+              GitHub
+            </a>
           )}
         </div>
       </div>
@@ -220,33 +163,29 @@ function Footer() {
 
 function LogoMark({ size = 24 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden="true">
-      <defs>
-        <linearGradient id="laG" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#8b5cf6" />
-          <stop offset="50%" stopColor="#06b6d4" />
-          <stop offset="100%" stopColor="#22c55e" />
-        </linearGradient>
-      </defs>
-      <rect x="1" y="1" width="30" height="30" rx="8" fill="black" stroke="url(#laG)" strokeWidth="2" />
-      {/* L shape */}
-      <path d="M9 23V9h4v10h10v4H9z" fill="white" />
-      {/* A hint (chevron) */}
-      <path d="M17 9l4 8h-3l-1-2h-4l1.4-2.8L17 9z" fill="white" fillOpacity="0.9" />
-    </svg>
+    <span className="inline-flex items-center justify-center rounded-full bg-gradient-to-br from-[#3ef4ff] via-[#436fff] to-[#854cff] p-[3px] shadow-[0_0_30px_rgba(62,244,255,0.2)]">
+      <Image
+        src={logoIcon}
+        alt="LeverAcc logo"
+        width={size}
+        height={size}
+        className="h-auto w-auto rounded-lg"
+        style={{ width: size - 6, height: size - 6 }}
+      />
+    </span>
   );
 }
 
 function WaitlistButton({ size = "md" }: { size?: "md" | "lg" }) {
   const [open, setOpen] = useState(false);
-  const pad = size === "lg" ? "px-5 py-2.5" : "px-4 py-2";
+  const pad = size === "lg" ? "px-7 py-3" : "px-5 py-2.5";
   return (
     <>
       <button
         onClick={() => setOpen(true)}
-        className={`inline-flex items-center gap-2 rounded-md ${pad} text-sm font-medium bg-black text-white hover:bg-neutral-800 transition`}
+        className={`inline-flex items-center gap-2 rounded-full ${pad} text-sm font-semibold tracking-tight text-white shadow-[0_10px_30px_rgba(160,50,255,0.35)] transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 bg-[radial-gradient(circle_at_10%_20%,#b44dff_0%,#7c3aed_45%,#ff5fb0_100%)]`}
       >
-        Join waitlist
+        JoinWaitlist
       </button>
       {open && <WaitlistModal onClose={() => setOpen(false)} />}
     </>
@@ -254,85 +193,51 @@ function WaitlistButton({ size = "md" }: { size?: "md" | "lg" }) {
 }
 
 function WaitlistModal({ onClose }: { onClose: () => void }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [message, setMessage] = useState("");
-
-  const valid = useMemo(() => /.+@.+\..+/.test(email), [email]);
-
-  async function submit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!valid) return;
-    setStatus("loading");
-
-    const payload = { name, email, source: "landing" };
-
-    try {
-      if (CONFIG.waitlist.webhookUrl) {
-        const res = await fetch(CONFIG.waitlist.webhookUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      } else {
-        await new Promise((r) => setTimeout(r, 500));
-        try {
-          const raw = JSON.parse(localStorage.getItem("waitlist") || "[]");
-          const next = [...raw, { ...payload, ts: Date.now() }];
-          localStorage.setItem("waitlist", JSON.stringify(next));
-        } catch {}
-      }
-      setStatus("success");
-      setMessage("Thanks! We'll be in touch soon.");
-      setName("");
-      setEmail("");
-    } catch (err: any) {
-      setStatus("error");
-      setMessage(err?.message || "Something went wrong.");
-    }
-  }
-
   return (
     <div className="fixed inset-0 z-[999] grid place-items-center p-4">
-      <div className="absolute inset-0 bg-black/40" onClick={onClose} />
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
       <motion.div
-        initial={{ opacity: 0, y: 12 }}
+        initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative w-full max-w-md rounded-xl border border-white/10 bg-white p-6 shadow-sm"
+        className="relative w-full max-w-md rounded-2xl border border-white/10 bg-[#12062c]/95 p-7 shadow-[0_20px_60px_rgba(0,0,0,0.45)]"
       >
-        <h4 className="text-lg font-semibold">Join the waitlist</h4>
-        <p className="text-sm text-white/70 mt-1">Get early updates and beta invites.</p>
-        <form onSubmit={submit} className="mt-5 space-y-3">
-          <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Your name (optional)"
-            className="w-full rounded-md border border-neutral-300 px-3 py-2.5 outline-none focus:ring-2 focus:ring-neutral-200"
-          />
-          <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            placeholder="Email"
-            type="email"
-            className="w-full rounded-md border border-neutral-300 px-3 py-2.5 outline-none focus:ring-2 focus:ring-neutral-200"
-          />
-          <button
-            type="submit"
-            disabled={!valid || status === "loading"}
-            className="w-full rounded-md bg-black text-white py-2.5 font-medium disabled:opacity-60"
+        <h4 className="text-lg font-semibold text-white">Join the waitlist</h4>
+        <p className="mt-2 text-sm text-white/70">
+          Join our Telegram community to access the LeverAcc bot and be the first to know about launch updates.
+        </p>
+        <div className="mt-6 space-y-4">
+          <a
+            href="https://t.me/leveracc_fans"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#7f45ff] via-[#c04bff] to-[#ff5fb0] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+            onClick={onClose}
           >
-            {status === "loading" ? "Submitting…" : "Get Early Access"}
-          </button>
-        </form>
-        {status !== "idle" && (
-          <p className={`mt-3 text-sm ${status === "success" ? "text-emerald-600" : status === "error" ? "text-rose-600" : "text-neutral-700"}`}>
-            {message}
+            Open Telegram Group
+          </a>
+          <div className="flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-black/40 p-4">
+            <div className="relative h-[170px] w-[170px] overflow-hidden rounded-2xl bg-white/5">
+              <Image
+                src="/static/tg_group_qrcode.jpg"
+                alt="LeverAcc Telegram group QR code"
+                fill
+                sizes="170px"
+                className="object-cover"
+                style={{ transform: "scale(1.55)", transformOrigin: "50% 38%" }}
+              />
+            </div>
+            <span className="text-xs text-white/60">Scan to join the LeverAcc Telegram group instantly</span>
+          </div>
+          <p className="text-xs text-white/55">
+            After you join the group, follow the pinned instructions to try the Telegram bot and secure your spot.
           </p>
-        )}
-        <button onClick={onClose} className="absolute top-3 right-3 text-neutral-500 hover:text-white">✕</button>
+        </div>
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 rounded-full bg-white/10 px-3 py-1 text-sm text-white/70 transition hover:bg-white/20 hover:text-white"
+        >
+          Close
+        </button>
       </motion.div>
     </div>
   );
