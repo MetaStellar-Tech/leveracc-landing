@@ -6,7 +6,9 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 import background from "./static/background.png";
+import mobileBackground from "./static/mobile_background.png";
 import logoIcon from "./static/icon.png";
+import mobileHippo from "./static/mobile_hippo.png";
 
 const CONFIG = {
   projectName: "LeverAcc",
@@ -27,15 +29,17 @@ const CONFIG = {
 };
 
 export default function App() {
+  const heroBackgroundStyle: React.CSSProperties = {
+    "--hero-bg-mobile": `url(${mobileBackground.src})`,
+    "--hero-bg-desktop": `url(${background.src})`,
+  };
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#070116] text-white antialiased">
-      <Image
-        src={background}
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="pointer-events-none select-none object-cover object-center"
+      <div
+        className="hero-background pointer-events-none absolute inset-0 select-none"
+        aria-hidden="true"
+        style={heroBackgroundStyle}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-[#060021]/18 to-[#100430]/45" />
       <div className="relative z-10 flex min-h-screen flex-col">
@@ -55,7 +59,7 @@ function NavBar() {
           <LogoMark size={28} />
           <span className="text-lg font-semibold tracking-tight text-white/90">LeverAcc</span>
         </div>
-        <nav className="hidden items-center gap-6 text-[11px] uppercase tracking-[0.34em] text-white/65 md:flex">
+        <nav className="flex items-center gap-4 text-[10px] uppercase tracking-[0.28em] text-white/70 md:gap-6 md:text-[11px] md:tracking-[0.34em]">
           {CONFIG.links.github && (
             <a className="transition hover:text-white" href={CONFIG.links.github} target="_blank" rel="noreferrer">
               GitHub
@@ -84,14 +88,14 @@ function NavBar() {
 
 function Hero() {
   return (
-    <main className="mx-auto flex w-full max-w-[1400px] grow flex-col justify-center px-4 pb-20 pt-8 sm:px-8 lg:px-12">
+    <main className="mx-auto flex w-full max-w-[1400px] grow flex-col items-center justify-center px-4 pb-20 pt-14 sm:px-8 lg:px-12 md:items-start">
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-xl space-y-6 text-left md:max-w-2xl"
+        className="max-w-xl space-y-6 text-center md:max-w-2xl md:text-left"
       >
-        <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
+        <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-7xl">
           <span className="mr-2 text-white">Lever</span>
           <span className="bg-gradient-to-r from-[#2ef7ff] via-[#29efc4] to-[#68ff9d] bg-clip-text text-transparent">
             Acc
@@ -101,7 +105,7 @@ function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-lg text-white/80 md:text-xl"
+          className="text-lg text-white/85 md:text-xl"
         >
           {CONFIG.tagline}
         </motion.p>
@@ -109,7 +113,7 @@ function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="text-base text-white/60 md:text-lg"
+          className="text-base text-white/70 md:text-lg"
         >
           {CONFIG.heroSubcopy}
         </motion.p>
@@ -117,7 +121,7 @@ function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="flex flex-wrap items-center gap-4 pt-4"
+          className="flex flex-wrap items-center justify-center gap-4 pt-5 md:justify-start"
         >
           {CONFIG.waitlist.enabled && <WaitlistButton size="lg" />}
           {CONFIG.links.gitbook && (
@@ -132,6 +136,21 @@ function Hero() {
           )}
         </motion.div>
       </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.35 }}
+        className="mt-14 flex w-full justify-center md:hidden"
+      >
+        <Image
+          src={mobileHippo}
+          alt="LeverAcc mascot"
+          width={640}
+          height={640}
+          sizes="(max-width: 767px) 80vw"
+          className="pointer-events-none h-auto w-full max-w-[320px] select-none drop-shadow-[0_18px_40px_rgba(0,0,0,0.45)]"
+        />
+      </motion.div>
     </main>
   );
 }
@@ -143,18 +162,6 @@ function Footer() {
         <div className="flex items-center gap-3">
           <LogoMark size={22} />
           <span>©MetaStellar Technology Ltd. All rights reserved.</span>
-        </div>
-        <div className="flex items-center gap-6 uppercase tracking-[0.26em]">
-          {CONFIG.links.gitbook && (
-            <a className="transition hover:text-white" href={CONFIG.links.gitbook} target="_blank" rel="noreferrer">
-              Docs
-            </a>
-          )}
-          {CONFIG.links.github && (
-            <a className="transition hover:text-white" href={CONFIG.links.github} target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-          )}
         </div>
       </div>
     </footer>

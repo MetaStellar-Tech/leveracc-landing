@@ -24,3 +24,18 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+  .hero-background {
+    background-image: var(--hero-bg-mobile);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media (min-width: 768px) {
+    .hero-background {
+      background-image: var(--hero-bg-desktop);
+    }
+  }
+}
