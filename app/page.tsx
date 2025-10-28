@@ -181,7 +181,7 @@ function LogoMark({ size = 24 }: { size?: number }) {
         alt="LeverAcc logo"
         width={size}
         height={size}
-        className="h-auto w-auto rounded-lg"
+        className="h-auto w-auto rounded-full bg-[#070116]"
         style={{ width: size - 6, height: size - 6 }}
       />
     </span>
