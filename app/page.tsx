@@ -28,8 +28,13 @@ const CONFIG = {
   },
 };
 
+type HeroBackgroundStyle = React.CSSProperties & {
+  "--hero-bg-mobile": string;
+  "--hero-bg-desktop": string;
+};
+
 export default function App() {
-  const heroBackgroundStyle: React.CSSProperties = {
+  const heroBackgroundStyle: HeroBackgroundStyle = {
     "--hero-bg-mobile": `url(${mobileBackground.src})`,
     "--hero-bg-desktop": `url(${background.src})`,
   };
