@@ -197,7 +197,7 @@ function WaitlistButton({ size = "md" }: { size?: "md" | "lg" }) {
         onClick={() => setOpen(true)}
         className={`inline-flex items-center gap-2 rounded-full ${pad} text-sm font-semibold tracking-tight text-white shadow-[0_10px_30px_rgba(160,50,255,0.35)] transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 bg-[radial-gradient(circle_at_10%_20%,#b44dff_0%,#7c3aed_45%,#ff5fb0_100%)]`}
       >
-        JoinWaitlist
+        Join Waitlist
       </button>
       {open && <WaitlistModal onClose={() => setOpen(false)} />}
     </>
