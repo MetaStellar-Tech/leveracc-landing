@@ -91,10 +91,20 @@ const Footer: React.FC = () => {
 
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="flex gap-6">
-            <a href="#" className="hover:text-black transition-colors">
+            <a
+              href="https://leveracc.gitbook.io/leveracc-docs/resources/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-black transition-colors"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-black transition-colors">
+            <a
+              href="https://leveracc.gitbook.io/leveracc-docs/resources/term-of-use"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-black transition-colors"
+            >
               Terms
             </a>
           </div>

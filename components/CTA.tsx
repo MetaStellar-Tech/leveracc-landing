@@ -19,12 +19,17 @@ export function CTA() {
               power today.
             </p>
 
-            <Button
-              size="lg"
-              className="rounded-full bg-white text-black hover:bg-gray-200 h-14 px-8 text-lg font-semibold shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all transform hover:-translate-y-1"
-            >
-              Access the Public Beta
-            </Button>
+            <div className="relative group inline-block">
+              <Button
+                size="lg"
+                className="rounded-full bg-white text-black hover:bg-gray-200 h-14 px-8 text-lg font-semibold shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transition-all transform hover:-translate-y-1 cursor-not-allowed opacity-80"
+              >
+                Access the Public Beta
+              </Button>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-gray-900 text-white text-xs font-medium rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-50">
+                TBD
+              </div>
+            </div>
           </div>
         </div>
       </div>
