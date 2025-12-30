@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const SectionFAQ: React.FC = () => {
   const faqs = [
@@ -58,15 +59,19 @@ const SectionFAQ: React.FC = () => {
                 }`}
               />
             </button>
-            <div
-              className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                openIndex === i
-                  ? "max-h-48 opacity-100 mt-4"
-                  : "max-h-0 opacity-0"
-              }`}
-            >
-              <p className="text-gray-600 leading-relaxed pr-8">{faq.a}</p>
-            </div>
+            <AnimatePresence>
+              {openIndex === i && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                  animate={{ height: "auto", opacity: 1, marginTop: 16 }}
+                  exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <p className="text-gray-600 leading-relaxed pr-8">{faq.a}</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         ))}
       </div>

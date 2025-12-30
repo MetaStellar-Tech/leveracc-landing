@@ -60,10 +60,26 @@ const SectionSteps: React.FC = () => {
                       REQUEST AMOUNT
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="h-2 w-32 bg-orange-500 rounded-full"></div>
-                      <span className="bg-orange-100 text-orange-700 text-[8px] font-bold px-1.5 py-0.5 rounded">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "8rem" }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.8,
+                          ease: "easeOut",
+                          delay: 0.5,
+                        }}
+                        className="h-2 bg-orange-500 rounded-full"
+                      ></motion.div>
+                      <motion.span
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: 1 }}
+                        className="bg-orange-100 text-orange-700 text-[8px] font-bold px-1.5 py-0.5 rounded"
+                      >
                         4x
-                      </span>
+                      </motion.span>
                     </div>
                   </div>
                   <div className="pt-2">
@@ -129,7 +145,13 @@ const SectionSteps: React.FC = () => {
             </div>
 
             {/* Transaction Item 2 (Active) */}
-            <div className="bg-white rounded-xl p-4 shadow-md flex items-center justify-between relative z-20 border border-green-100">
+            <motion.div
+              initial={{ opacity: 0, y: 15, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="bg-white rounded-xl p-4 shadow-md flex items-center justify-between relative z-20 border border-green-100"
+            >
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
                   <Check size={16} strokeWidth={3} />
@@ -147,7 +169,7 @@ const SectionSteps: React.FC = () => {
                 <div className="text-xs font-bold text-gray-900">+ $4,000</div>
                 <div className="text-[9px] text-gray-400">0.04s</div>
               </div>
-            </div>
+            </motion.div>
           </div>
           <div className="flex items-start gap-4">
             <span className="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0">
@@ -196,9 +218,13 @@ const SectionSteps: React.FC = () => {
 
               {/* Buttons */}
               <div className="grid grid-cols-2 gap-2">
-                <div className="bg-green-500 text-white text-[10px] py-1.5 rounded text-center font-bold">
+                <motion.div
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+                  className="bg-green-500 text-white text-[10px] py-1.5 rounded text-center font-bold"
+                >
                   Long
-                </div>
+                </motion.div>
                 <div className="bg-red-50 text-red-400 text-[10px] py-1.5 rounded text-center font-bold">
                   Short
                 </div>

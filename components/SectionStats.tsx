@@ -1,7 +1,54 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import { motion, useInView, animate } from "framer-motion";
+
+const AnimatedCounter = ({
+  value,
+  className,
+  highlight,
+}: {
+  value: string;
+  className?: string;
+  highlight?: boolean;
+}) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (!isInView || !ref.current) return;
+
+    const match = value.match(/^([^0-9]*)([0-9,.]+)(.*)$/);
+    if (!match) return;
+
+    const [, prefix, numStr, suffix] = match;
+    const num = parseFloat(numStr.replace(/,/g, ""));
+    const decimals = numStr.includes(".") ? numStr.split(".")[1].length : 0;
+
+    const controls = animate(0, num, {
+      duration: 2,
+      ease: "easeOut",
+      onUpdate(value) {
+        if (ref.current) {
+          ref.current.textContent = `${prefix}${value.toFixed(
+            decimals
+          )}${suffix}`;
+        }
+      },
+    });
+
+    return () => controls.stop();
+  }, [isInView, value]);
+
+  return (
+    <span
+      ref={ref}
+      className={`${className} ${highlight ? "text-green-600" : "text-black"}`}
+    >
+      {value}
+    </span>
+  );
+};
 
 const SectionStats: React.FC = () => {
   const metrics = [
@@ -30,13 +77,11 @@ const SectionStats: React.FC = () => {
             <span className="text-gray-500 font-medium text-sm md:text-base mb-3 group-hover:text-gray-800 transition-colors tracking-wide">
               {metric.label}
             </span>
-            <span
-              className={`text-3xl md:text-5xl font-bold tracking-tight ${
-                metric.highlight ? "text-green-600" : "text-black"
-              }`}
-            >
-              {metric.value}
-            </span>
+            <AnimatedCounter
+              value={metric.value}
+              className="text-3xl md:text-5xl font-bold tracking-tight inline-block"
+              highlight={metric.highlight}
+            />
           </motion.div>
         ))}
       </div>
