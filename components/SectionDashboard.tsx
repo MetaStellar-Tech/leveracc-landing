@@ -65,7 +65,7 @@ const SectionDashboard: React.FC = () => {
           <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 mt-auto">
             <div className="flex justify-between text-xs font-semibold uppercase tracking-wider mb-3 text-gray-400">
               <span>Injection Speed</span>
-              <span className="text-[#0099ff]">&lt; 0.04ms</span>
+              <span className="text-[#0099ff]">&lt; 50ms</span>
             </div>
             {/* Minimalist Progress Bar */}
             <div className="flex gap-1 h-2">

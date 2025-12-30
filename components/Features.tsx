@@ -39,7 +39,7 @@ export function Features() {
                 <span className="text-muted-foreground uppercase">
                   Injection Speed
                 </span>
-                <span className="text-blue-400 font-mono">&lt;0.04ms</span>
+                <span className="text-blue-400 font-mono">&lt;50ms</span>
               </div>
               <div className="flex gap-1 h-2">
                 {[...Array(20)].map((_, i) => (

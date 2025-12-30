@@ -52,10 +52,10 @@ const AnimatedCounter = ({
 
 const SectionStats: React.FC = () => {
   const metrics = [
-    { label: "Total Volume", value: "$4.2B+" },
-    { label: "Vault Liquidity", value: "$850M" },
-    { label: "Positions Secured", value: "24.5K" },
-    { label: "LPs APY", value: "24.8%", highlight: true },
+    { label: "Max Buying Power", value: "5x" },
+    { label: "Low Interest Rates (Daily)", value: "0.1%" },
+    { label: "High Execution Speed", value: "< 50ms" },
+    { label: "Target LPs APY", value: "~10%-15%", highlight: true },
   ];
 
   return (
@@ -74,12 +74,12 @@ const SectionStats: React.FC = () => {
             }}
             className="bg-white rounded-3xl p-6 md:p-10 flex flex-col items-center justify-center text-center shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
           >
-            <span className="text-gray-500 font-medium text-sm md:text-base mb-3 group-hover:text-gray-800 transition-colors tracking-wide">
+            <span className="text-gray-500 font-medium text-xs md:text-sm mb-3 group-hover:text-gray-800 transition-colors tracking-wide">
               {metric.label}
             </span>
             <AnimatedCounter
               value={metric.value}
-              className="text-3xl md:text-5xl font-bold tracking-tight inline-block"
+              className="text-2xl md:text-4xl font-bold tracking-tight inline-block"
               highlight={metric.highlight}
             />
           </motion.div>
