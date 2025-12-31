@@ -43,7 +43,7 @@ const AnimatedCounter = ({
   return (
     <span
       ref={ref}
-      className={`${className} ${highlight ? "text-green-600" : "text-black"}`}
+      className={`${className} ${highlight ? "text-green-600 dark:text-green-400" : "text-black dark:text-white"}`}
     >
       {value}
     </span>
@@ -72,9 +72,9 @@ const SectionStats: React.FC = () => {
               delay: idx * 0.1,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="bg-white rounded-3xl p-6 md:p-10 flex flex-col items-center justify-center text-center shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+            className="bg-white dark:bg-gray-900 rounded-3xl p-6 md:p-10 flex flex-col items-center justify-center text-center shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
           >
-            <span className="text-gray-500 font-medium text-xs md:text-sm mb-3 group-hover:text-gray-800 transition-colors tracking-wide">
+            <span className="text-gray-500 dark:text-gray-400 font-medium text-xs md:text-sm mb-3 group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors tracking-wide">
               {metric.label}
             </span>
             <AnimatedCounter

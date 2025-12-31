@@ -23,13 +23,20 @@ import Footer from "@/components/Footer";
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen relative text-gray-900 selection:bg-black selection:text-white">
+    <div className="min-h-screen relative text-gray-900 dark:text-gray-100 selection:bg-black dark:selection:bg-white selection:text-white dark:selection:text-black">
       {/* Global Gradient Background */}
       <div
         className="fixed inset-0 pointer-events-none"
         style={{
           background: "linear-gradient(to bottom, #FFFDE4, #005AA7)",
           opacity: 0.3,
+        }}
+      />
+      {/* Dark mode gradient overlay */}
+      <div
+        className="fixed inset-0 pointer-events-none dark:opacity-100 opacity-0 transition-opacity duration-300"
+        style={{
+          background: "linear-gradient(to bottom, #0a0a0f, #1a1a2e)",
         }}
       />
 

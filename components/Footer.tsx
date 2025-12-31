@@ -73,8 +73,8 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Links */}
-      <div className="flex flex-col md:flex-row justify-between items-center py-8 gap-6 text-gray-500 text-sm border-t border-gray-200/50">
-        <div className="flex items-center gap-2 font-bold text-lg text-black">
+      <div className="flex flex-col md:flex-row justify-between items-center py-8 gap-6 text-gray-500 dark:text-gray-400 text-sm border-t border-gray-200/50 dark:border-gray-700/50">
+        <div className="flex items-center gap-2 font-bold text-lg text-black dark:text-white">
           <Image
             src="/icon.png"
             alt="LeverAcc Logo"
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
           LEVERACC
         </div>
 
-        <div className="text-sm text-gray-400 text-center">
+        <div className="text-sm text-gray-400 dark:text-gray-500 text-center">
           © MetaStellar Technology Ltd. All Rights Reserved.
         </div>
 
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
               href="https://leveracc.gitbook.io/leveracc-docs/resources/privacy-policy"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-black transition-colors"
+              className="hover:text-black dark:hover:text-white transition-colors"
             >
               Privacy Policy
             </a>
@@ -103,13 +103,13 @@ const Footer: React.FC = () => {
               href="https://leveracc.gitbook.io/leveracc-docs/resources/term-of-use"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-black transition-colors"
+              className="hover:text-black dark:hover:text-white transition-colors"
             >
               Terms
             </a>
           </div>
 
-          <div className="hidden md:block w-px h-4 bg-gray-300 mx-2"></div>
+          <div className="hidden md:block w-px h-4 bg-gray-300 dark:bg-gray-700 mx-2"></div>
 
           <div className="flex items-center gap-5">
             {/* X (Twitter) */}
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
               href="https://x.com/leveracc_xyz"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-black transition-colors"
+              className="hover:text-black dark:hover:text-white transition-colors"
               aria-label="X (Twitter)"
             >
               <svg
@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
               href="https://t.me/leveracc_fans"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-black transition-colors"
+              className="hover:text-black dark:hover:text-white transition-colors"
               aria-label="Telegram"
             >
               <svg
@@ -154,7 +154,7 @@ const Footer: React.FC = () => {
               href="https://github.com/MetaStellar-Tech"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-black transition-colors"
+              className="hover:text-black dark:hover:text-white transition-colors"
               aria-label="Github"
             >
               <svg

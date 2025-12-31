@@ -40,21 +40,21 @@ const SectionFAQ: React.FC = () => {
   return (
     <section className="max-w-3xl mx-auto py-12">
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold">A few more questions?</h2>
+        <h2 className="text-4xl font-bold dark:text-white">A few more questions?</h2>
       </div>
 
-      <div className="divide-y divide-gray-200">
+      <div className="divide-y divide-gray-200 dark:divide-gray-700">
         {faqs.map((faq, i) => (
           <div key={i} className="py-6">
             <button
               onClick={() => toggle(i)}
               className="w-full flex items-center justify-between text-left group"
             >
-              <span className="text-lg font-medium text-gray-900 group-hover:text-black">
+              <span className="text-lg font-medium text-gray-900 dark:text-white group-hover:text-black dark:group-hover:text-gray-200">
                 {faq.q}
               </span>
               <ChevronDown
-                className={`text-gray-400 transition-transform duration-300 ${
+                className={`text-gray-400 dark:text-gray-500 transition-transform duration-300 ${
                   openIndex === i ? "rotate-180" : ""
                 }`}
               />
@@ -68,20 +68,20 @@ const SectionFAQ: React.FC = () => {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <p className="text-gray-600 leading-relaxed pr-8">{faq.a}</p>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed pr-8">{faq.a}</p>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
         ))}
       </div>
-      <div className="text-center mt-12 text-gray-500">
+      <div className="text-center mt-12 text-gray-500 dark:text-gray-400">
         Still have questions?{" "}
         <a
           href="https://t.me/leveracc_fans"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-black font-semibold hover:underline"
+          className="text-black dark:text-white font-semibold hover:underline"
         >
           Join the community
         </a>

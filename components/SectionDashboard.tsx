@@ -14,7 +14,7 @@ const SectionDashboard: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6"
+          className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-6"
         >
           Engineered for Capital Efficiency.
         </motion.h2>
@@ -23,7 +23,7 @@ const SectionDashboard: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed"
+          className="text-xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed"
         >
           The Atomic Liquidity Engine ensures seamless zero-collateral
           borrowing, while the Algorithmic Circuit Breaker safeguards fund
@@ -38,7 +38,7 @@ const SectionDashboard: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white rounded-3xl p-8 md:p-12 border border-gray-100 shadow-xl shadow-gray-200/50 relative overflow-hidden flex flex-col justify-between group h-full"
+          className="bg-white dark:bg-gray-900 rounded-3xl p-8 md:p-12 border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/50 dark:shadow-gray-900/50 relative overflow-hidden flex flex-col justify-between group h-full"
         >
           <div>
             <div className="w-14 h-14 mb-8 bg-blue-50 rounded-2xl flex items-center justify-center border border-blue-100">
@@ -51,10 +51,10 @@ const SectionDashboard: React.FC = () => {
               />
             </div>
 
-            <h3 className="text-2xl text-gray-900 font-bold mb-4 tracking-tight">
+            <h3 className="text-2xl text-gray-900 dark:text-white font-bold mb-4 tracking-tight">
               Atomic Liquidity Engine
             </h3>
-            <p className="text-gray-500 leading-relaxed text-lg mb-12">
+            <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-lg mb-12">
               Liquidity is injected within the same block as execution.
               Flash-loan mechanics applied to perpetual futures, ensuring zero
               collateral drag.
@@ -62,8 +62,8 @@ const SectionDashboard: React.FC = () => {
           </div>
 
           {/* Footer Metric - Clean Light Style */}
-          <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 mt-auto">
-            <div className="flex justify-between text-xs font-semibold uppercase tracking-wider mb-3 text-gray-400">
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 border border-gray-100 dark:border-gray-700 mt-auto">
+            <div className="flex justify-between text-xs font-semibold uppercase tracking-wider mb-3 text-gray-400 dark:text-gray-500">
               <span>Injection Speed</span>
               <span className="text-[#0099ff]">&lt; 50ms</span>
             </div>
@@ -81,7 +81,7 @@ const SectionDashboard: React.FC = () => {
                     ease: "easeOut",
                   }}
                   className={`flex-1 rounded-full ${
-                    i < 20 ? "bg-[#0099ff]" : "bg-gray-200"
+                    i < 20 ? "bg-[#0099ff]" : "bg-gray-200 dark:bg-gray-700"
                   }`}
                 ></motion.div>
               ))}
@@ -95,7 +95,7 @@ const SectionDashboard: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-[#0c111d] rounded-3xl p-8 md:p-12 border border-gray-800 shadow-2xl relative overflow-hidden flex flex-col justify-between h-full"
+          className="bg-[#0c111d] dark:bg-[#0c111d] rounded-3xl p-8 md:p-12 border border-gray-800 dark:border-gray-700 shadow-2xl relative overflow-hidden flex flex-col justify-between h-full"
         >
           <div>
             <div className="w-14 h-14 mb-8 bg-gray-800/50 rounded-2xl flex items-center justify-center border border-gray-700/50">
@@ -113,7 +113,7 @@ const SectionDashboard: React.FC = () => {
           </div>
 
           {/* Footer Metric - Dark Minimalist Style */}
-          <div className="bg-[#161b26] rounded-2xl p-6 border border-gray-800 mt-auto">
+          <div className="bg-[#161b26] dark:bg-[#161b26] rounded-2xl p-6 border border-gray-800 dark:border-gray-700 mt-auto">
             <div className="flex justify-between text-xs font-semibold uppercase tracking-wider mb-4 text-gray-500">
               <span>Risk Monitor</span>
               <span className="text-emerald-500 flex items-center gap-2">

@@ -9,31 +9,31 @@ const SectionBuilder: React.FC = () => {
     <div className="w-full">
       {/* Section Header */}
       <div className="text-center mb-16 px-4">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
           The Geometry of Leverage.
         </h2>
-        <p className="text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
           See how LeverAcc transforms your position size while maintaining the
           same initial capital requirement.
         </p>
       </div>
 
       {/* Dark Card Container */}
-      <div className="bg-[#0c111d] rounded-3xl shadow-2xl overflow-hidden border border-gray-800 font-sans text-gray-300">
+      <div className="bg-[#0c111d] dark:bg-[#0c111d] rounded-3xl shadow-2xl overflow-hidden border border-gray-800 dark:border-gray-700 font-sans text-gray-300 dark:text-gray-300">
         {/* Top Header Bar - Lighter background to distinguish from content */}
-        <div className="flex flex-col md:flex-row justify-between md:items-center px-6 py-4 border-b border-gray-700/50 text-xs tracking-wider font-medium gap-2 md:gap-0 bg-[#161b26]">
+        <div className="flex flex-col md:flex-row justify-between md:items-center px-6 py-4 border-b border-gray-700/50 dark:border-gray-600/50 text-xs tracking-wider font-medium gap-2 md:gap-0 bg-[#161b26] dark:bg-[#161b26]">
           <div className="flex items-center gap-2 text-gray-300">
             <Bitcoin size={14} className="text-orange-500" />
             <span>BTC/USDC PERP</span>
           </div>
 
-          <div className="hidden md:block w-px h-4 bg-gray-700"></div>
+          <div className="hidden md:block w-px h-4 bg-gray-700 dark:bg-gray-600"></div>
 
           <div className="text-blue-400 flex items-center justify-center font-semibold">
             20x LEVERAGE
           </div>
 
-          <div className="hidden md:block w-px h-4 bg-gray-700"></div>
+          <div className="hidden md:block w-px h-4 bg-gray-700 dark:bg-gray-600"></div>
 
           <div className="flex items-center gap-2 text-gray-300 justify-end">
             <Wallet size={14} className="text-gray-400" />
@@ -43,7 +43,7 @@ const SectionBuilder: React.FC = () => {
 
         <div className="flex flex-col lg:flex-row min-h-[550px]">
           {/* Left Panel: Chart */}
-          <div className="flex-1 p-8 md:p-12 relative border-r border-gray-800/50 flex flex-col">
+          <div className="flex-1 p-8 md:p-12 relative border-r border-gray-800/50 dark:border-gray-700/50 flex flex-col">
             <h2 className="text-3xl text-white font-normal mb-2 tracking-tight">
               Notional Exposure
             </h2>
@@ -62,10 +62,10 @@ const SectionBuilder: React.FC = () => {
                     className="flex items-center absolute w-full"
                     style={{ top: `${i * 25}%` }}
                   >
-                    <span className="text-[10px] text-gray-600 w-8 text-right mr-4 font-mono translate-y-[1px] -mt-2">
+                    <span className="text-[10px] text-gray-600 dark:text-gray-500 w-8 text-right mr-4 font-mono translate-y-[1px] -mt-2">
                       {val === 0 ? "0" : `$${val}k`}
                     </span>
-                    <div className="flex-1 border-t border-dashed border-gray-800/60"></div>
+                    <div className="flex-1 border-t border-dashed border-gray-800/60 dark:border-gray-700/60"></div>
                   </div>
                 ))}
               </div>
@@ -131,7 +131,7 @@ const SectionBuilder: React.FC = () => {
           </div>
 
           {/* Right Panel: Details */}
-          <div className="lg:w-[420px] bg-[#0f1522] p-8 md:p-12 flex flex-col justify-center border-t lg:border-t-0 border-gray-800/50">
+          <div className="lg:w-[420px] bg-[#0f1522] dark:bg-[#0f1522] p-8 md:p-12 flex flex-col justify-center border-t lg:border-t-0 border-gray-800/50 dark:border-gray-700/50">
             {/* Standard DEX Info */}
             <div className="mb-10 relative">
               <div className="flex items-center gap-3 mb-2">
@@ -140,7 +140,7 @@ const SectionBuilder: React.FC = () => {
                   Trade on Perp DEX
                 </h3>
               </div>
-              <div className="pl-6 border-l border-gray-800 ml-1.5 py-1">
+              <div className="pl-6 border-l border-gray-800 dark:border-gray-700 ml-1.5 py-1">
                 <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1 font-medium">
                   Formula
                 </div>
@@ -161,7 +161,7 @@ const SectionBuilder: React.FC = () => {
                 </h3>
               </div>
 
-              <div className="pl-6 border-l border-blue-900/30 ml-1.5 py-1">
+              <div className="pl-6 border-l border-blue-900/30 dark:border-blue-800/30 ml-1.5 py-1">
                 <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-2 font-medium">
                   The Pre-Fund Effect
                 </div>
@@ -185,7 +185,7 @@ const SectionBuilder: React.FC = () => {
             </div>
 
             {/* Footer Stat */}
-            <div className="pt-6 border-t border-gray-800 flex justify-between items-center">
+            <div className="pt-6 border-t border-gray-800 dark:border-gray-700 flex justify-between items-center">
               <span className="text-gray-500 font-medium">Efficiency Gain</span>
               <span className="text-3xl font-bold text-[#0099ff]">5.0x</span>
             </div>

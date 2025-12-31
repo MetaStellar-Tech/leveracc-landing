@@ -23,10 +23,10 @@ const SectionComparison: React.FC = () => {
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="text-center mb-16 px-4"
       >
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
           Win-Win for Network Contributors.
         </h2>
-        <p className="text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
           LeverAcc not only empowers traders but also provides LPs with enhanced
           yield channels.
         </p>
@@ -39,7 +39,7 @@ const SectionComparison: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-          className="bg-[#0c111d] rounded-[32px] p-8 md:p-12 border border-gray-800 flex flex-col relative overflow-hidden group h-full hover:shadow-2xl hover:shadow-blue-900/10 transition-shadow duration-500"
+          className="bg-[#0c111d] dark:bg-[#0c111d] rounded-[32px] p-8 md:p-12 border border-gray-800 dark:border-gray-700 flex flex-col relative overflow-hidden group h-full hover:shadow-2xl hover:shadow-blue-900/10 transition-shadow duration-500"
         >
           {/* Background decoration */}
           <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-blue-600/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-600/20 transition-all duration-700"></div>
@@ -63,7 +63,7 @@ const SectionComparison: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-[#161b26] rounded-2xl p-6 border border-gray-800 transition-transform hover:-translate-y-1 duration-300 flex-1 flex flex-col justify-center hover:border-blue-500/30"
+              className="bg-[#161b26] dark:bg-[#161b26] rounded-2xl p-6 border border-gray-800 dark:border-gray-700 transition-transform hover:-translate-y-1 duration-300 flex-1 flex flex-col justify-center hover:border-blue-500/30 dark:hover:border-blue-500/50"
             >
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
@@ -105,13 +105,13 @@ const SectionComparison: React.FC = () => {
                     API access for professional/institutional traders.
                   </p>
                   <div className="flex gap-2">
-                    <div className="bg-gray-800 p-1.5 rounded-lg text-gray-400 hover:text-white transition-colors">
+                    <div className="bg-gray-800 dark:bg-gray-700 p-1.5 rounded-lg text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors">
                       <Monitor size={14} />
                     </div>
-                    <div className="bg-gray-800 p-1.5 rounded-lg text-gray-400 hover:text-white transition-colors">
+                    <div className="bg-gray-800 dark:bg-gray-700 p-1.5 rounded-lg text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors">
                       <Smartphone size={14} />
                     </div>
-                    <div className="bg-gray-800 p-1.5 rounded-lg text-gray-400 hover:text-white transition-colors">
+                    <div className="bg-gray-800 dark:bg-gray-700 p-1.5 rounded-lg text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors">
                       <Bot size={14} />
                     </div>
                   </div>
@@ -127,20 +127,20 @@ const SectionComparison: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className="bg-white rounded-[32px] p-8 md:p-12 border border-gray-100 shadow-xl shadow-gray-200/50 flex flex-col relative overflow-hidden group h-full hover:shadow-2xl hover:shadow-gray-300/50 transition-shadow duration-500"
+          className="bg-white dark:bg-gray-900 rounded-[32px] p-8 md:p-12 border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/50 dark:shadow-gray-900/50 flex flex-col relative overflow-hidden group h-full hover:shadow-2xl hover:shadow-gray-300/50 dark:hover:shadow-gray-800/50 transition-shadow duration-500"
         >
           {/* Background decoration */}
           <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-green-500/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2 group-hover:bg-green-500/20 transition-all duration-700"></div>
 
           {/* Card Header */}
           <div className="relative z-10 mb-8 min-h-[140px] flex flex-col justify-start">
-            <div className="self-start inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 border border-green-200 text-green-700 text-xs font-bold uppercase tracking-wider mb-6">
+            <div className="self-start inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-800/50 text-green-700 dark:text-green-400 text-xs font-bold uppercase tracking-wider mb-6">
               Passive Growth
             </div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-2">
+            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
               Liquidity Providers
             </h3>
-            <p className="text-gray-500">
+            <p className="text-gray-500 dark:text-gray-400">
               Robust yields backed by protocol revenue.
             </p>
           </div>
@@ -153,17 +153,17 @@ const SectionComparison: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="bg-gray-50 rounded-2xl p-6 border border-gray-100 transition-transform hover:-translate-y-1 duration-300 group/item flex-1 flex flex-col justify-center hover:border-green-300"
+              className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 border border-gray-100 dark:border-gray-700 transition-transform hover:-translate-y-1 duration-300 group/item flex-1 flex flex-col justify-center hover:border-green-300 dark:hover:border-green-700"
             >
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center text-green-600 shrink-0 group-hover/item:scale-110 transition-transform">
+                <div className="w-10 h-10 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400 shrink-0 group-hover/item:scale-110 transition-transform">
                   <Coins size={20} />
                 </div>
                 <div>
-                  <h4 className="text-gray-900 font-bold text-lg mb-2">
+                  <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-2">
                     Passive Yield Generation
                   </h4>
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                  <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                     Deposit funds into vaults to provide liquidity for
                     high-performance traders and enjoy a substantial APY.
                   </p>
@@ -177,18 +177,18 @@ const SectionComparison: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="bg-gray-50 rounded-2xl p-6 border border-gray-100 transition-transform hover:-translate-y-1 duration-300 group/item flex-1 flex flex-col justify-center hover:border-orange-300"
+              className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 border border-gray-100 dark:border-gray-700 transition-transform hover:-translate-y-1 duration-300 group/item flex-1 flex flex-col justify-center hover:border-orange-300 dark:hover:border-orange-700"
             >
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center text-orange-600 shrink-0 group-hover/item:scale-110 transition-transform">
+                <div className="w-10 h-10 rounded-xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-600 dark:text-orange-400 shrink-0 group-hover/item:scale-110 transition-transform">
                   <Layers size={20} />
                 </div>
                 <div>
-                  <h4 className="text-gray-900 font-bold text-lg mb-2 flex items-center gap-2">
+                  <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-2 flex items-center gap-2">
                     Advanced Strategy Options
-                    <ArrowUpRight size={16} className="text-gray-400" />
+                    <ArrowUpRight size={16} className="text-gray-400 dark:text-gray-500" />
                   </h4>
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                  <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                     Participate in advanced trading strategies developed by the
                     protocol to achieve higher returns.
                   </p>
