@@ -92,13 +92,9 @@ const SectionHero: React.FC = () => {
               <ArrowUpRight size={18} />
             </motion.span>
           </motion.button>
-          <motion.div
-            initial={{ opacity: 0, y: -5 }}
-            whileHover={{ opacity: 1, y: 0 }}
-            className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-gray-900 dark:bg-gray-100 text-white dark:text-black text-xs font-medium rounded whitespace-nowrap pointer-events-none z-50"
-          >
+          <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-gray-900 dark:bg-gray-100 text-white dark:text-black text-xs font-medium rounded whitespace-nowrap pointer-events-none z-50 opacity-0 group-hover:opacity-100 transition-opacity">
             TBD
-          </motion.div>
+          </div>
         </motion.div>
         <motion.a
           href="https://leveracc.gitbook.io/leveracc-docs/"

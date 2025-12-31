@@ -95,9 +95,14 @@ const Navbar: React.FC = () => {
             <ThemeToggle />
 
             {/* Launch APP Button */}
-            <button className="text-base border border-gray-300 dark:border-gray-700 text-gray-900 font-bold dark:text-gray-200 px-10 py-1 rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors whitespace-nowrap cursor-not-allowed opacity-80">
-              Launch App
-            </button>
+            <div className="relative group">
+              <button className="text-base border border-gray-300 dark:border-gray-700 text-gray-900 font-bold dark:text-gray-200 px-10 py-1 rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors whitespace-nowrap cursor-not-allowed opacity-80">
+                Launch App
+              </button>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-gray-900 dark:bg-gray-100 text-white dark:text-black text-xs font-medium rounded whitespace-nowrap pointer-events-none z-50 opacity-0 group-hover:opacity-100 transition-opacity">
+                TBD
+              </div>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -165,9 +170,14 @@ const Navbar: React.FC = () => {
                 <ThemeToggle />
               </div>
               <div className="h-px bg-gray-200 dark:bg-gray-800 my-2"></div>
-              <button className="w-full bg-gray-900 dark:bg-gray-800 text-white dark:text-gray-300 px-4 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors font-medium text-center cursor-not-allowed opacity-80">
-                Launch APP
-              </button>
+              <div className="relative group">
+                <button className="w-full bg-gray-900 dark:bg-gray-800 text-white dark:text-gray-300 px-4 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors font-medium text-center cursor-not-allowed opacity-80">
+                  Launch APP
+                </button>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-gray-900 dark:bg-gray-100 text-white dark:text-black text-xs font-medium rounded whitespace-nowrap pointer-events-none z-50 opacity-0 group-hover:opacity-100 transition-opacity">
+                  TBD
+                </div>
+              </div>
             </div>
           </motion.div>
         )}
