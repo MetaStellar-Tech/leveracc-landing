@@ -43,25 +43,28 @@ const Navbar: React.FC = () => {
         )}
 
         {/* Content */}
-        <div className="relative z-10 flex items-center justify-between w-full max-w-7xl mx-auto">
-          {/* Left Section: Logo and Navigation Links */}
+        <div className="relative z-10 flex items-center justify-between w-full max-w-7xl mx-auto px-4 md:px-8">
+          {/* Left Section: Logo */}
           <div className="flex items-center gap-6">
             {/* Logo Section */}
             <div className="flex items-center gap-3">
               <Image
-                src="/icon.png"
+                src="/576x576-transparent-bg-transparent-fill.png"
                 alt="LeverAcc Logo"
                 width={32}
                 height={32}
                 className="rounded-full"
               />
-              <span className="text-gray-900 dark:text-gray-300 font-medium text-lg tracking-tight">
-                Lever Acc
+              <span className="font-title tracking-tight text-base md:text-lg text-black dark:text-white">
+                LeverAcc
               </span>
             </div>
+          </div>
 
+          {/* Right Section: Navigation Links, Theme Toggle and Launch APP Button */}
+          <div className="hidden md:flex items-center gap-6">
             {/* Navigation Links */}
-            <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-400">
+            <div className="flex items-center gap-6 text-base font-medium text-gray-600 dark:text-gray-200">
               <a
                 href="https://leveracc.gitbook.io/leveracc-docs/"
                 target="_blank"
@@ -87,17 +90,14 @@ const Navbar: React.FC = () => {
                 Github
               </a>
             </div>
-          </div>
 
-          {/* Right Section: Launch APP Button and Theme Toggle */}
-          <div className="hidden md:flex items-center gap-6">
-            {/* Launch APP Button */}
-            <button className=" border border-gray-300 dark:border-gray-700 text-gray-900 font-bold dark:text-gray-300 px-10 py-2 rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors whitespace-nowrap cursor-not-allowed opacity-80">
-              Launch APP
-            </button>
-
-            {/* Theme Toggle - Rightmost */}
+            {/* Theme Toggle */}
             <ThemeToggle />
+
+            {/* Launch APP Button */}
+            <button className="text-base border border-gray-300 dark:border-gray-700 text-gray-900 font-bold dark:text-gray-200 px-10 py-1 rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors whitespace-nowrap cursor-not-allowed opacity-80">
+              Launch App
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -160,7 +160,7 @@ const Navbar: React.FC = () => {
               <div className="h-px bg-gray-200 dark:bg-gray-800 my-2"></div>
               <div className="flex items-center justify-between p-3">
                 <span className="text-gray-600 dark:text-gray-400 font-medium text-sm">
-                  主题
+                  Theme
                 </span>
                 <ThemeToggle />
               </div>

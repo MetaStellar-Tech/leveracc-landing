@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "@fontsource/inter";
+import "@fontsource/plus-jakarta-sans/800.css";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 

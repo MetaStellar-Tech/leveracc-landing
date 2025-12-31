@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Zap, ShieldCheck } from "lucide-react";
+import { ShieldCheck, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
 const SectionDashboard: React.FC = () => {
@@ -14,7 +14,7 @@ const SectionDashboard: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-[#EDEEEC] mb-6"
+          className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-[#EDEEEC] mb-6"
         >
           Engineered for Capital Efficiency.
         </motion.h2>
@@ -23,7 +23,7 @@ const SectionDashboard: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-xl text-gray-500 dark:text-[#838389] max-w-3xl mx-auto leading-relaxed"
+          className="text-base md:text-xl text-gray-500 dark:text-[#838389] max-w-3xl mx-auto leading-relaxed"
         >
           The Atomic Liquidity Engine ensures seamless zero-collateral
           borrowing, while the Algorithmic Circuit Breaker safeguards fund
@@ -41,20 +41,20 @@ const SectionDashboard: React.FC = () => {
           className="bg-white dark:bg-gray-900 rounded-3xl p-8 md:p-12 border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/50 dark:shadow-gray-900/50 relative overflow-hidden flex flex-col justify-between group h-full"
         >
           <div>
-            <div className="w-14 h-14 mb-8 bg-blue-50 rounded-2xl flex items-center justify-center border border-blue-100">
+            <div className="w-14 h-14 mb-8 bg-[#242654] rounded-2xl flex items-center justify-center border-4 border-[#2E3057]">
               <Zap
-                className="text-[#0099ff]"
-                size={28}
-                strokeWidth={2}
-                fill="currentColor"
-                fillOpacity={0.2}
+                className="text-[#4F62CA]"
+                size={24}
+                // strokeWidth={2}
+                fill="#4F62CA"
+                // fillOpacity={0.2}
               />
             </div>
 
-            <h3 className="text-2xl text-gray-900 dark:text-white font-bold mb-4 tracking-tight">
+            <h3 className="text-xl md:text-2xl text-gray-900 dark:text-[#EDEEEC] font-bold mb-4 tracking-tight">
               Atomic Liquidity Engine
             </h3>
-            <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-lg mb-12">
+            <p className="text-gray-500 dark:text-[#838389] leading-relaxed text-base md:text-lg mb-12">
               Liquidity is injected within the same block as execution.
               Flash-loan mechanics applied to perpetual futures, ensuring zero
               collateral drag.
@@ -81,9 +81,10 @@ const SectionDashboard: React.FC = () => {
                     ease: "easeOut",
                   }}
                   className={`flex-1 rounded-full ${
-                    i < 20 ? "bg-[#0099ff]" : "bg-gray-200 dark:bg-gray-700"
+                    i < 20 ? "bg-[#4F62CA]" : "bg-gray-200 dark:bg-gray-700"
                   }`}
-                ></motion.div>
+                >
+                </motion.div>
               ))}
             </div>
           </div>
@@ -98,14 +99,18 @@ const SectionDashboard: React.FC = () => {
           className="bg-[#0c111d] dark:bg-[#0c111d] rounded-3xl p-8 md:p-12 border border-gray-800 dark:border-gray-700 shadow-2xl relative overflow-hidden flex flex-col justify-between h-full"
         >
           <div>
-            <div className="w-14 h-14 mb-8 bg-gray-800/50 rounded-2xl flex items-center justify-center border border-gray-700/50">
-              <ShieldCheck className="text-white" size={28} strokeWidth={2} />
+            <div className="w-14 h-14 mb-8 bg-[#242654] rounded-2xl flex items-center justify-center border-4 border-[#2E3057]">
+              <ShieldCheck
+                className="text-[#242654]"
+                size={36}
+                fill="#4F62CA"
+              />
             </div>
 
-            <h3 className="text-2xl text-white font-bold mb-4 tracking-tight">
+            <h3 className="text-xl md:text-2xl text-[#EDEEEC] font-bold mb-4 tracking-tight">
               Algorithmic Circuit Breaker
             </h3>
-            <p className="text-gray-400 leading-relaxed text-lg mb-12">
+            <p className="text-[#838389] leading-relaxed text-base md:text-lg mb-12">
               Auto-deleveraging protocols trigger instantly upon volatility
               spikes. 100% LP capital protection guarantees via smart contract
               enforcement.
@@ -117,7 +122,8 @@ const SectionDashboard: React.FC = () => {
             <div className="flex justify-between text-xs font-semibold uppercase tracking-wider mb-4 text-gray-500">
               <span>Risk Monitor</span>
               <span className="text-emerald-500 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse">
+                </span>
                 LIVE
               </span>
             </div>

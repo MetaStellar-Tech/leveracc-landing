@@ -9,10 +9,10 @@ const SectionBuilder: React.FC = () => {
     <div className="w-full">
       {/* Section Header */}
       <div className="text-center mb-16 px-4">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-[#EDEEEC] mb-6">
+        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-[#EDEEEC] mb-6">
           The Geometry of Leverage.
         </h2>
-        <p className="text-xl text-gray-500 dark:text-[#838389] max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base md:text-xl text-gray-500 dark:text-[#838389] max-w-3xl mx-auto leading-relaxed">
           See how LeverAcc transforms your position size while maintaining the
           same initial capital requirement.
         </p>
@@ -44,10 +44,10 @@ const SectionBuilder: React.FC = () => {
         <div className="flex flex-col lg:flex-row min-h-[550px]">
           {/* Left Panel: Chart */}
           <div className="flex-1 p-8 md:p-12 relative border-r border-gray-800/50 dark:border-gray-700/50 flex flex-col">
-            <h2 className="text-3xl text-white font-normal mb-2 tracking-tight">
+            <h2 className="text-2xl md:text-3xl text-white font-normal mb-2 tracking-tight">
               Notional Exposure
             </h2>
-            <p className="text-gray-500 mb-8 font-light">
+            <p className="text-sm md:text-base text-gray-500 mb-8 font-light">
               Comparing buying power output based on identical inputs.
             </p>
 
@@ -120,10 +120,10 @@ const SectionBuilder: React.FC = () => {
 
               {/* X-Axis Labels */}
               <div className="absolute bottom-0 left-0 right-0 pl-12 flex justify-around h-14 items-center pt-4">
-                <span className="text-gray-500 text-sm font-medium min-w-[140px] text-center whitespace-nowrap">
+                <span className="text-gray-500 text-xs md:text-sm font-medium min-w-[140px] text-center whitespace-nowrap">
                   Trade on Perp DEX
                 </span>
-                <span className="text-gray-400 text-sm font-medium min-w-[140px] text-center whitespace-nowrap">
+                <span className="text-gray-400 text-xs md:text-sm font-medium min-w-[140px] text-center whitespace-nowrap">
                   Trade on LeverAcc
                 </span>
               </div>
@@ -136,7 +136,7 @@ const SectionBuilder: React.FC = () => {
             <div className="mb-10 relative">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-3 h-3 rounded bg-gray-600"></div>
-                <h3 className="text-white text-lg font-normal">
+                <h3 className="text-white text-base md:text-lg font-normal">
                   Trade on Perp DEX
                 </h3>
               </div>
@@ -144,7 +144,7 @@ const SectionBuilder: React.FC = () => {
                 <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1 font-medium">
                   Formula
                 </div>
-                <div className="text-xl text-gray-300 font-light">
+                <div className="text-lg md:text-xl text-gray-300 font-light">
                   <span className="text-gray-500">$1k</span> × 20x ={" "}
                   <span className="text-white font-medium">$20k</span>
                 </div>
@@ -156,7 +156,7 @@ const SectionBuilder: React.FC = () => {
               <div className="absolute -left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-transparent opacity-0"></div>
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-3 h-3 rounded bg-[#0099ff] shadow-[0_0_10px_#0099ff]"></div>
-                <h3 className="text-white text-lg font-medium">
+                <h3 className="text-white text-base md:text-lg font-medium">
                   Trade on LeverAcc
                 </h3>
               </div>
@@ -165,7 +165,7 @@ const SectionBuilder: React.FC = () => {
                 <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-2 font-medium">
                   The Pre-Fund Effect
                 </div>
-                <p className="text-sm text-gray-400 mb-4 leading-relaxed">
+                <p className="text-xs md:text-sm text-gray-400 mb-4 leading-relaxed">
                   Your $1k collateral is boosted by{" "}
                   <span className="text-[#0099ff] font-medium">
                     $4k liquidity injection
@@ -176,7 +176,7 @@ const SectionBuilder: React.FC = () => {
                 <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1 font-medium">
                   Formula
                 </div>
-                <div className="text-xl text-gray-300 font-light">
+                <div className="text-lg md:text-xl text-gray-300 font-light">
                   (<span className="text-[#0099ff] font-medium">$1k + $4k</span>
                   ) × 20x ={" "}
                   <span className="text-white font-medium">$100k</span>
@@ -186,8 +186,8 @@ const SectionBuilder: React.FC = () => {
 
             {/* Footer Stat */}
             <div className="pt-6 border-t border-gray-800 dark:border-gray-700 flex justify-between items-center">
-              <span className="text-gray-500 font-medium">Efficiency Gain</span>
-              <span className="text-3xl font-bold text-[#0099ff]">5.0x</span>
+              <span className="text-gray-500 font-medium text-sm md:text-base">Efficiency Gain</span>
+              <span className="text-2xl md:text-3xl font-bold text-[#0099ff]">5.0x</span>
             </div>
           </div>
         </div>

@@ -23,10 +23,10 @@ const SectionComparison: React.FC = () => {
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="text-center mb-16 px-4"
       >
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-[#EDEEEC] mb-6">
+        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-[#EDEEEC] mb-6">
           Win-Win for Network Contributors.
         </h2>
-        <p className="text-xl text-gray-500 dark:text-[#838389] max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base md:text-xl text-gray-500 dark:text-[#838389] max-w-3xl mx-auto leading-relaxed">
           LeverAcc not only empowers traders but also provides LPs with enhanced
           yield channels.
         </p>
@@ -50,8 +50,8 @@ const SectionComparison: React.FC = () => {
             <div className="self-start inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6">
               Active Participants
             </div>
-            <h3 className="text-3xl font-bold text-white mb-2">Traders</h3>
-            <p className="text-gray-400">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Traders</h3>
+            <p className="text-gray-400 text-sm md:text-base">
               Maximize capital efficiency with zero friction.
             </p>
           </div>
@@ -71,13 +71,13 @@ const SectionComparison: React.FC = () => {
                   <Zap size={20} />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold text-lg mb-2 flex items-center gap-2">
+                  <h4 className="text-white font-bold text-base md:text-lg mb-2 flex items-center gap-2">
                     Scale Your Strategy
                     <span className="bg-blue-600 text-white text-[10px] px-1.5 py-0.5 rounded font-bold">
                       5x
                     </span>
                   </h4>
-                  <p className="text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                     Unlock 5x Buying Power via Pre-Funding. Execute larger
                     positions without locking collateral.
                   </p>
@@ -98,10 +98,10 @@ const SectionComparison: React.FC = () => {
                   <Smartphone size={20} />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold text-lg mb-2">
+                  <h4 className="text-white font-bold text-base md:text-lg mb-2">
                     Trade Anywhere
                   </h4>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-3">
+                  <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-3">
                     Support trading via Web/Mobile App/Telegram Bot, with future
                     API access for professional/institutional traders.
                   </p>
@@ -139,10 +139,10 @@ const SectionComparison: React.FC = () => {
             <div className="self-start inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-800/50 text-green-700 dark:text-green-400 text-xs font-bold uppercase tracking-wider mb-6">
               Passive Growth
             </div>
-            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
               Liquidity Providers
             </h3>
-            <p className="text-gray-500 dark:text-gray-400">
+            <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base">
               Robust yields backed by protocol revenue.
             </p>
           </div>
@@ -162,10 +162,10 @@ const SectionComparison: React.FC = () => {
                   <Coins size={20} />
                 </div>
                 <div>
-                  <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-2">
+                  <h4 className="text-gray-900 dark:text-white font-bold text-base md:text-lg mb-2">
                     Passive Yield Generation
                   </h4>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm leading-relaxed">
                     Deposit funds into vaults to provide liquidity for
                     high-performance traders and enjoy a substantial APY.
                   </p>
@@ -186,14 +186,14 @@ const SectionComparison: React.FC = () => {
                   <Layers size={20} />
                 </div>
                 <div>
-                  <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-2 flex items-center gap-2">
+                  <h4 className="text-gray-900 dark:text-white font-bold text-base md:text-lg mb-2 flex items-center gap-2">
                     Advanced Strategy Options
                     <ArrowUpRight
                       size={16}
                       className="text-gray-400 dark:text-gray-500"
                     />
                   </h4>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm leading-relaxed">
                     Participate in advanced trading strategies developed by the
                     protocol to achieve higher returns.
                   </p>

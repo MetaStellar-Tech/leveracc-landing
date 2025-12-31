@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
@@ -58,50 +59,65 @@ const Footer: React.FC = () => {
           >
           </div>
         </div>
-        {/* Bottom Right Background Image */}
-        <div className="absolute bottom-0 right-0 z-10 pointer-events-none">
+        {/* Bottom Right Background Image - Desktop Only */}
+        <div className="absolute bottom-0 right-0 z-10 pointer-events-none hidden md:block">
           <Image
             src="/static/footerbg.png"
             alt="Footer Background"
             width={217}
             height={259}
-            // className="opacity-30 md:opacity-50"
-            className=" size-100 object-bottom-right object-contain rounded-[40px]"
-            // style={{ objectFit: "contain" }}
+            className="size-70 object-bottom-right object-contain rounded-[40px]"
           />
         </div>
         {/* Content */}
         <div className="relative z-10 max-w-5xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 drop-shadow-lg text-white">
+          <h2 className="font-title text-3xl md:text-6xl tracking-tight mb-6 drop-shadow-lg text-white">
             Ready to Break Boundaries?
           </h2>
-          <p className="text-xl text-blue-50/80 mb-10 max-w-3xl mx-auto drop-shadow-md font-light">
+          <p className="text-base md:text-xl text-blue-50/80 mb-10 max-w-3xl mx-auto drop-shadow-md font-light">
             Maximize your capital efficiency and start trading with amplified
             power today.
           </p>
 
           <div className="flex justify-center">
-            <button className="bg-white text-black px-8 py-4 rounded-xl font-medium text-lg hover:bg-blue-50 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_35px_rgba(255,255,255,0.5)] hover:-translate-y-1 active:scale-95 duration-300 cursor-not-allowed opacity-80">
-              Access the Public Beta
-            </button>
+            <div className="relative group">
+              <button className="access-button cursor-not-allowed opacity-80 flex items-center justify-center gap-2">
+                Access the Public Beta
+                <ArrowUpRight size={18} />
+              </button>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-gray-900 dark:bg-gray-100 text-white dark:text-black text-xs font-medium rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-50">
+                TBD
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Image - Below Content */}
+          <div className="relative mt-12 md:hidden flex justify-center">
+            <Image
+              src="/static/footerbg.png"
+              alt="Footer Background"
+              width={180}
+              height={210}
+              className="object-contain"
+            />
           </div>
         </div>
       </div>
 
       {/* Bottom Links */}
-      <div className="flex flex-col md:flex-row justify-between items-center py-8 gap-6 text-gray-500 dark:text-gray-400 text-sm border-t border-gray-200/50 dark:border-gray-700/50">
-        <div className="flex items-center gap-2 font-bold text-lg text-black dark:text-white">
+      <div className="flex flex-col md:flex-row justify-between items-center py-8 gap-6 text-gray-500 dark:text-gray-400 text-xs md:text-sm border-t border-gray-200/50 dark:border-gray-700/50">
+        <div className="font-title flex items-center gap-2 text-base md:text-lg text-black dark:text-white">
           <Image
-            src="/icon.png"
+            src="/576x576-transparent-bg-transparent-fill.png"
             alt="LeverAcc Logo"
             width={24}
             height={24}
             className="rounded-full"
           />
-          LEVERACC
+          LeverAcc
         </div>
 
-        <div className="text-sm text-gray-400 dark:text-gray-500 text-center">
+        <div className="text-xs md:text-sm text-gray-400 dark:text-gray-500 text-center">
           © MetaStellar Technology Ltd. All Rights Reserved.
         </div>
 

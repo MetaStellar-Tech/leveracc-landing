@@ -74,12 +74,12 @@ const SectionStats: React.FC = () => {
             }}
             className="bg-white dark:bg-gray-900 rounded-3xl p-6 md:p-10 flex flex-col items-center justify-center text-center shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
           >
-            <span className="text-gray-500 dark:text-gray-400 font-medium text-xs md:text-sm mb-3 group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors tracking-wide">
+            <span className="text-gray-500 dark:text-gray-400 font-medium text-[10px] md:text-sm mb-3 group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors tracking-wide">
               {metric.label}
             </span>
             <AnimatedCounter
               value={metric.value}
-              className="text-2xl md:text-4xl font-bold tracking-tight inline-block"
+              className="text-xl md:text-4xl font-bold tracking-tight inline-block"
               highlight={metric.highlight}
             />
           </motion.div>

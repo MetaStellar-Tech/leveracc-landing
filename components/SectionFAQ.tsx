@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const SectionFAQ: React.FC = () => {
   const faqs = [
@@ -40,7 +40,9 @@ const SectionFAQ: React.FC = () => {
   return (
     <section className="max-w-3xl mx-auto py-12">
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold dark:text-[#EDEEEC]">A few more questions?</h2>
+        <h2 className="text-3xl md:text-4xl font-bold dark:text-[#EDEEEC]">
+          A few more questions?
+        </h2>
       </div>
 
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -50,11 +52,11 @@ const SectionFAQ: React.FC = () => {
               onClick={() => toggle(i)}
               className="w-full flex items-center justify-between text-left group"
             >
-              <span className="text-lg font-medium text-gray-900 dark:text-white group-hover:text-black dark:group-hover:text-gray-200">
+              <span className="text-base md:text-lg font-medium text-gray-900 dark:text-[#EDEEEC] group-hover:text-black dark:group-hover:text-gray-200">
                 {faq.q}
               </span>
               <ChevronDown
-                className={`text-gray-400 dark:text-gray-500 transition-transform duration-300 ${
+                className={`text-gray-400 dark:text-[#3F4FA6] transition-transform duration-300 ${
                   openIndex === i ? "rotate-180" : ""
                 }`}
               />
@@ -68,20 +70,22 @@ const SectionFAQ: React.FC = () => {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed pr-8">{faq.a}</p>
+                  <p className="text-sm md:text-base text-gray-600 dark:text-[#838389] leading-relaxed pr-8">
+                    {faq.a}
+                  </p>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
         ))}
       </div>
-      <div className="text-center mt-12 text-gray-500 dark:text-gray-400">
+      <div className="text-center mt-12 text-sm md:text-base text-gray-500 dark:text-[#838389]">
         Still have questions?{" "}
         <a
           href="https://t.me/leveracc_fans"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-black dark:text-white font-semibold hover:underline"
+          className="text-black dark:text-[#EDEEEC] font-semibold hover:underline"
         >
           Join the community
         </a>

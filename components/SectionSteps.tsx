@@ -14,8 +14,10 @@ const SectionSteps: React.FC = () => {
         transition={{ duration: 0.5 }}
         className="text-center mb-16"
       >
-        <h2 className="text-5xl font-bold mb-4 dark:text-[#EDEEEC]">How does it work?</h2>
-        <p className="text-gray-500 dark:text-[#838389] font-medium text-lg">
+        <h2 className="text-3xl md:text-5xl font-bold mb-4 dark:text-[#EDEEEC]">
+          How does it work?
+        </h2>
+        <p className="text-gray-500 dark:text-[#838389] font-medium text-base md:text-lg">
           I know what you&apos;re thinking... Here&apos;s a simple step-by-step
           guide.
         </p>
@@ -34,7 +36,8 @@ const SectionSteps: React.FC = () => {
             {/* Borrow Request Visual */}
             <div className="relative w-full h-full flex items-center justify-center">
               {/* Background decorative elements */}
-              <div className="absolute w-40 h-40 bg-orange-200/50 rounded-full blur-2xl -top-4 -left-4"></div>
+              <div className="absolute w-40 h-40 bg-orange-200/50 rounded-full blur-2xl -top-4 -left-4">
+              </div>
 
               {/* Main Card */}
               <div className="absolute w-56 bg-white dark:bg-gray-900 rounded-xl shadow-lg p-5 flex flex-col z-10 rotate-[-2deg] transition-transform group-hover:rotate-0 duration-500 border border-gray-200 dark:border-gray-700">
@@ -53,7 +56,8 @@ const SectionSteps: React.FC = () => {
                     <div className="text-[10px] text-gray-400 dark:text-gray-500 font-medium mb-1">
                       YOUR COLLATERAL
                     </div>
-                    <div className="h-2 w-16 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+                    <div className="h-2 w-16 bg-gray-200 dark:bg-gray-700 rounded-full">
+                    </div>
                   </div>
                   <div className="relative">
                     <div className="text-[10px] text-gray-400 dark:text-gray-500 font-medium mb-1">
@@ -70,7 +74,8 @@ const SectionSteps: React.FC = () => {
                           delay: 0.5,
                         }}
                         className="h-2 bg-orange-500 rounded-full"
-                      ></motion.div>
+                      >
+                      </motion.div>
                       <motion.span
                         initial={{ scale: 0 }}
                         whileInView={{ scale: 1 }}
@@ -97,14 +102,14 @@ const SectionSteps: React.FC = () => {
             </div>
           </div>
           <div className="flex items-start gap-4">
-            <span className="bg-black dark:bg-white text-white dark:text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0">
+            <span className="bg-black dark:bg-[#4F62CA] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0">
               01
             </span>
             <div>
-              <h3 className="text-xl font-bold mb-2 dark:text-white">
+              <h3 className="text-lg md:text-xl font-bold mb-2 dark:text-[#EDEEEC]">
                 Initiate a borrowing request
               </h3>
-              <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
+              <p className="text-gray-500 dark:text-[#838389] leading-relaxed text-xs md:text-sm">
                 Before executing perps trades, apply for an uncollateralized
                 loan from the vault (up to 4x of your own funds).
               </p>
@@ -123,8 +128,10 @@ const SectionSteps: React.FC = () => {
           <div className="bg-[#f0f0f0] dark:bg-gray-800 rounded-3xl h-64 mb-8 p-6 flex flex-col justify-center gap-3 relative overflow-hidden">
             {/* Speed Lines Effect */}
             <div className="absolute inset-0 opacity-30">
-              <div className="absolute top-10 left-[-20%] w-[140%] h-[1px] bg-gradient-to-r from-transparent via-green-400 to-transparent rotate-[-5deg]"></div>
-              <div className="absolute bottom-10 left-[-20%] w-[140%] h-[1px] bg-gradient-to-r from-transparent via-green-400 to-transparent rotate-[-5deg]"></div>
+              <div className="absolute top-10 left-[-20%] w-[140%] h-[1px] bg-gradient-to-r from-transparent via-green-400 to-transparent rotate-[-5deg]">
+              </div>
+              <div className="absolute bottom-10 left-[-20%] w-[140%] h-[1px] bg-gradient-to-r from-transparent via-green-400 to-transparent rotate-[-5deg]">
+              </div>
             </div>
 
             {/* Transaction Item 1 */}
@@ -166,18 +173,24 @@ const SectionSteps: React.FC = () => {
                 </div>
               </div>
               <div className="text-right">
-                <div className="text-xs font-bold text-gray-900 dark:text-white">+ $4,000</div>
-                <div className="text-[9px] text-gray-400 dark:text-gray-500">0.04s</div>
+                <div className="text-xs font-bold text-gray-900 dark:text-white">
+                  + $4,000
+                </div>
+                <div className="text-[9px] text-gray-400 dark:text-gray-500">
+                  0.04s
+                </div>
               </div>
             </motion.div>
           </div>
           <div className="flex items-start gap-4">
-            <span className="bg-black dark:bg-white text-white dark:text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0">
+            <span className="bg-black dark:bg-[#4F62CA] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0">
               02
             </span>
             <div>
-              <h3 className="text-xl font-bold mb-2 dark:text-white">Loan funds received</h3>
-              <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
+              <h3 className="text-lg md:text-xl font-bold mb-2 dark:text-[#EDEEEC]">
+                Loan funds received
+              </h3>
+              <p className="text-gray-500 dark:text-[#838389] leading-relaxed text-xs md:text-sm">
                 The system transfers funds to your account at lightning speed,
                 making them available immediately - no waiting required.
               </p>
@@ -211,9 +224,13 @@ const SectionSteps: React.FC = () => {
               <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-2 mb-3">
                 <div className="flex justify-between text-[9px] text-gray-400 dark:text-gray-500 mb-1 uppercase font-bold tracking-wide">
                   <span>Buying Power</span>
-                  <span className="text-blue-600 dark:text-blue-400">5x Mode</span>
+                  <span className="text-blue-600 dark:text-blue-400">
+                    5x Mode
+                  </span>
                 </div>
-                <div className="text-sm font-bold text-gray-900 dark:text-white">$5,000.00</div>
+                <div className="text-sm font-bold text-gray-900 dark:text-white">
+                  $5,000.00
+                </div>
               </div>
 
               {/* Buttons */}
@@ -232,16 +249,20 @@ const SectionSteps: React.FC = () => {
             </div>
 
             {/* Background Elements */}
-            <div className="absolute top-12 right-8 w-12 h-12 bg-blue-200/50 rounded-full blur-xl"></div>
-            <div className="absolute bottom-8 left-8 w-16 h-16 bg-green-200/50 rounded-full blur-xl"></div>
+            <div className="absolute top-12 right-8 w-12 h-12 bg-blue-200/50 rounded-full blur-xl">
+            </div>
+            <div className="absolute bottom-8 left-8 w-16 h-16 bg-green-200/50 rounded-full blur-xl">
+            </div>
           </div>
           <div className="flex items-start gap-4">
-            <span className="bg-black dark:bg-white text-white dark:text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0">
+            <span className="bg-black dark:bg-[#4F62CA] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0">
               03
             </span>
             <div>
-              <h3 className="text-xl font-bold mb-2 dark:text-white">Trade perps as before</h3>
-              <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
+              <h3 className="text-lg md:text-xl font-bold mb-2 dark:text-[#EDEEEC]">
+                Trade perps as before
+              </h3>
+              <p className="text-gray-500 dark:text-[#838389] leading-relaxed text-xs md:text-sm">
                 Place orders in a familiar UI/UX with enhanced buying power, and
                 enjoying better profit expectations at the same risk level.
               </p>
