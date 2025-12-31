@@ -14,7 +14,7 @@ const SectionDashboard: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-6"
+          className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-[#EDEEEC] mb-6"
         >
           Engineered for Capital Efficiency.
         </motion.h2>
@@ -23,7 +23,7 @@ const SectionDashboard: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed"
+          className="text-xl text-gray-500 dark:text-[#838389] max-w-3xl mx-auto leading-relaxed"
         >
           The Atomic Liquidity Engine ensures seamless zero-collateral
           borrowing, while the Algorithmic Circuit Breaker safeguards fund

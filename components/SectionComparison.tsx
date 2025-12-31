@@ -2,13 +2,13 @@
 
 import React from "react";
 import {
-  Smartphone,
+  ArrowUpRight,
+  Bot,
   Coins,
   Layers,
-  ArrowUpRight,
-  Zap,
   Monitor,
-  Bot,
+  Smartphone,
+  Zap,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -23,10 +23,10 @@ const SectionComparison: React.FC = () => {
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="text-center mb-16 px-4"
       >
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-[#EDEEEC] mb-6">
           Win-Win for Network Contributors.
         </h2>
-        <p className="text-xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl text-gray-500 dark:text-[#838389] max-w-3xl mx-auto leading-relaxed">
           LeverAcc not only empowers traders but also provides LPs with enhanced
           yield channels.
         </p>
@@ -42,7 +42,8 @@ const SectionComparison: React.FC = () => {
           className="bg-[#0c111d] dark:bg-[#0c111d] rounded-[32px] p-8 md:p-12 border border-gray-800 dark:border-gray-700 flex flex-col relative overflow-hidden group h-full hover:shadow-2xl hover:shadow-blue-900/10 transition-shadow duration-500"
         >
           {/* Background decoration */}
-          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-blue-600/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-600/20 transition-all duration-700"></div>
+          <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-blue-600/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-600/20 transition-all duration-700">
+          </div>
 
           {/* Card Header */}
           <div className="relative z-10 mb-8 min-h-[140px] flex flex-col justify-start">
@@ -130,7 +131,8 @@ const SectionComparison: React.FC = () => {
           className="bg-white dark:bg-gray-900 rounded-[32px] p-8 md:p-12 border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/50 dark:shadow-gray-900/50 flex flex-col relative overflow-hidden group h-full hover:shadow-2xl hover:shadow-gray-300/50 dark:hover:shadow-gray-800/50 transition-shadow duration-500"
         >
           {/* Background decoration */}
-          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-green-500/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2 group-hover:bg-green-500/20 transition-all duration-700"></div>
+          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-green-500/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2 group-hover:bg-green-500/20 transition-all duration-700">
+          </div>
 
           {/* Card Header */}
           <div className="relative z-10 mb-8 min-h-[140px] flex flex-col justify-start">
@@ -186,7 +188,10 @@ const SectionComparison: React.FC = () => {
                 <div>
                   <h4 className="text-gray-900 dark:text-white font-bold text-lg mb-2 flex items-center gap-2">
                     Advanced Strategy Options
-                    <ArrowUpRight size={16} className="text-gray-400 dark:text-gray-500" />
+                    <ArrowUpRight
+                      size={16}
+                      className="text-gray-400 dark:text-gray-500"
+                    />
                   </h4>
                   <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                     Participate in advanced trading strategies developed by the

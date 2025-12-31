@@ -40,7 +40,7 @@ const SectionFAQ: React.FC = () => {
   return (
     <section className="max-w-3xl mx-auto py-12">
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold dark:text-white">A few more questions?</h2>
+        <h2 className="text-4xl font-bold dark:text-[#EDEEEC]">A few more questions?</h2>
       </div>
 
       <div className="divide-y divide-gray-200 dark:divide-gray-700">

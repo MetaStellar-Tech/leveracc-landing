@@ -1,80 +1,121 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className="sticky top-6 z-50 flex flex-col items-center px-4 w-full pointer-events-none gap-2">
-      <nav className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 shadow-sm rounded-full px-5 py-2.5 flex items-center justify-between gap-8 pointer-events-auto min-w-[320px] max-w-2xl w-full transition-all relative z-50">
-        <div className="flex items-center gap-2 font-bold text-xl tracking-tight text-black dark:text-white">
-          <Image
-            src="/icon.png"
-            alt="LeverAcc Logo"
-            width={32}
-            height={32}
-            className="rounded-full"
+    <header className="sticky top-0 z-50 w-full">
+      <nav
+        className={`relative px-4 md:px-8 py-4 flex items-center justify-between gap-8 transition-all duration-300 ${
+          isScrolled
+            ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-800/50"
+            : "bg-transparent"
+        }`}
+      >
+        {/* Geometric Pattern Background - Only visible when scrolled */}
+        {isScrolled && (
+          <div
+            className="absolute inset-0 opacity-20 dark:opacity-20"
+            style={{
+              backgroundImage: `
+                linear-gradient(rgba(100, 100, 100, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(100, 100, 100, 0.1) 1px, transparent 1px)
+              `,
+              backgroundSize: "20px 20px",
+            }}
           />
-          LEVERACC
-        </div>
+        )}
 
-        <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
-          <a
-            href="https://leveracc.gitbook.io/leveracc-docs/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-black dark:hover:text-white transition-colors"
-          >
-            Docs
-          </a>
-          <div className="w-px h-4 bg-gray-300 dark:bg-gray-700 mx-1"></div>
-          <a
-            href="https://x.com/leveracc_xyz"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-black dark:hover:text-white transition-colors"
-          >
-            Twitter
-          </a>
-          <div className="w-px h-4 bg-gray-300 dark:bg-gray-700 mx-1"></div>
-          <a
-            href="https://github.com/MetaStellar-Tech"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-black dark:hover:text-white transition-colors px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
-          >
-            Github
-          </a>
-          <div className="w-px h-4 bg-gray-300 dark:bg-gray-700 mx-1"></div>
-          <ThemeToggle />
-          <div className="relative group">
-            <button className="bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors whitespace-nowrap cursor-not-allowed opacity-80">
-              Launch App
-            </button>
-            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-gray-900 dark:bg-gray-100 text-white dark:text-black text-xs font-medium rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-50">
-              TBD
+        {/* Content */}
+        <div className="relative z-10 flex items-center justify-between w-full max-w-7xl mx-auto">
+          {/* Left Section: Logo and Navigation Links */}
+          <div className="flex items-center gap-6">
+            {/* Logo Section */}
+            <div className="flex items-center gap-3">
+              <Image
+                src="/icon.png"
+                alt="LeverAcc Logo"
+                width={32}
+                height={32}
+                className="rounded-full"
+              />
+              <span className="text-gray-900 dark:text-gray-300 font-medium text-lg tracking-tight">
+                Lever Acc
+              </span>
+            </div>
+
+            {/* Navigation Links */}
+            <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-400">
+              <a
+                href="https://leveracc.gitbook.io/leveracc-docs/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-900 dark:hover:text-gray-200 transition-colors"
+              >
+                Docs
+              </a>
+              <a
+                href="https://x.com/leveracc_xyz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-900 dark:hover:text-gray-200 transition-colors"
+              >
+                Twitter
+              </a>
+              <a
+                href="https://github.com/MetaStellar-Tech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-900 dark:hover:text-gray-200 transition-colors"
+              >
+                Github
+              </a>
             </div>
           </div>
-        </div>
 
-        <div className="md:hidden flex items-center gap-2">
-          <ThemeToggle />
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? (
-              <X className="w-6 h-6 text-gray-700 dark:text-gray-300" />
-            ) : (
-              <Menu className="w-6 h-6 text-gray-700 dark:text-gray-300" />
-            )}
-          </button>
+          {/* Right Section: Launch APP Button and Theme Toggle */}
+          <div className="hidden md:flex items-center gap-6">
+            {/* Launch APP Button */}
+            <button className=" border border-gray-300 dark:border-gray-700 text-gray-900 font-bold dark:text-gray-300 px-10 py-2 rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors whitespace-nowrap cursor-not-allowed opacity-80">
+              Launch APP
+            </button>
+
+            {/* Theme Toggle - Rightmost */}
+            <ThemeToggle />
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className={`p-1 rounded-full transition-colors focus:outline-none ${
+                isScrolled
+                  ? "hover:bg-gray-200 dark:hover:bg-gray-800"
+                  : "hover:bg-gray-200/50 dark:hover:bg-gray-800/50"
+              }`}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen
+                ? <X className="w-6 h-6 text-gray-900 dark:text-gray-300" />
+                : <Menu className="w-6 h-6 text-gray-900 dark:text-gray-300" />}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -82,18 +123,18 @@ const Navbar: React.FC = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20, scale: 0.95, x: "-50%" }}
-            animate={{ opacity: 1, y: 0, scale: 1, x: "-50%" }}
-            exit={{ opacity: 0, y: -20, scale: 0.95, x: "-50%" }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full mt-2 left-1/2 w-full max-w-2xl px-4 md:hidden pointer-events-auto"
+            className="absolute top-full left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-800/50 shadow-lg md:hidden"
           >
-            <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 shadow-lg rounded-2xl p-4 flex flex-col gap-2">
+            <div className="px-4 py-4 flex flex-col gap-2">
               <a
                 href="https://leveracc.gitbook.io/leveracc-docs/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300 font-medium"
+                className="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Docs
@@ -102,7 +143,7 @@ const Navbar: React.FC = () => {
                 href="https://x.com/leveracc_xyz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300 font-medium"
+                className="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Twitter
@@ -111,30 +152,27 @@ const Navbar: React.FC = () => {
                 href="https://github.com/MetaStellar-Tech"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300 font-medium"
+                className="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Github
               </a>
-              <div className="h-px bg-gray-200 dark:bg-gray-700 my-1"></div>
+              <div className="h-px bg-gray-200 dark:bg-gray-800 my-2"></div>
               <div className="flex items-center justify-between p-3">
-                <span className="text-gray-700 dark:text-gray-300 font-medium text-sm">主题</span>
+                <span className="text-gray-600 dark:text-gray-400 font-medium text-sm">
+                  主题
+                </span>
                 <ThemeToggle />
               </div>
-              <div className="h-px bg-gray-200 dark:bg-gray-700 my-1"></div>
-              <div className="relative group w-full">
-                <button className="w-full bg-black dark:bg-white text-white dark:text-black px-4 py-3 rounded-xl hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors font-medium text-center cursor-not-allowed opacity-80">
-                  Launch App
-                </button>
-                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 dark:bg-gray-100 text-white dark:text-black text-xs font-medium rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-50">
-                  TBD
-                </div>
-              </div>
+              <div className="h-px bg-gray-200 dark:bg-gray-800 my-2"></div>
+              <button className="w-full bg-gray-900 dark:bg-gray-800 text-white dark:text-gray-300 px-4 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors font-medium text-center cursor-not-allowed opacity-80">
+                Launch APP
+              </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </header>
   );
 };
 

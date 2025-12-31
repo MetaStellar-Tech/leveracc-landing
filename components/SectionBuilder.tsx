@@ -9,10 +9,10 @@ const SectionBuilder: React.FC = () => {
     <div className="w-full">
       {/* Section Header */}
       <div className="text-center mb-16 px-4">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-[#EDEEEC] mb-6">
           The Geometry of Leverage.
         </h2>
-        <p className="text-xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl text-gray-500 dark:text-[#838389] max-w-3xl mx-auto leading-relaxed">
           See how LeverAcc transforms your position size while maintaining the
           same initial capital requirement.
         </p>

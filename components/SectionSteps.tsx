@@ -14,8 +14,8 @@ const SectionSteps: React.FC = () => {
         transition={{ duration: 0.5 }}
         className="text-center mb-16"
       >
-        <h2 className="text-5xl font-bold mb-4 dark:text-white">How does it work?</h2>
-        <p className="text-gray-500 dark:text-gray-400 font-medium text-lg">
+        <h2 className="text-5xl font-bold mb-4 dark:text-[#EDEEEC]">How does it work?</h2>
+        <p className="text-gray-500 dark:text-[#838389] font-medium text-lg">
           I know what you&apos;re thinking... Here&apos;s a simple step-by-step
           guide.
         </p>

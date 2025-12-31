@@ -10,16 +10,16 @@ const SectionHero: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="text-5xl md:text-7xl font-bold tracking-tight text-black dark:text-white mb-6 leading-[1.1]"
+        className="text-5xl md:text-7xl font-bold tracking-tight text-black dark:text-[#EDEEEC] mb-6 leading-[1.1]"
       >
         <span className="block">Trade Perps with 5x Buying Power.</span>
-        <span className="block text-gray-600 dark:text-gray-400">Low rates, high impact.</span>
+        <span className="block ">Low rates, high impact.</span>
       </motion.h1>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-        className="text-xl md:text-2xl text-gray-500 dark:text-gray-400 max-w-3xl mb-10 leading-relaxed"
+        className="text-xl md:text-2xl text-gray-500 dark:text-[#838389] max-w-3xl mb-10 leading-relaxed"
       >
         LeverAcc is a liquidity and efficiency layer built specifically for
         high-performance traders.
