@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const SectionFAQ: React.FC = () => {
   const faqs = [
     {
-      q: "Is LeverAcc a Perp DEX?",
+      q: "Is LeverAcc a Perp DEX ?",
       a: "No, LeverAcc is a liquidity and capital efficiency layer built on top of Perp DEXs, designed to maximize users' capital efficiency. Simply put, LeverAcc acts as middleware that can plug into any Perp DEX.",
     },
     {

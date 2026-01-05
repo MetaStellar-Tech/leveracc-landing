@@ -1,15 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "@fontsource/inter";
 import "@fontsource/plus-jakarta-sans/800.css";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-
-const harmonyOSBold = localFont({
-  src: "../font/HarmonyOS_Sans_SC_Bold.ttf",
-  variable: "--font-harmonyos-bold",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "LeverAcc",
@@ -27,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${harmonyOSBold.variable} antialiased`}>
+      <body className="antialiased font-sans">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
