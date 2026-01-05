@@ -83,7 +83,7 @@ const SectionHero: React.FC = () => {
             whileTap={{ scale: 0.95 }}
           >
             <motion.button
-              className="flex items-center justify-center gap-2 bg-[#0099ff] text-white px-5 py-2.5 rounded-full hover:opacity-90 transition-colors whitespace-nowrap"
+              className="flex items-center justify-center gap-2 font-bold text-base md:text-lg border-0 border-[#0099ff] bg-[#0099ff] text-white px-5 py-2.5 rounded-full hover:opacity-90 transition-colors whitespace-nowrap"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => {

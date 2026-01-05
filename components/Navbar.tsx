@@ -95,13 +95,13 @@ const Navbar: React.FC = () => {
             <ThemeToggle />
 
             {/* Launch APP Button */}
-            <div
-              className="relative group"
-              onClick={() => {
-                window.open("https://t.me/LeverAccTestBot", "_blank");
-              }}
-            >
-              <button className="text-base border border-gray-300 bg-[#0099ff] dark:border-gray-700  font-bold text-white px-5 py-1 rounded-full hover:opacity-90 transition-colors whitespace-nowrap">
+            <div className="relative group">
+              <button
+                className="text-base border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-200 px-5 py-1 rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors whitespace-nowrap cursor-not-allowed opacity-80"
+                onClick={() => {
+                  window.open("https://t.me/LeverAccTestBot", "_blank");
+                }}
+              >
                 Launch App
               </button>
             </div>
@@ -174,7 +174,7 @@ const Navbar: React.FC = () => {
               <div className="h-px bg-gray-200 dark:bg-gray-800 my-2"></div>
               <div className="relative group">
                 <button
-                  className="w-full bg-[#0099ff] text-white px-4 py-3 rounded-lg hover:opacity-90 transition-colors font-medium text-center"
+                  className="w-full bg-gray-900 dark:bg-gray-800 text-white dark:text-gray-300 px-4 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors font-medium text-center cursor-not-allowed opacity-80"
                   onClick={() => {
                     window.open("https://t.me/LeverAccTestBot", "_blank");
                   }}

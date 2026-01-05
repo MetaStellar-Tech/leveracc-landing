@@ -92,7 +92,7 @@ const SectionStats: React.FC = () => {
           </motion.div>
         ))}
       </div>
-      <EnergyOval />
+      {/* <EnergyOval /> */}
     </section>
   );
 };

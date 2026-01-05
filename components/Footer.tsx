@@ -8,7 +8,8 @@ const Footer: React.FC = () => {
       {/* CTA Card */}
       <div className="relative rounded-[40px] py-16 px-6 md:px-12 md:py-20 text-center overflow-visible mb-12 isolate">
         {/* Layer 1: Base Background Color (Black) */}
-        <div className="absolute inset-0 bg-black -z-20 rounded-[40px]"></div>
+        <div className="absolute inset-0  bg-gray-950 -z-20 rounded-[40px]">
+        </div>
 
         {/* Layer 2: Animated Aurora Background */}
         <div></div>
@@ -107,7 +108,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Links */}
-      <div className="flex flex-col md:flex-row justify-between items-center py-8 gap-6 text-gray-500 dark:text-gray-400 text-xs md:text-sm border-t border-gray-200/50 dark:border-gray-700/50">
+      <div className="flex flex-col md:flex-row justify-between items-center py-8 gap-6 text-gray-500 dark:text-gray-400 text-xs md:text-sm border-t border-gray-200/50 dark:border-gray-700/50 relative">
         <div className="font-title flex items-center gap-2 text-base md:text-lg text-black dark:text-white">
           <Image
             src="/576x576-transparent-bg-transparent-fill.png"
@@ -119,7 +120,7 @@ const Footer: React.FC = () => {
           LeverAcc
         </div>
 
-        <div className="text-xs md:text-sm text-gray-400 dark:text-gray-500 text-center">
+        <div className="text-xs md:text-sm text-gray-400 dark:text-gray-500 text-center absolute w-full h-full flex items-center justify-center">
           © MetaStellar Technology Ltd. All Rights Reserved.
         </div>
 
