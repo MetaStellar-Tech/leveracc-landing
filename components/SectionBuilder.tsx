@@ -22,22 +22,35 @@ const SectionBuilder: React.FC = () => {
       <div className="bg-[#0c111d] dark:bg-[#0c111d] rounded-3xl shadow-2xl overflow-hidden border border-gray-800 dark:border-gray-700 font-sans text-gray-300 dark:text-gray-300">
         {/* Top Header Bar - Lighter background to distinguish from content */}
         <div className="flex flex-col md:flex-row justify-between md:items-center px-6 py-4 border-b border-gray-700/50 dark:border-gray-600/50 text-xs tracking-wider font-medium gap-2 md:gap-0 bg-[#161b26] dark:bg-[#161b26]">
-          <div className="flex items-center gap-2 text-gray-300">
-            <Bitcoin size={14} className="text-orange-500" />
-            <span>BTC/USDC PERP</span>
+          {/* Mobile: First row - BTC/USDC PERP and OWN FUNDS */}
+          {/* Desktop: First item - BTC/USDC PERP */}
+          <div className="flex flex-row md:flex items-center justify-between md:justify-start gap-2 md:gap-2 text-gray-300">
+            <div className="flex items-center gap-2">
+              <Bitcoin size={14} className="text-orange-500" />
+              <span>BTC/USDC PERP</span>
+            </div>
+            <div className="flex md:hidden items-center gap-2">
+              <Wallet size={14} className="text-gray-400" />
+              <span>OWN FUNDS $1,000</span>
+            </div>
           </div>
 
+          {/* Desktop: First divider */}
           <div className="hidden md:block w-px h-4 bg-gray-700 dark:bg-gray-600">
           </div>
 
-          <div className="text-blue-400 flex items-center justify-center font-semibold">
+          {/* Mobile: Second row - 20x LEVERAGE */}
+          {/* Desktop: Middle item - 20x LEVERAGE */}
+          <div className="text-blue-400 flex items-center justify-center md:justify-center font-bold text-lg md:text-xs md:font-semibold">
             20x LEVERAGE
           </div>
 
+          {/* Desktop: Second divider */}
           <div className="hidden md:block w-px h-4 bg-gray-700 dark:bg-gray-600">
           </div>
 
-          <div className="flex items-center gap-2 text-gray-300 justify-end">
+          {/* Desktop: Last item - OWN FUNDS */}
+          <div className="hidden md:flex items-center gap-2 text-gray-300">
             <Wallet size={14} className="text-gray-400" />
             <span>OWN FUNDS $1,000</span>
           </div>
@@ -125,10 +138,10 @@ const SectionBuilder: React.FC = () => {
 
               {/* X-Axis Labels */}
               <div className="absolute bottom-0 left-0 right-0 pl-6 sm:pl-12 flex justify-around min-h-14 md:h-14 items-center pt-4">
-                <span className="text-gray-500 text-xs md:text-sm font-medium min-w-[140px] text-center break-words whitespace-normal md:whitespace-nowrap">
+                <span className="text-gray-500 h-8 md:h-auto text-xs md:text-sm font-medium min-w-[140px] text-center break-words whitespace-normal md:whitespace-nowrap">
                   Trade on Perp DEX
                 </span>
-                <span className="text-gray-400 text-xs md:text-sm font-medium min-w-[140px] text-center break-words whitespace-normal md:whitespace-nowrap">
+                <span className="text-gray-400 h-8 md:h-auto text-xs md:text-sm font-medium min-w-[140px] text-center break-words whitespace-normal md:whitespace-nowrap">
                   Trade on Perp DEX via LeverAcc
                 </span>
               </div>
