@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Color, Mesh, Program, Renderer, Triangle, Vec3 } from "ogl";
+import { motion } from "framer-motion";
 
 const vertexShader = `
 attribute vec2 position;
@@ -206,6 +207,7 @@ const QuantumFlow: React.FC<QuantumFlowProps> = ({
         }
 
         function update(t: number) {
+            gl.clear(gl.COLOR_BUFFER_BIT);
             if (enableMouseInteraction) {
                 const smoothing = 0.05;
                 currentMouse[0] += smoothing *
@@ -219,13 +221,14 @@ const QuantumFlow: React.FC<QuantumFlowProps> = ({
                 program.uniforms.uMouse.value[1] = 0.5;
             }
             program.uniforms.iTime.value = t * 0.001;
-
+            gl.clear(gl.COLOR_BUFFER_BIT);
             renderer.render({ scene: mesh });
             animationFrameId.current = requestAnimationFrame(update);
         }
         animationFrameId.current = requestAnimationFrame(update);
 
         return () => {
+            gl.clear(gl.COLOR_BUFFER_BIT);
             if (animationFrameId.current) {
                 cancelAnimationFrame(animationFrameId.current);
             }
@@ -246,9 +249,12 @@ const QuantumFlow: React.FC<QuantumFlowProps> = ({
     }, [color, amplitude, distance, enableMouseInteraction]);
 
     return (
-        <div
+        <motion.div
             ref={containerRef}
             className="absolute inset-0 w-full h-full"
+            initial={{ opacity: 0, visibility: "hidden" }}
+            animate={{ opacity: 1, visibility: "visible" }}
+            transition={{ duration: 1, ease: "easeInOut" }}
         />
     );
 };

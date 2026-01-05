@@ -41,7 +41,8 @@ const App: React.FC = () => {
       <div
         className="fixed inset-0 pointer-events-none dark:opacity-100 opacity-0 transition-opacity duration-300"
         style={{
-          background: "linear-gradient(to bottom, #0a0a0f, #1a1a2e)",
+          // background: "linear-gradient(to bottom, #0a0a0f, #1a1a2e)",
+          background: "black",
         }}
       />
 

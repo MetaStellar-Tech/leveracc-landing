@@ -184,20 +184,19 @@ button {
 /* Access 按钮样式 */
 .access-button {
   padding: 1rem 2rem !important;
-  border-radius: 0.75rem !important;
   font-weight: 500 !important;
   font-size: 1.125rem !important;
   color: white !important;
   border: none !important;
   cursor: pointer !important;
-  background-color: transparent !important;
+  /* background-color: transparent !important; */
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 0.5rem !important;
-  
+  background-color: #0099FF !important;
   /* 只使用背景图片 */
-  background-image: url('/access-button-bg.png') !important;
+  /* background-image: url('/access-button-bg.png') !important; */
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;

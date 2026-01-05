@@ -19,7 +19,7 @@ const SectionFAQ: React.FC = () => {
     },
     {
       q: "Do I need collateral assets to borrow funds from LeverAcc? What is the borrowing interest rate?",
-      a: "Borrowing from the LeverAcc Vault does not require any collateral. The borrowable fund is matched solely based on your own funds (up to 4x, but an initial borrowing limit will be in place to ensure system stability).",
+      a: "Borrowing from the LeverAcc Vault does not require any collateral. The borrowable fund is matched solely based on your own funds (up to 4x, but an initial borrowing limit will be in place to ensure system stability). Borrow from LeverAcc at an interest rate of 0.1% daily.",
     },
     {
       q: "Does LeverAcc charge trading fees?",
@@ -56,7 +56,7 @@ const SectionFAQ: React.FC = () => {
                 {faq.q}
               </span>
               <ChevronDown
-                className={`text-gray-400 dark:text-[#3F4FA6] transition-transform duration-300 ${
+                className={`text-gray-400 dark:text-[#0099FF] transition-transform duration-300 ${
                   openIndex === i ? "rotate-180" : ""
                 }`}
               />

@@ -83,9 +83,12 @@ const SectionHero: React.FC = () => {
             whileTap={{ scale: 0.95 }}
           >
             <motion.button
-              className="pill-button flex items-center justify-center gap-2"
+              className="flex items-center justify-center gap-2 bg-[#0099ff] text-white px-5 py-2.5 rounded-full hover:opacity-90 transition-colors whitespace-nowrap"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              onClick={() => {
+                window.open("https://t.me/LeverAccTestBot", "_blank");
+              }}
             >
               Launch App
               <motion.span
@@ -99,9 +102,6 @@ const SectionHero: React.FC = () => {
                 <ArrowUpRight size={18} />
               </motion.span>
             </motion.button>
-            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-gray-900 dark:bg-gray-100 text-white dark:text-black text-xs font-medium rounded whitespace-nowrap pointer-events-none z-50 opacity-0 group-hover:opacity-100 transition-opacity">
-              TBD
-            </div>
           </motion.div>
           <motion.a
             href="https://leveracc.gitbook.io/leveracc-docs/"

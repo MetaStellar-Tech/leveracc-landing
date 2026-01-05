@@ -114,7 +114,8 @@ export function LeverageGeometry() {
                       Formula
                     </p>
                     <p className="text-white font-mono">
-                      (<span className="text-blue-400">$1k + $4k</span>) × 20x ={" "}
+                      (<span className="text-blue-400">$1k + $4k</span>) × 20x =
+                      {" "}
                       <span className="text-white font-bold">$100k</span>
                     </p>
                   </div>

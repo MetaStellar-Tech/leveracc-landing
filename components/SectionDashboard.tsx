@@ -41,23 +41,22 @@ const SectionDashboard: React.FC = () => {
           className="bg-white dark:bg-gray-900 rounded-3xl p-8 md:p-12 border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/50 dark:shadow-gray-900/50 relative overflow-hidden flex flex-col justify-between group h-full"
         >
           <div>
-            <div className="w-14 h-14 mb-8 bg-[#242654] rounded-2xl flex items-center justify-center border-4 border-[#2E3057]">
+            <div className="w-14 h-14 mb-8 bg-blue-500/20 rounded-2xl flex items-center justify-center border-4 border-blue-500/20">
               <Zap
-                className="text-[#4F62CA]"
+                className="text-[#0099FF]"
                 size={24}
                 // strokeWidth={2}
-                fill="#4F62CA"
+                fill="#0099FF"
                 // fillOpacity={0.2}
               />
             </div>
 
             <h3 className="text-xl md:text-2xl text-gray-900 dark:text-[#EDEEEC] font-bold mb-4 tracking-tight">
-              Atomic Liquidity Engine
+              Pre-Funding Architecture
             </h3>
             <p className="text-gray-500 dark:text-[#838389] leading-relaxed text-base md:text-lg mb-12">
-              Liquidity is injected within the same block as execution.
-              Flash-loan mechanics applied to perpetual futures, ensuring zero
-              collateral drag.
+              Capital injection via smart contracts before trade execution,
+              enabling 5x capital scaling with zero collateral requirements.
             </p>
           </div>
 
@@ -81,7 +80,7 @@ const SectionDashboard: React.FC = () => {
                     ease: "easeOut",
                   }}
                   className={`flex-1 rounded-full ${
-                    i < 20 ? "bg-[#4F62CA]" : "bg-gray-200 dark:bg-gray-700"
+                    i < 20 ? "bg-[#0099FF]" : "bg-gray-200 dark:bg-gray-700"
                   }`}
                 >
                 </motion.div>
@@ -96,24 +95,24 @@ const SectionDashboard: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-[#0c111d] dark:bg-[#0c111d] rounded-3xl p-8 md:p-12 border border-gray-800 dark:border-gray-700 shadow-2xl relative overflow-hidden flex flex-col justify-between h-full"
+          className="bg-[#0c111d] dark:bg-blue-500/20 rounded-3xl p-8 md:p-12 border border-gray-800 dark:border-blue-500/20 shadow-2xl relative overflow-hidden flex flex-col justify-between h-full"
         >
           <div>
-            <div className="w-14 h-14 mb-8 bg-[#242654] rounded-2xl flex items-center justify-center border-4 border-[#2E3057]">
+            <div className="w-14 h-14 mb-8 bg-blue-500/20 rounded-2xl flex items-center justify-center border-4 border-blue-500/20">
               <ShieldCheck
                 className="text-[#242654]"
                 size={36}
-                fill="#4F62CA"
+                fill="#0099FF"
               />
             </div>
 
             <h3 className="text-xl md:text-2xl text-[#EDEEEC] font-bold mb-4 tracking-tight">
-              Algorithmic Circuit Breaker
+              Dynamic Circuit Breaker
             </h3>
             <p className="text-[#838389] leading-relaxed text-base md:text-lg mb-12">
-              Auto-deleveraging protocols trigger instantly upon volatility
-              spikes. 100% LP capital protection guarantees via smart contract
-              enforcement.
+              Stop-loss thresholds modulate dynamically via real-time β
+              coefficients. 100% LP capital preservation ensured by adaptive
+              risk protocols.
             </p>
           </div>
 

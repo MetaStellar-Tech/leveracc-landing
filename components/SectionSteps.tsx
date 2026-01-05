@@ -102,7 +102,7 @@ const SectionSteps: React.FC = () => {
             </div>
           </div>
           <div className="flex items-start gap-4">
-            <span className="bg-black dark:bg-[#4F62CA] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0">
+            <span className="bg-black dark:bg-[#0099FF] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0">
               01
             </span>
             <div>
@@ -183,7 +183,7 @@ const SectionSteps: React.FC = () => {
             </motion.div>
           </div>
           <div className="flex items-start gap-4">
-            <span className="bg-black dark:bg-[#4F62CA] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0">
+            <span className="bg-black dark:bg-[#0099FF] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0">
               02
             </span>
             <div>
@@ -255,7 +255,7 @@ const SectionSteps: React.FC = () => {
             </div>
           </div>
           <div className="flex items-start gap-4">
-            <span className="bg-black dark:bg-[#4F62CA] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0">
+            <span className="bg-black dark:bg-[#0099FF] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0">
               03
             </span>
             <div>

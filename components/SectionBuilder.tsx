@@ -27,13 +27,15 @@ const SectionBuilder: React.FC = () => {
             <span>BTC/USDC PERP</span>
           </div>
 
-          <div className="hidden md:block w-px h-4 bg-gray-700 dark:bg-gray-600"></div>
+          <div className="hidden md:block w-px h-4 bg-gray-700 dark:bg-gray-600">
+          </div>
 
           <div className="text-blue-400 flex items-center justify-center font-semibold">
             20x LEVERAGE
           </div>
 
-          <div className="hidden md:block w-px h-4 bg-gray-700 dark:bg-gray-600"></div>
+          <div className="hidden md:block w-px h-4 bg-gray-700 dark:bg-gray-600">
+          </div>
 
           <div className="flex items-center gap-2 text-gray-300 justify-end">
             <Wallet size={14} className="text-gray-400" />
@@ -65,7 +67,8 @@ const SectionBuilder: React.FC = () => {
                     <span className="text-[10px] text-gray-600 dark:text-gray-500 w-8 text-right mr-4 font-mono translate-y-[1px] -mt-2">
                       {val === 0 ? "0" : `$${val}k`}
                     </span>
-                    <div className="flex-1 border-t border-dashed border-gray-800/60 dark:border-gray-700/60"></div>
+                    <div className="flex-1 border-t border-dashed border-gray-800/60 dark:border-gray-700/60">
+                    </div>
                   </div>
                 ))}
               </div>
@@ -90,7 +93,8 @@ const SectionBuilder: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                     className="w-full bg-gradient-to-b from-gray-600 to-gray-800/40 rounded-t-sm relative group-hover:opacity-90 transition-opacity"
-                  ></motion.div>
+                  >
+                  </motion.div>
                 </div>
 
                 {/* Bar 2: Trade on LeverAcc */}
@@ -113,7 +117,8 @@ const SectionBuilder: React.FC = () => {
                     className="w-full bg-[#0099ff] rounded-t-sm shadow-[0_0_40px_rgba(0,153,255,0.25)] relative"
                   >
                     {/* Gradient Overlay for depth */}
-                    <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/40 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/40 to-transparent">
+                    </div>
                   </motion.div>
                 </div>
               </div>
@@ -153,9 +158,11 @@ const SectionBuilder: React.FC = () => {
 
             {/* LeverAcc Info */}
             <div className="mb-12 relative">
-              <div className="absolute -left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-transparent opacity-0"></div>
+              <div className="absolute -left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-transparent opacity-0">
+              </div>
               <div className="flex items-center gap-3 mb-2">
-                <div className="w-3 h-3 rounded bg-[#0099ff] shadow-[0_0_10px_#0099ff]"></div>
+                <div className="w-3 h-3 rounded bg-[#0099ff] shadow-[0_0_10px_#0099ff]">
+                </div>
                 <h3 className="text-white text-base md:text-lg font-medium">
                   Trade on LeverAcc
                 </h3>
@@ -166,7 +173,7 @@ const SectionBuilder: React.FC = () => {
                   The Pre-Fund Effect
                 </div>
                 <p className="text-xs md:text-sm text-gray-400 mb-4 leading-relaxed">
-                  Your $1k collateral is boosted by{" "}
+                  Your $1k margin is boosted by{" "}
                   <span className="text-[#0099ff] font-medium">
                     $4k liquidity injection
                   </span>{" "}
@@ -186,8 +193,12 @@ const SectionBuilder: React.FC = () => {
 
             {/* Footer Stat */}
             <div className="pt-6 border-t border-gray-800 dark:border-gray-700 flex justify-between items-center">
-              <span className="text-gray-500 font-medium text-sm md:text-base">Efficiency Gain</span>
-              <span className="text-2xl md:text-3xl font-bold text-[#0099ff]">5.0x</span>
+              <span className="text-gray-500 font-medium text-sm md:text-base">
+                Efficiency Gain
+              </span>
+              <span className="text-2xl md:text-3xl font-bold text-[#0099ff]">
+                5.0x
+              </span>
             </div>
           </div>
         </div>

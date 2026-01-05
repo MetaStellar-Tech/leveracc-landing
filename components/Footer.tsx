@@ -81,13 +81,15 @@ const Footer: React.FC = () => {
 
           <div className="flex justify-center">
             <div className="relative group">
-              <button className="access-button cursor-not-allowed opacity-80 flex items-center justify-center gap-2">
+              <button
+                className="access-button flex items-center justify-center gap-2 rounded-full"
+                onClick={() => {
+                  window.open("https://t.me/LeverAccTestBot", "_blank");
+                }}
+              >
                 Access the Public Beta
                 <ArrowUpRight size={18} />
               </button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-gray-900 dark:bg-gray-100 text-white dark:text-black text-xs font-medium rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-50">
-                TBD
-              </div>
             </div>
           </div>
 
