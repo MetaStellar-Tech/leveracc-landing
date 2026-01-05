@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { motion, useInView, animate } from "framer-motion";
+import { animate, motion, useInView } from "framer-motion";
+import EnergyOval from "./EnergyOval";
 
 const AnimatedCounter = ({
   value,
@@ -30,9 +31,11 @@ const AnimatedCounter = ({
       ease: "easeOut",
       onUpdate(value) {
         if (ref.current) {
-          ref.current.textContent = `${prefix}${value.toFixed(
-            decimals
-          )}${suffix}`;
+          ref.current.textContent = `${prefix}${
+            value.toFixed(
+              decimals,
+            )
+          }${suffix}`;
         }
       },
     });
@@ -43,7 +46,11 @@ const AnimatedCounter = ({
   return (
     <span
       ref={ref}
-      className={`${className} ${highlight ? "text-green-600 dark:text-green-400" : "text-black dark:text-white"}`}
+      className={`${className} ${
+        highlight
+          ? "text-green-600 dark:text-green-400"
+          : "text-black dark:text-white"
+      }`}
     >
       {value}
     </span>
@@ -85,6 +92,7 @@ const SectionStats: React.FC = () => {
           </motion.div>
         ))}
       </div>
+      <EnergyOval />
     </section>
   );
 };
