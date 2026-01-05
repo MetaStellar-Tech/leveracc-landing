@@ -67,7 +67,7 @@ const SectionStats: React.FC = () => {
 
   return (
     <section className="px-4 md:px-8 max-w-7xl mx-auto w-full">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6">
         {metrics.map((metric, idx) => (
           <motion.div
             key={idx}
