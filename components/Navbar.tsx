@@ -97,7 +97,7 @@ const Navbar: React.FC = () => {
             {/* Launch APP Button */}
             <div className="relative group">
               <button
-                className="text-base border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-200 px-5 py-1 rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors whitespace-nowrap cursor-not-allowed opacity-80"
+                className="text-base border border-gray-300 dark:border-gray-700 px-5 py-1 rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors whitespace-nowrap cursor-not-allowed opacity-80"
                 onClick={() => {
                   window.open("https://t.me/LeverAccTestBot", "_blank");
                 }}

@@ -56,7 +56,7 @@ const SectionFAQ: React.FC = () => {
                 {faq.q}
               </span>
               <ChevronDown
-                className={`text-gray-400 dark:text-[#0099FF] transition-transform duration-300 ${
+                className={`text-gray-400 dark:text-[#0099FF] transition-transform duration-300 shrink-0 ${
                   openIndex === i ? "rotate-180" : ""
                 }`}
               />

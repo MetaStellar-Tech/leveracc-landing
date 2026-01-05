@@ -97,7 +97,7 @@ const SectionBuilder: React.FC = () => {
                   </motion.div>
                 </div>
 
-                {/* Bar 2: Trade on LeverAcc */}
+                {/* Bar 2: Trade on Perp DEX via LeverAcc */}
                 <div className="relative w-24 h-full flex items-end justify-center group">
                   <motion.span
                     initial={{ opacity: 0, y: 10 }}
@@ -124,12 +124,12 @@ const SectionBuilder: React.FC = () => {
               </div>
 
               {/* X-Axis Labels */}
-              <div className="absolute bottom-0 left-0 right-0 pl-12 flex justify-around h-14 items-center pt-4">
-                <span className="text-gray-500 text-xs md:text-sm font-medium min-w-[140px] text-center whitespace-nowrap">
+              <div className="absolute bottom-0 left-0 right-0 pl-6 sm:pl-12 flex justify-around min-h-14 md:h-14 items-center pt-4">
+                <span className="text-gray-500 text-xs md:text-sm font-medium min-w-[140px] text-center break-words whitespace-normal md:whitespace-nowrap">
                   Trade on Perp DEX
                 </span>
-                <span className="text-gray-400 text-xs md:text-sm font-medium min-w-[140px] text-center whitespace-nowrap">
-                  Trade on LeverAcc
+                <span className="text-gray-400 text-xs md:text-sm font-medium min-w-[140px] text-center break-words whitespace-normal md:whitespace-nowrap">
+                  Trade on Perp DEX via LeverAcc
                 </span>
               </div>
             </div>
@@ -164,7 +164,7 @@ const SectionBuilder: React.FC = () => {
                 <div className="w-3 h-3 rounded bg-[#0099ff] shadow-[0_0_10px_#0099ff]">
                 </div>
                 <h3 className="text-white text-base md:text-lg font-medium">
-                  Trade on LeverAcc
+                  Trade on Perp DEX via LeverAcc
                 </h3>
               </div>
 

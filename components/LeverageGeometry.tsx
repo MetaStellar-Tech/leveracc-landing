@@ -41,7 +41,7 @@ export function LeverageGeometry() {
               </div>
 
               {/* Bar 1: Perp DEX */}
-              <div className="flex flex-col items-center gap-4 group w-1/3">
+              <div className="flex flex-col items-center gap-4 group w-1/3 min-w-0">
                 <span className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity">
                   $20,000
                 </span>
@@ -52,13 +52,16 @@ export function LeverageGeometry() {
                 >
                   <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/20" />
                 </motion.div>
-                <span className="text-xs text-muted-foreground text-center">
+                <div
+                  className="text-xs text-muted-foreground text-center break-words whitespace-normal w-full px-1"
+                  style={{ overflowWrap: "anywhere", wordBreak: "break-word" }}
+                >
                   Trade on Perp DEX
-                </span>
+                </div>
               </div>
 
               {/* Bar 2: LeverAcc */}
-              <div className="flex flex-col items-center gap-4 group w-1/3">
+              <div className="flex flex-col items-center gap-4 group w-1/3 min-w-0">
                 <span className="text-white font-bold text-lg">$100,000</span>
                 <motion.div
                   initial={{ height: 0 }}
@@ -67,9 +70,12 @@ export function LeverageGeometry() {
                 >
                   <div className="absolute top-0 left-0 right-0 h-[1px] bg-blue-300/50" />
                 </motion.div>
-                <span className="text-xs text-white text-center font-medium">
-                  Trade on LeverAcc
-                </span>
+                <div
+                  className="text-xs text-white text-center font-medium break-words whitespace-normal w-full px-1"
+                  style={{ overflowWrap: "anywhere", wordBreak: "break-word" }}
+                >
+                  Trade on Perp DEX via LeverAcc
+                </div>
               </div>
             </div>
 
@@ -94,7 +100,7 @@ export function LeverageGeometry() {
               <div>
                 <h3 className="text-lg font-medium text-white mb-2 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-blue-500" />
-                  Trade on LeverAcc
+                  Trade on Perp DEX via LeverAcc
                 </h3>
                 <div className="pl-4 border-l border-blue-500/30 space-y-3">
                   <div>
