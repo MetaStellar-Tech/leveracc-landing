@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
                 height={32}
                 className="rounded-full"
               />
-              <span className="font-title tracking-tight text-base md:text-lg text-black dark:text-white">
+              <span className="font-harmonyos tracking-tight text-base md:text-lg text-black dark:text-white">
                 LeverAcc
               </span>
             </div>

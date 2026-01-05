@@ -1,22 +1,13 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import "@fontsource/inter";
+import "@fontsource/plus-jakarta-sans/800.css";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-const harmonyOS = localFont({
-  src: [
-    {
-      path: "../font/HarmonyOS_Sans_SC_Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../font/HarmonyOS_Sans_SC_Bold.ttf",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-  variable: "--font-harmonyos",
+const harmonyOSBold = localFont({
+  src: "../font/HarmonyOS_Sans_SC_Bold.ttf",
+  variable: "--font-harmonyos-bold",
   display: "swap",
 });
 
@@ -36,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${harmonyOS.variable} antialiased`}>
+      <body className={`${harmonyOSBold.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

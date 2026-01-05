@@ -9,7 +9,7 @@ import QuantumFlow from "./QuantumFlow";
 const SectionHero: React.FC = () => {
   return (
     <section className="relative pt-16 md:pt-32 pb-16 px-4  w-full">
-      <div className="absolute inset-0 w-full h-full z-0">
+      <div className="absolute inset-0 w-full h-full z-0 flex items-center justify-center -translate-y-30 sm:translate-y-0">
         <QuantumFlow />
       </div>
       <div className="relative z-10 max-w-7xl mx-auto w-full text-center flex flex-col items-center">
@@ -83,7 +83,7 @@ const SectionHero: React.FC = () => {
             whileTap={{ scale: 0.95 }}
           >
             <motion.button
-              className="flex items-center justify-center gap-2 font-bold text-base md:text-lg border-0 border-[#0099ff] bg-[#0099ff] text-white px-5 py-2.5 rounded-full hover:opacity-90 transition-colors whitespace-nowrap"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 font-bold text-base md:text-lg border-0 border-[#0099ff] bg-[#0099ff] text-white px-5 py-2.5 rounded-full hover:opacity-90 transition-colors whitespace-nowrap"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => {

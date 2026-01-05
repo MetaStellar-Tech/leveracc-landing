@@ -109,7 +109,7 @@ const Footer: React.FC = () => {
 
       {/* Bottom Links */}
       <div className="flex flex-col md:flex-row justify-between items-center py-8 gap-6 text-gray-500 dark:text-gray-400 text-xs md:text-sm border-t border-gray-200/50 dark:border-gray-700/50 relative">
-        <div className="font-title flex items-center gap-2 text-base md:text-lg text-black dark:text-white">
+        <div className="font-harmonyos flex items-center gap-2 text-base md:text-lg text-black dark:text-white">
           <Image
             src="/576x576-transparent-bg-transparent-fill.png"
             alt="LeverAcc Logo"
@@ -120,7 +120,7 @@ const Footer: React.FC = () => {
           LeverAcc
         </div>
 
-        <div className="text-xs md:text-sm text-gray-400 dark:text-gray-500 text-center absolute w-full h-full flex items-center justify-center">
+        <div className="text-xs md:text-sm text-gray-400 dark:text-gray-500 text-center md:absolute md:w-full md:h-full flex items-center justify-center">
           © MetaStellar Technology Ltd. All Rights Reserved.
         </div>
 
