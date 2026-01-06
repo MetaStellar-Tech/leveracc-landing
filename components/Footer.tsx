@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
             alt="Footer Background"
             width={217}
             height={259}
-            className="size-70 object-bottom-right object-contain rounded-br-[80px] translate-x-6"
+            className="size-70 object-bottom-right object-contain rounded-br-[80px] translate-x-3"
           />
         </div>
         {/* Content */}
