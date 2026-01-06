@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="relative px-4 md:px-8 max-w-7xl mx-auto w-full">
       {/* CTA Card */}
-      <div className="relative rounded-[40px] py-16 px-6 md:px-12 md:py-20 text-center overflow-visible mb-12 isolate">
+      <div className="relative rounded-[40px] py-16 px-6 md:px-12 md:py-20 text-center overflow-hidden mb-12 isolate">
         {/* Layer 1: Base Background Color (Black) */}
         <div className="absolute inset-0  bg-gray-950 -z-20 rounded-[40px]">
         </div>
