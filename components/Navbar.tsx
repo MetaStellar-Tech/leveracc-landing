@@ -79,7 +79,7 @@ const Navbar: React.FC = () => {
                 rel="noopener noreferrer"
                 className="hover:text-gray-900 dark:hover:text-gray-200 transition-colors"
               >
-                Twitter
+                X
               </a>
               <a
                 href="https://github.com/MetaStellar-Tech"
@@ -153,7 +153,7 @@ const Navbar: React.FC = () => {
                 className="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Twitter
+                X
               </a>
               <a
                 href="https://github.com/MetaStellar-Tech"

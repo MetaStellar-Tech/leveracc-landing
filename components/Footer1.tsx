@@ -20,7 +20,7 @@ export function Footer() {
             Documentation
           </a>
           <a href="#" className="hover:text-white transition-colors">
-            Twitter
+            X
           </a>
           <a href="#" className="hover:text-white transition-colors">
             Github

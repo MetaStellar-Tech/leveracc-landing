@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Twitter, Menu } from "lucide-react";
+import { Github, Menu, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Navbar() {
@@ -23,7 +23,7 @@ export function Navbar() {
           Docs
         </Link>
         <Link href="#" className="hover:text-primary transition-colors">
-          Twitter
+          X
         </Link>
         <Link href="#" className="hover:text-primary transition-colors">
           Github
