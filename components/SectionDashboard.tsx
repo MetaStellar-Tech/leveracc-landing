@@ -25,9 +25,8 @@ const SectionDashboard: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-base md:text-xl text-gray-500 dark:text-[#838389] max-w-3xl mx-auto leading-relaxed"
         >
-          The Atomic Liquidity Engine ensures seamless zero-collateral
-          borrowing, while the Algorithmic Circuit Breaker safeguards fund
-          security.
+          The Pre-Funding Architecture ensures seamless zero-collateral
+          borrowing, while the Dynamic Circuit Breaker safeguards fund security.
         </motion.p>
       </div>
 
