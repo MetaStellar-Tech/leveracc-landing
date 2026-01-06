@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
         {/* Bottom Right Background Image - Desktop Only */}
         <div className="absolute bottom-0 right-0 z-10 pointer-events-none hidden md:block">
           <Image
-            src="/static/footerbg.png"
+            src="/static/hema.png"
             alt="Footer Background"
             width={217}
             height={259}
@@ -97,11 +97,11 @@ const Footer: React.FC = () => {
           {/* Mobile Image - Below Content */}
           <div className="relative mt-12 md:hidden flex justify-center">
             <Image
-              src="/static/footerbg.png"
+              src="/static/hema.png"
               alt="Footer Background"
               width={180}
               height={210}
-              className="object-contain"
+              className="object-contain translate-x-3"
             />
           </div>
         </div>
