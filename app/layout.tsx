@@ -10,7 +10,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ??
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "LeverAcc",
-  description: "A risk-free leverage accelerator based on HyperLiquid",
+  description: "The Liquidity & Capital Efficiency Layer built on Hyperliquid",
   icons: {
     icon: [{ url: "/icon.png", type: "image/png", sizes: "192x192" }],
     shortcut: "/icon.png",
@@ -18,7 +18,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     title: "LeverAcc",
-    description: "A risk-free leverage accelerator based on HyperLiquid",
+    description:
+      "The Liquidity & Capital Efficiency Layer built on Hyperliquid",
     url: "/",
     siteName: "LeverAcc",
     images: [
@@ -33,7 +34,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "LeverAcc",
-    description: "A risk-free leverage accelerator based on HyperLiquid",
+    description:
+      "The Liquidity & Capital Efficiency Layer built on Hyperliquid",
     images: ["/og.png"],
   },
 };
