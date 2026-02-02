@@ -4,7 +4,8 @@ import "@fontsource/plus-jakarta-sans/800.css";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://leveracc.xyz";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://leveracc-website-git-v2-lever-acc.vercel.app"; //"https://leveracc.xyz";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
