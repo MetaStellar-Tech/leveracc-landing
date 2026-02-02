@@ -50,7 +50,9 @@ const SectionComparison: React.FC = () => {
             <div className="self-start inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6">
               Active Participants
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Traders</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              Traders
+            </h3>
             <p className="text-gray-400 text-sm md:text-base">
               Maximize capital efficiency with zero friction.
             </p>
@@ -102,8 +104,8 @@ const SectionComparison: React.FC = () => {
                     Trade Anywhere
                   </h4>
                   <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-3">
-                    Support trading via Web/Mobile App/Telegram Bot, with future
-                    API access for professional/institutional traders.
+                    Support trading via Web App / Telegram Bot, with future API
+                    access for professional/institutional traders.
                   </p>
                   <div className="flex gap-2">
                     <div className="bg-gray-800 dark:bg-gray-700 p-1.5 rounded-lg text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors">
@@ -166,8 +168,8 @@ const SectionComparison: React.FC = () => {
                     Passive Yield Generation
                   </h4>
                   <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm leading-relaxed">
-                    Deposit funds into vaults to provide liquidity for
-                    high-performance traders and enjoy a substantial APY.
+                    Deposit funds into vaults to provide liquidity for perpetual
+                    traders and enjoy a substantial APY.
                   </p>
                 </div>
               </div>

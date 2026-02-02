@@ -21,14 +21,6 @@ const SectionFAQ: React.FC = () => {
       q: "Do I need collateral assets to borrow funds from LeverAcc? What is the borrowing interest rate?",
       a: "Borrowing from the LeverAcc Vault does not require any collateral. The borrowable fund is matched solely based on your own funds (up to 4x, but an initial borrowing limit will be in place to ensure system stability). Borrow from LeverAcc at an interest rate of 0.1% daily.",
     },
-    {
-      q: "Does LeverAcc charge trading fees?",
-      a: "Yes, LeverAcc currently charges an additional 0.015% fee on every transaction.",
-    },
-    {
-      q: "Does LeverAcc have a points program?",
-      a: "Yes, the LAP (LeverAcc Points) program will launch simultaneously with the Public Beta. Users can accumulate LAP through activities such as depositing, borrowing, trading, and inviting others. We encourage all genuine network contributions.",
-    },
   ];
 
   const [openIndex, setOpenIndex] = useState<number | null>(null);

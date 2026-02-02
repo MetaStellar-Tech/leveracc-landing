@@ -58,7 +58,7 @@ const SectionHero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
             className="block"
           >
-            Low rates, high impact.
+            Low interest, high impact.
           </motion.span>
         </motion.h1>
         <motion.p
@@ -68,7 +68,7 @@ const SectionHero: React.FC = () => {
           className="relative z-10 text-base md:text-lg text-gray-500 dark:text-[#838389] max-w-3xl mb-12 leading-relaxed"
         >
           LeverAcc is a liquidity and efficiency layer built specifically for
-          high-performance traders.
+          perpetual traders.
         </motion.p>
 
         <motion.div

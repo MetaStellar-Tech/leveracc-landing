@@ -22,13 +22,10 @@ import SectionSteps from "@/components/SectionSteps";
 import SectionComparison from "@/components/SectionComparison";
 import SectionFAQ from "@/components/SectionFAQ";
 import Footer from "@/components/Footer";
-import MouseFollower from "@/components/animations/MouseFollower";
 
 const App: React.FC = () => {
   return (
     <div className="min-h-screen relative text-gray-900 dark:text-gray-100 selection:bg-black dark:selection:bg-white selection:text-white dark:selection:text-black">
-      <MouseFollower />
-
       {/* Global Gradient Background */}
       <div
         className="fixed inset-0 pointer-events-none"

@@ -16,12 +16,12 @@ export function Hero() {
           </span>
           .
           <br />
-          Low rates, high impact.
+          Low interest, high impact.
         </h1>
 
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
           LeverAcc is a liquidity and efficiency layer built specifically for
-          high-performance traders.
+          perpetual traders.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">

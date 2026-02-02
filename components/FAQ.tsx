@@ -29,16 +29,6 @@ export function FAQ() {
       answer:
         "Yes, you need initial margin. Interest rates are dynamic based on utilization and market conditions.",
     },
-    {
-      question: "Does LeverAcc charge trading fees?",
-      answer:
-        "LeverAcc charges a small fee on the borrowed capital, separate from the trading fees of the underlying DEX.",
-    },
-    {
-      question: "Does LeverAcc have a points program?",
-      answer:
-        "Information regarding points or incentives will be announced on our official channels.",
-    },
   ];
 
   return (
