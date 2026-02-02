@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "LeverAcc",
     images: [
       {
-        url: "/twitterog.png",
+        url: "/og.png",
         // width: 576,
         // height: 576,
         alt: "LeverAcc - Risk-free leverage accelerator",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "LeverAcc",
     description: "A risk-free leverage accelerator based on HyperLiquid",
-    images: ["/twitterog.png"],
+    images: ["/og.png"],
   },
 };
 
