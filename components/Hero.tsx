@@ -27,10 +27,17 @@ export function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
           <Button
             size="lg"
+            asChild
             className="rounded-full bg-blue-600 hover:bg-blue-500 text-white px-8 h-12 text-base shadow-lg shadow-blue-900/20"
           >
-            Launch App
-            <ArrowRight className="ml-2 w-4 h-4" />
+            <a
+              href="https://app.leveracc.xyz/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Launch App
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </a>
           </Button>
           <Button
             variant="outline"

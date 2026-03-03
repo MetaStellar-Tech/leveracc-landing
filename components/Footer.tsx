@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
               <button
                 className="access-button flex items-center justify-center gap-2 rounded-full"
                 onClick={() => {
-                  window.open("https://t.me/LeverAccTestBot", "_blank");
+                  window.open("https://app.leveracc.xyz/", "_blank");
                 }}
               >
                 Access the Public Beta

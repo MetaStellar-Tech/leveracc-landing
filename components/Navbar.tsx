@@ -97,9 +97,9 @@ const Navbar: React.FC = () => {
             {/* Launch APP Button */}
             <div className="relative group">
               <button
-                className="text-base border border-gray-300 dark:border-gray-700 px-5 py-1 rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors whitespace-nowrap cursor-not-allowed opacity-80"
+                className="text-base border border-gray-300 dark:border-gray-700 px-5 py-1 rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors whitespace-nowrap"
                 onClick={() => {
-                  window.open("https://t.me/LeverAccTestBot", "_blank");
+                  window.open("https://app.leveracc.xyz/", "_blank");
                 }}
               >
                 Launch App
@@ -174,9 +174,9 @@ const Navbar: React.FC = () => {
               <div className="h-px bg-gray-200 dark:bg-gray-800 my-2"></div>
               <div className="relative group">
                 <button
-                  className="w-full bg-gray-900 dark:bg-gray-800 text-white dark:text-gray-300 px-4 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors font-medium text-center cursor-not-allowed opacity-80"
+                  className="w-full bg-gray-900 dark:bg-gray-800 text-white dark:text-gray-300 px-4 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors font-medium text-center"
                   onClick={() => {
-                    window.open("https://t.me/LeverAccTestBot", "_blank");
+                    window.open("https://app.leveracc.xyz/", "_blank");
                   }}
                 >
                   Launch App

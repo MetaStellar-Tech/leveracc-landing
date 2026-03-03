@@ -87,7 +87,7 @@ const SectionHero: React.FC = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => {
-                window.open("https://t.me/LeverAccTestBot", "_blank");
+                window.open("https://app.leveracc.xyz/", "_blank");
               }}
             >
               Launch App
