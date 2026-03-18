@@ -5,21 +5,27 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ??
-  "https://leveracc-website-git-v2-lever-acc.vercel.app"; //"https://leveracc.xyz";
+  "https://leveracc.xyz";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "LeverAcc",
-  description: "The Liquidity & Capital Efficiency Layer built on Hyperliquid",
+  title:
+    "LeverAcc - 5x Leverage Trading on Hyperliquid | Capital Efficiency Layer",
+  description:
+    "LeverAcc is the Liquidity and Capital Efficiency Layer built on Hyperliquid. Trade perpetuals with 5x buying power at low interest rates. Earn passive yield as a liquidity provider.",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [{ url: "/icon.png", type: "image/png", sizes: "192x192" }],
     shortcut: "/icon.png",
   },
   openGraph: {
     type: "website",
-    title: "LeverAcc",
+    title:
+      "LeverAcc - 5x Leverage Trading on Hyperliquid | Capital Efficiency Layer",
     description:
-      "The Liquidity & Capital Efficiency Layer built on Hyperliquid",
+      "LeverAcc is the Liquidity and Capital Efficiency Layer built on Hyperliquid. Trade perpetuals with 5x buying power at low interest rates. Earn passive yield as a liquidity provider.",
     url: "/",
     siteName: "LeverAcc",
     images: [
@@ -33,9 +39,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LeverAcc",
+    title:
+      "LeverAcc - 5x Leverage Trading on Hyperliquid | Capital Efficiency Layer",
     description:
-      "The Liquidity & Capital Efficiency Layer built on Hyperliquid",
+      "LeverAcc is the Liquidity and Capital Efficiency Layer built on Hyperliquid. Trade perpetuals with 5x buying power at low interest rates. Earn passive yield as a liquidity provider.",
     images: ["/og.png"],
   },
 };
