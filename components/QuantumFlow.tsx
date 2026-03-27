@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { Color, Mesh, Program, Renderer, Triangle, Vec3 } from "ogl";
-import { motion } from "framer-motion";
 
 const vertexShader = `
 attribute vec2 position;
@@ -188,7 +187,7 @@ const QuantumFlow: React.FC<QuantumFlowProps> = ({
         window.addEventListener("resize", resize);
         resize();
 
-        let currentMouse = [0.5, 0.5];
+        const currentMouse = [0.5, 0.5];
         let targetMouse = [0.5, 0.5];
 
         function handleMouseMove(e: MouseEvent) {
@@ -249,12 +248,9 @@ const QuantumFlow: React.FC<QuantumFlowProps> = ({
     }, [color, amplitude, distance, enableMouseInteraction]);
 
     return (
-        <motion.div
+        <div
             ref={containerRef}
             className="absolute inset-0 w-full h-full"
-            initial={{ opacity: 0, visibility: "hidden" }}
-            animate={{ opacity: 1, visibility: "visible" }}
-            transition={{ duration: 1, ease: "easeInOut" }}
         />
     );
 };

@@ -1,8 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import { animate, motion, useInView } from "framer-motion";
-import EnergyOval from "./EnergyOval";
+import React, { useEffect, useRef, useState } from "react";
 
 const AnimatedCounter = ({
   value,
@@ -14,7 +12,25 @@ const AnimatedCounter = ({
   highlight?: boolean;
 }) => {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "-50px" }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     if (!isInView || !ref.current) return;
@@ -23,24 +39,28 @@ const AnimatedCounter = ({
     if (!match) return;
 
     const [, prefix, numStr, suffix] = match;
-    const num = parseFloat(numStr.replace(/,/g, ""));
+    const target = parseFloat(numStr.replace(/,/g, ""));
     const decimals = numStr.includes(".") ? numStr.split(".")[1].length : 0;
 
-    const controls = animate(0, num, {
-      duration: 2,
-      ease: "easeOut",
-      onUpdate(value) {
-        if (ref.current) {
-          ref.current.textContent = `${prefix}${
-            value.toFixed(
-              decimals,
-            )
-          }${suffix}`;
-        }
-      },
-    });
+    const duration = 1800;
+    const startTime = performance.now();
 
-    return () => controls.stop();
+    const animateFrame = (time: number) => {
+      if (!ref.current) return;
+
+      const elapsed = Math.min((time - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - elapsed, 3);
+      const current = target * eased;
+
+      ref.current.textContent = `${prefix}${current.toFixed(decimals)}${suffix}`;
+
+      if (elapsed < 1) {
+        requestAnimationFrame(animateFrame);
+      }
+    };
+
+    const rafId = requestAnimationFrame(animateFrame);
+    return () => cancelAnimationFrame(rafId);
   }, [isInView, value]);
 
   return (
@@ -65,21 +85,37 @@ const SectionStats: React.FC = () => {
     { label: "Target LPs APY", value: "~10%-15%", highlight: true },
   ];
 
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [cardsVisible, setCardsVisible] = useState(false);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setCardsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "-50px" }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="px-4 md:px-8 max-w-7xl mx-auto w-full">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6">
+      <div ref={sectionRef} className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6">
         {metrics.map((metric, idx) => (
-          <motion.div
+          <div
             key={idx}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{
-              duration: 0.6,
-              delay: idx * 0.1,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="bg-white dark:bg-gray-900 rounded-3xl p-6 md:p-10 flex flex-col items-center justify-center text-center shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+            style={{ transitionDelay: `${idx * 90}ms` }}
+            className={`bg-white dark:bg-gray-900 rounded-3xl p-6 md:p-10 flex flex-col items-center justify-center text-center shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group ${
+              cardsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
           >
             <span className="text-gray-500 dark:text-gray-400 font-medium text-[10px] md:text-sm mb-3 group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors tracking-wide h-[2rem] md:min-h-0 leading-[2] md:leading-normal">
               {metric.label}
@@ -89,10 +125,9 @@ const SectionStats: React.FC = () => {
               className="text-xl md:text-4xl font-bold tracking-tight inline-block"
               highlight={metric.highlight}
             />
-          </motion.div>
+          </div>
         ))}
       </div>
-      {/* <EnergyOval /> */}
     </section>
   );
 };
