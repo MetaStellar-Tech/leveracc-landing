@@ -71,17 +71,102 @@ const faqEntities = [
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://leveracc.xyz/#organization",
   name: "LeverAcc",
   url: "https://leveracc.xyz",
+  logo: "https://leveracc.xyz/576x576-transparent-bg-transparent-fill.png",
   description:
     "LeverAcc is the Liquidity and Capital Efficiency Layer built on Hyperliquid, enabling traders to access 5x buying power for perpetual trading with low interest rates.",
-  sameAs: ["https://leveracc.gitbook.io", "https://twitter.com/leveracc"],
+  foundingDate: "2024",
+  sameAs: [
+    "https://x.com/leveracc_xyz",
+    "https://leveracc.gitbook.io/leveracc-docs/",
+    "https://github.com/MetaStellar-Tech",
+    "https://t.me/leveracc_fans",
+  ],
 };
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "@id": "https://leveracc.xyz/#faq",
   mainEntity: faqEntities,
+};
+
+const softwareApplicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://leveracc.xyz/#app",
+  name: "LeverAcc Trading Platform",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Web Browser",
+  url: "https://app.leveracc.xyz/",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  description:
+    "Trade perpetuals with 5x leverage on Hyperliquid with low rates and fast execution.",
+  provider: {
+    "@type": "Organization",
+    "@id": "https://leveracc.xyz/#organization",
+  },
+};
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "https://leveracc.xyz/#product",
+  name: "LeverAcc",
+  description:
+    "Liquidity and capital efficiency layer for 5x leverage perpetual trading on Hyperliquid.",
+  brand: {
+    "@type": "Brand",
+    name: "LeverAcc",
+  },
+  category: "DeFi Trading Platform",
+  url: "https://leveracc.xyz/",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+    url: "https://app.leveracc.xyz/",
+  },
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://leveracc.xyz/#website",
+  name: "LeverAcc",
+  url: "https://leveracc.xyz/",
+  inLanguage: "en",
+  publisher: {
+    "@type": "Organization",
+    "@id": "https://leveracc.xyz/#organization",
+  },
+};
+
+const webpageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leveracc.xyz/#webpage",
+  name: "LeverAcc: 5x Leverage Trading on Hyperliquid | Low Rates",
+  url: "https://leveracc.xyz/",
+  isPartOf: {
+    "@type": "WebSite",
+    "@id": "https://leveracc.xyz/#website",
+  },
+  about: {
+    "@type": "Organization",
+    "@id": "https://leveracc.xyz/#organization",
+  },
+  mainEntity: {
+    "@type": "SoftwareApplication",
+    "@id": "https://leveracc.xyz/#app",
+  },
 };
 
 const App: React.FC = () => {
@@ -94,6 +179,24 @@ const App: React.FC = () => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(softwareApplicationSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}
       />
 
       <div

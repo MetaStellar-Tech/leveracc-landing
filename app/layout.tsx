@@ -9,10 +9,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ??
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title:
-    "LeverAcc - 5x Leverage Trading on Hyperliquid | Capital Efficiency Layer",
+  title: "LeverAcc: 5x Leverage Trading on Hyperliquid | Low Rates",
   description:
-    "LeverAcc is the Liquidity and Capital Efficiency Layer built on Hyperliquid. Trade perpetuals with 5x buying power at low interest rates. Earn passive yield as a liquidity provider.",
+    "Trade perpetuals with 5x leverage on Hyperliquid. Low rates, pre-funded architecture, and fast execution to boost capital efficiency for active traders.",
   alternates: {
     canonical: "/",
   },
@@ -22,27 +21,25 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title:
-      "LeverAcc - 5x Leverage Trading on Hyperliquid | Capital Efficiency Layer",
+    title: "LeverAcc: 5x Leverage Trading on Hyperliquid",
     description:
-      "LeverAcc is the Liquidity and Capital Efficiency Layer built on Hyperliquid. Trade perpetuals with 5x buying power at low interest rates. Earn passive yield as a liquidity provider.",
+      "Trade perpetuals with 5x leverage on Hyperliquid with low rates and fast execution powered by LeverAcc's pre-funded architecture.",
     url: "/",
     siteName: "LeverAcc",
     images: [
       {
         url: "/og.png",
-        // width: 576,
-        // height: 576,
+        width: 1200,
+        height: 630,
         alt: "LeverAcc - Risk-free leverage accelerator",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "LeverAcc - 5x Leverage Trading on Hyperliquid | Capital Efficiency Layer",
+    title: "LeverAcc: 5x Leverage Trading on Hyperliquid",
     description:
-      "LeverAcc is the Liquidity and Capital Efficiency Layer built on Hyperliquid. Trade perpetuals with 5x buying power at low interest rates. Earn passive yield as a liquidity provider.",
+      "Trade perpetuals with 5x leverage on Hyperliquid at low rates with pre-funded architecture and fast execution.",
     images: ["/og.png"],
   },
 };

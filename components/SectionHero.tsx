@@ -47,7 +47,9 @@ const SectionHero: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto w-full text-center flex flex-col items-center">
         <h1 className="relative z-10 text-4xl md:text-7xl font-bold tracking-tight text-black dark:text-[#EDEEEC] mb-8 leading-[1.1]">
-          <span className="block">Trade Perps with 5x Buying Power.</span>
+          <span className="block">
+            5x Leverage Trading on Hyperliquid
+          </span>
           <span className="block">Low interest, high impact.</span>
         </h1>
 
