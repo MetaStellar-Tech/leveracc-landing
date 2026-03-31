@@ -2,6 +2,7 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import SectionHero from "@/components/SectionHero";
 import SectionStats from "@/components/SectionStats";
@@ -168,6 +169,14 @@ const webpageSchema = {
     "@id": "https://leveracc.xyz/#app",
   },
 };
+
+const blogResources = [
+  {
+    href: "/blog/introducing-leveracc-the-next-evolution-of-perpetual-trading",
+    title: "Introducing LeverAcc: The Next Evolution of Perpetual Trading",
+    description: "How LeverAcc works, core mechanics, and why capital efficiency matters for perp traders.",
+  },
+];
 
 const App: React.FC = () => {
   return (

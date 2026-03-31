@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
 
 const Navbar: React.FC = () => {
@@ -58,6 +59,12 @@ const Navbar: React.FC = () => {
 
           <div className="hidden md:flex items-center gap-6">
             <div className="flex items-center gap-6 text-base font-medium text-gray-600 dark:text-gray-200">
+              <Link
+                href="/blog"
+                className="hover:text-gray-900 dark:hover:text-gray-200 transition-colors"
+              >
+                Blog
+              </Link>
               <a
                 href="https://leveracc.gitbook.io/leveracc-docs/"
                 target="_blank"
@@ -128,6 +135,13 @@ const Navbar: React.FC = () => {
         aria-hidden={!isMenuOpen}
       >
         <div className="px-4 py-4 flex flex-col gap-2">
+          <Link
+            href="/blog"
+            className="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 font-medium"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Blog
+          </Link>
           <a
             href="https://leveracc.gitbook.io/leveracc-docs/"
             target="_blank"
