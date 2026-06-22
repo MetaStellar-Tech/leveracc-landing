@@ -125,6 +125,20 @@ interface QuantumFlowProps {
     enableMouseInteraction?: boolean;
 }
 
+function canUseWebGL() {
+    if (typeof window === "undefined") return false;
+
+    try {
+        const canvas = document.createElement("canvas");
+        return !!(
+            canvas.getContext("webgl") ||
+            canvas.getContext("experimental-webgl")
+        );
+    } catch {
+        return false;
+    }
+}
+
 const QuantumFlow: React.FC<QuantumFlowProps> = ({
     // Using a bright blue to match the site's brand (R, G, B normalized 0-1)
     color = [0.0, 0.6, 1.0],
@@ -139,8 +153,50 @@ const QuantumFlow: React.FC<QuantumFlowProps> = ({
         if (!containerRef.current) return;
         const container = containerRef.current;
 
-        const renderer = new Renderer({ alpha: true });
-        const gl = renderer.gl;
+        if (!canUseWebGL()) {
+            console.warn("[QuantumFlow] WebGL unavailable, skipping background animation");
+            return;
+        }
+
+        let renderer: Renderer | null = null;
+        let gl: Renderer["gl"] | null = null;
+        let geometry: Triangle | null = null;
+        let program: Program | null = null;
+        let mesh: Mesh | null = null;
+        let isMounted = true;
+
+        try {
+            renderer = new Renderer({ alpha: true });
+            gl = renderer.gl;
+            geometry = new Triangle(gl);
+            program = new Program(gl, {
+                vertex: vertexShader,
+                fragment: fragmentShader,
+                uniforms: {
+                    iTime: { value: 0 },
+                    iResolution: {
+                        value: new Vec3(
+                            gl.canvas.width,
+                            gl.canvas.height,
+                            gl.canvas.width / gl.canvas.height,
+                        ),
+                    },
+                    uColor: { value: new Color(color) },
+                    uAmplitude: { value: amplitude },
+                    uDistance: { value: distance },
+                    uMouse: { value: new Float32Array([0.5, 0.5]) },
+                },
+            });
+            mesh = new Mesh(gl, { geometry, program });
+        } catch (error) {
+            console.warn("[QuantumFlow] Failed to initialize WebGL background", error);
+            return;
+        }
+
+        if (!renderer || !gl || !program || !mesh) {
+            return;
+        }
+
         gl.clearColor(0, 0, 0, 0);
         gl.enable(gl.BLEND);
         gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
@@ -152,35 +208,13 @@ const QuantumFlow: React.FC<QuantumFlowProps> = ({
 
         container.appendChild(gl.canvas);
 
-        const geometry = new Triangle(gl);
-        const program = new Program(gl, {
-            vertex: vertexShader,
-            fragment: fragmentShader,
-            uniforms: {
-                iTime: { value: 0 },
-                iResolution: {
-                    value: new Vec3(
-                        gl.canvas.width,
-                        gl.canvas.height,
-                        gl.canvas.width / gl.canvas.height,
-                    ),
-                },
-                uColor: { value: new Color(color) },
-                uAmplitude: { value: amplitude },
-                uDistance: { value: distance },
-                uMouse: { value: new Float32Array([0.5, 0.5]) },
-            },
-        });
-
-        const mesh = new Mesh(gl, { geometry, program });
-
         function resize() {
-            if (!container) return;
+            if (!container || !renderer || !program || !isMounted) return;
             const { clientWidth, clientHeight } = container;
             renderer.setSize(clientWidth, clientHeight);
             program.uniforms.iResolution.value[0] = clientWidth;
             program.uniforms.iResolution.value[1] = clientHeight;
-            program.uniforms.iResolution.value[2] = clientWidth / clientHeight;
+            program.uniforms.iResolution.value[2] = clientHeight === 0 ? 1 : clientWidth / clientHeight;
 
             program.uniforms.iResolution.value.needsUpdate = true;
         }
@@ -206,6 +240,7 @@ const QuantumFlow: React.FC<QuantumFlowProps> = ({
         }
 
         function update(t: number) {
+            if (!gl || !renderer || !program || !mesh || !isMounted) return;
             gl.clear(gl.COLOR_BUFFER_BIT);
             if (enableMouseInteraction) {
                 const smoothing = 0.05;
@@ -227,9 +262,11 @@ const QuantumFlow: React.FC<QuantumFlowProps> = ({
         animationFrameId.current = requestAnimationFrame(update);
 
         return () => {
-            gl.clear(gl.COLOR_BUFFER_BIT);
+            isMounted = false;
+
             if (animationFrameId.current) {
                 cancelAnimationFrame(animationFrameId.current);
+                animationFrameId.current = 0;
             }
             window.removeEventListener("resize", resize);
 
@@ -237,6 +274,12 @@ const QuantumFlow: React.FC<QuantumFlowProps> = ({
                 container.removeEventListener("mousemove", handleMouseMove);
                 container.removeEventListener("mouseleave", handleMouseLeave);
             }
+
+            if (!gl) {
+                return;
+            }
+
+            gl.clear(gl.COLOR_BUFFER_BIT);
 
             // Cleanup WebGL context
             if (container && container.contains(gl.canvas)) {

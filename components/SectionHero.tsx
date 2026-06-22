@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { ArrowUpRight } from "lucide-react";
+import ClientErrorBoundary from "./ClientErrorBoundary";
 
 const QuantumFlow = dynamic(() => import("./QuantumFlow"), {
   ssr: false,
@@ -42,7 +43,11 @@ const SectionHero: React.FC = () => {
   return (
     <section className="relative pt-16 md:pt-32 pb-16 px-4 w-full">
       <div className="absolute inset-0 w-full h-full z-0 flex items-center justify-center -translate-y-30 sm:translate-y-0">
-        {showQuantumFlow ? <QuantumFlow /> : null}
+        {showQuantumFlow ? (
+          <ClientErrorBoundary fallback={null}>
+            <QuantumFlow />
+          </ClientErrorBoundary>
+        ) : null}
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full text-center flex flex-col items-center">
