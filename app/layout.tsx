@@ -9,9 +9,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ??
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "LeverAcc: 5x Leverage Trading on Hyperliquid | Low Rates",
+  title: "LeverAcc: The Capital Layer of Hyperliquid | 5x Leverage Trading",
   description:
-    "Trade perpetuals with 5x leverage on Hyperliquid. Low rates, pre-funded architecture, and fast execution to boost capital efficiency for active traders.",
+    "LeverAcc is the Capital Layer of Hyperliquid — shared account, lending, credit risk and settlement infrastructure giving trading apps and perpetual traders 5x buying power at 0.1% daily interest.",
   alternates: {
     canonical: "/",
   },
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "LeverAcc: 5x Leverage Trading on Hyperliquid",
+    title: "LeverAcc: The Capital Layer of Hyperliquid",
     description:
-      "Trade perpetuals with 5x leverage on Hyperliquid with low rates and fast execution powered by LeverAcc's pre-funded architecture.",
+      "Shared capital infrastructure for every trading app on Hyperliquid — 5x buying power for traders, partners and LPs, powered by pre-funded vaults and a credit risk engine.",
     url: "/",
     siteName: "LeverAcc",
     images: [
@@ -31,15 +31,15 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "LeverAcc - Risk-free leverage accelerator",
+        alt: "LeverAcc — The Capital Layer of Hyperliquid",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "LeverAcc: 5x Leverage Trading on Hyperliquid",
+    title: "LeverAcc: The Capital Layer of Hyperliquid",
     description:
-      "Trade perpetuals with 5x leverage on Hyperliquid at low rates with pre-funded architecture and fast execution.",
+      "Shared capital infrastructure for trading apps on Hyperliquid — 5x buying power at 0.1% daily interest.",
     images: ["/og.png"],
   },
 };

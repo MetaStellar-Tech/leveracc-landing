@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 const Footer: React.FC = () => {
@@ -76,11 +79,11 @@ const Footer: React.FC = () => {
             Ready to Break Boundaries?
           </h2>
           <p className="text-base md:text-xl text-blue-50/80 mb-10 max-w-3xl mx-auto drop-shadow-md font-light">
-            Maximize your capital efficiency and start trading with amplified
-            power today.
+            Trade with 5x power, provide liquidity, or build your app on the
+            capital layer — pick your side.
           </p>
 
-          <div className="flex justify-center">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4">
             <div className="relative group">
               <button
                 className="access-button flex items-center justify-center gap-2 rounded-full"
@@ -88,10 +91,24 @@ const Footer: React.FC = () => {
                   window.open("https://app.leveracc.xyz/", "_blank");
                 }}
               >
-                Access the Public Beta
+                Launch App
                 <ArrowUpRight size={18} />
               </button>
             </div>
+            <Link
+              href="/#partners"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-white/30 text-white font-bold text-base md:text-lg hover:bg-white/10 hover:-translate-y-0.5 transition-all whitespace-nowrap"
+            >
+              Become a Partner
+            </Link>
+            <a
+              href="https://leveracc.gitbook.io/leveracc-docs/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-white/30 text-white font-bold text-base md:text-lg hover:bg-white/10 hover:-translate-y-0.5 transition-all whitespace-nowrap"
+            >
+              Provide Liquidity
+            </a>
           </div>
 
           {/* Mobile Image - Below Content */}
@@ -105,6 +122,36 @@ const Footer: React.FC = () => {
             />
           </div>
         </div>
+      </div>
+
+      {/* Site Links */}
+      <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 py-6 text-xs md:text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200/50 dark:border-gray-700/50 relative">
+        <Link href="/#product" className="hover:text-black dark:hover:text-white transition-colors">
+          Product
+        </Link>
+        <Link href="/#partners" className="hover:text-black dark:hover:text-white transition-colors">
+          For Partners
+        </Link>
+        <Link href="/#risk" className="hover:text-black dark:hover:text-white transition-colors">
+          Risk & LP Safety
+        </Link>
+        <Link href="/#roadmap" className="hover:text-black dark:hover:text-white transition-colors">
+          Roadmap
+        </Link>
+        <Link href="/#seed" className="hover:text-black dark:hover:text-white transition-colors">
+          Seed Program
+        </Link>
+        <a
+          href="https://leveracc.gitbook.io/leveracc-docs/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-black dark:hover:text-white transition-colors"
+        >
+          Docs
+        </a>
+        <Link href="/blog" className="hover:text-black dark:hover:text-white transition-colors">
+          Blog
+        </Link>
       </div>
 
       {/* Bottom Links */}

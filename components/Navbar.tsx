@@ -60,10 +60,10 @@ const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center gap-6">
             <div className="flex items-center gap-6 text-base font-medium text-gray-600 dark:text-gray-200">
               <Link
-                href="/blog"
+                href="/#partners"
                 className="hover:text-gray-900 dark:hover:text-gray-200 transition-colors"
               >
-                Blog
+                Partners
               </Link>
               <a
                 href="https://leveracc.gitbook.io/leveracc-docs/"
@@ -73,6 +73,12 @@ const Navbar: React.FC = () => {
               >
                 Docs
               </a>
+              <Link
+                href="/blog"
+                className="hover:text-gray-900 dark:hover:text-gray-200 transition-colors"
+              >
+                Blog
+              </Link>
               <a
                 href="https://x.com/leveracc_xyz"
                 target="_blank"
@@ -93,15 +99,23 @@ const Navbar: React.FC = () => {
 
             <ThemeToggle />
 
-            <div className="relative group">
-              <button
-                className="text-base border border-gray-300 dark:border-gray-700 px-5 py-1 rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors whitespace-nowrap"
-                onClick={() => {
-                  window.open("https://app.leveracc.xyz/", "_blank");
-                }}
+            <div className="flex items-center gap-3">
+              <Link
+                href="/#partners"
+                className="hidden lg:inline-flex text-base border border-gray-300 dark:border-gray-700 px-5 py-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors whitespace-nowrap"
               >
-                Launch App
-              </button>
+                Partner with us
+              </Link>
+              <div className="relative group">
+                <button
+                  className="text-base border border-gray-300 dark:border-gray-700 px-5 py-1 rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors whitespace-nowrap"
+                  onClick={() => {
+                    window.open("https://app.leveracc.xyz/", "_blank");
+                  }}
+                >
+                  Launch App
+                </button>
+              </div>
             </div>
           </div>
 
@@ -136,26 +150,33 @@ const Navbar: React.FC = () => {
       >
         <div className="px-4 py-4 flex flex-col gap-2">
           <Link
-            href="/blog"
-            className="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 font-medium"
+            href="/#partners"
+            className="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white font-medium"
             onClick={() => setIsMenuOpen(false)}
           >
-            Blog
+            Partners
           </Link>
           <a
             href="https://leveracc.gitbook.io/leveracc-docs/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 font-medium"
+            className="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white font-medium"
             onClick={() => setIsMenuOpen(false)}
           >
             Docs
           </a>
+          <Link
+            href="/blog"
+            className="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white font-medium"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Blog
+          </Link>
           <a
             href="https://x.com/leveracc_xyz"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 font-medium"
+            className="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white font-medium"
             onClick={() => setIsMenuOpen(false)}
           >
             X
@@ -164,7 +185,7 @@ const Navbar: React.FC = () => {
             href="https://github.com/MetaStellar-Tech"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 font-medium"
+            className="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white font-medium"
             onClick={() => setIsMenuOpen(false)}
           >
             Github
@@ -177,7 +198,16 @@ const Navbar: React.FC = () => {
             <ThemeToggle />
           </div>
           <div className="h-px bg-gray-200 dark:bg-gray-800 my-2"></div>
-          <div className="relative group">
+          <div className="flex flex-col gap-2">
+            <button
+              className="w-full border-2 border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors font-medium text-center"
+              onClick={() => {
+                setIsMenuOpen(false);
+                document.querySelector("#partners")?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Partner with us
+            </button>
             <button
               className="w-full bg-gray-900 dark:bg-gray-800 text-white dark:text-gray-300 px-4 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-700 hover:text-white dark:hover:text-gray-200 transition-colors font-medium text-center"
               onClick={() => {

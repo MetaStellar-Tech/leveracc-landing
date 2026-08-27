@@ -2,7 +2,6 @@
 
 import React from "react";
 import {
-  ArrowUpRight,
   Bot,
   Coins,
   Layers,
@@ -188,12 +187,8 @@ const SectionComparison: React.FC = () => {
                   <Layers size={20} />
                 </div>
                 <div>
-                  <h4 className="text-gray-900 dark:text-white font-bold text-base md:text-lg mb-2 flex items-center gap-2">
+                  <h4 className="text-gray-900 dark:text-white font-bold text-base md:text-lg mb-2">
                     Advanced Strategy Options
-                    <ArrowUpRight
-                      size={16}
-                      className="text-gray-400 dark:text-gray-500"
-                    />
                   </h4>
                   <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm leading-relaxed">
                     Participate in advanced trading strategies developed by the

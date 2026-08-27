@@ -80,7 +80,7 @@ const AnimatedCounter = ({
 const SectionStats: React.FC = () => {
   const metrics = [
     { label: "Max Buying Power", value: "5x" },
-    { label: "Low Interest Rates (Daily)", value: "0.1%" },
+    { label: "Daily Interest Rate", value: "0.1%" },
     { label: "High Execution Speed", value: "< 50ms" },
     { label: "Target LPs APY", value: "~10%-15%", highlight: true },
   ];

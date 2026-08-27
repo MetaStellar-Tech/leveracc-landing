@@ -8,6 +8,11 @@ import SectionHero from "@/components/SectionHero";
 import SectionStats from "@/components/SectionStats";
 import Footer from "@/components/Footer";
 import DeferredSection from "@/components/DeferredSection";
+import SectionEcosystem from "@/components/SectionEcosystem";
+import SectionPartners from "@/components/SectionPartners";
+import SectionRisk from "@/components/SectionRisk";
+import SectionRoadmap from "@/components/SectionRoadmap";
+import SectionSeed from "@/components/SectionSeed";
 
 const SectionBuilder = dynamic(() => import("@/components/SectionBuilder"), {
   ssr: false,
@@ -67,6 +72,38 @@ const faqEntities = [
       text: "Borrowing from the LeverAcc Vault does not require any collateral. The borrowable fund is matched solely based on your own funds (up to 4x, but an initial borrowing limit will be in place to ensure system stability). Borrow from LeverAcc at an interest rate of 0.1% daily.",
     },
   },
+  {
+    "@type": "Question",
+    name: "How does my product integrate with LeverAcc?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Apply through our partner channel. After a credit review, you integrate accounts, lending, credit risk and settlement through a single SDK/API surface — your UI and strategy stay fully yours. Full guides live in the documentation.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "What does LeverAcc handle — and what does it leave to partners?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "We provide the capital layer: accounts, borrowing, credit risk and settlement. Partners keep full ownership of strategy, signals and user experience. We never compete with the apps we serve — no strategies, no signals, no investment advice.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "How is LP capital protected?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Borrowing is uncollateralized but credit-managed: limits are set per account by the credit engine, a dynamic circuit breaker modulates risk in real time, and a trader can only ever lose their own principal — never LP funds.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "Which products can build on LeverAcc?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Anything that trades on Hyperliquid: AI trading agents, copy-trading platforms, quant strategies, trading studios and Telegram bots. If your users have strategies, LeverAcc gives them the capital to scale them.",
+    },
+  },
 ];
 
 const organizationSchema = {
@@ -77,7 +114,7 @@ const organizationSchema = {
   url: "https://leveracc.xyz",
   logo: "https://leveracc.xyz/576x576-transparent-bg-transparent-fill.png",
   description:
-    "LeverAcc is the Liquidity and Capital Efficiency Layer built on Hyperliquid, enabling traders to access 5x buying power for perpetual trading with low interest rates.",
+    "LeverAcc is the Capital Layer of Hyperliquid — shared capital infrastructure providing accounts, lending, credit risk management and settlement for trading apps and 5x buying power for perpetual traders.",
   foundingDate: "2024",
   sameAs: [
     "https://x.com/leveracc_xyz",
@@ -108,7 +145,7 @@ const softwareApplicationSchema = {
     priceCurrency: "USD",
   },
   description:
-    "Trade perpetuals with 5x leverage on Hyperliquid with low rates and fast execution.",
+    "Shared capital infrastructure for trading apps on Hyperliquid — AI trading, copy trading, quant teams and bots get 5x buying power with low rates and fast execution.",
   provider: {
     "@type": "Organization",
     "@id": "https://leveracc.xyz/#organization",
@@ -121,7 +158,7 @@ const productSchema = {
   "@id": "https://leveracc.xyz/#product",
   name: "LeverAcc",
   description:
-    "Liquidity and capital efficiency layer for 5x leverage perpetual trading on Hyperliquid.",
+    "The Capital Layer of Hyperliquid: shared account, lending, credit risk and settlement infrastructure giving traders and trading apps 5x buying power.",
   brand: {
     "@type": "Brand",
     name: "LeverAcc",
@@ -154,7 +191,7 @@ const webpageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "@id": "https://leveracc.xyz/#webpage",
-  name: "LeverAcc: 5x Leverage Trading on Hyperliquid | Low Rates",
+  name: "LeverAcc: The Capital Layer of Hyperliquid | 5x Leverage Trading",
   url: "https://leveracc.xyz/",
   isPartOf: {
     "@type": "WebSite",
@@ -228,6 +265,13 @@ const App: React.FC = () => {
         <SectionStats />
 
         <div className="px-4 md:px-8 max-w-7xl mx-auto w-full space-y-32 mt-20">
+          {/* 锚点区块直接渲染保证导航可用，内容进入首屏 HTML 利于 SEO；重组件保持懒加载 */}
+          <SectionEcosystem />
+
+          <DeferredSection placeholderClassName="min-h-[720px]">
+            <SectionSteps />
+          </DeferredSection>
+
           <DeferredSection placeholderClassName="min-h-[680px]">
             <SectionBuilder />
           </DeferredSection>
@@ -236,15 +280,19 @@ const App: React.FC = () => {
             <SectionDashboard />
           </DeferredSection>
 
-          <DeferredSection placeholderClassName="min-h-[720px]">
-            <SectionSteps />
-          </DeferredSection>
+          <SectionPartners />
+
+          <SectionRisk />
 
           <DeferredSection placeholderClassName="min-h-[620px]">
             <SectionComparison />
           </DeferredSection>
 
-          <DeferredSection placeholderClassName="min-h-[460px]">
+          <SectionRoadmap />
+
+          <SectionSeed />
+
+          <DeferredSection placeholderClassName="min-h-[860px]">
             <SectionFAQ />
           </DeferredSection>
         </div>
