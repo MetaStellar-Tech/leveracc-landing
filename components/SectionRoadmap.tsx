@@ -6,7 +6,7 @@ const phases = [
   {
     year: "2026",
     icon: Flag,
-    phase: "Phase 1 — Product validation",
+    phase: "Phase 1: Product Validation",
     points: [
       "Reference trading platform live",
       "First partner integrations",
@@ -17,7 +17,7 @@ const phases = [
   {
     year: "2027",
     icon: Network,
-    phase: "Phase 2 — Network expansion",
+    phase: "Phase 2: Network Expansion",
     points: [
       "Partner network grows across app categories",
       "Capital Marketplace",
@@ -28,7 +28,7 @@ const phases = [
   {
     year: "2028+",
     icon: Globe2,
-    phase: "Phase 3 — Default capital layer",
+    phase: "Phase 3: Default Capital Layer",
     points: [
       "The standard capital rails on Hyperliquid",
       "Serving the majority of trading apps",
@@ -47,11 +47,11 @@ const SectionRoadmap: React.FC = () => {
           Roadmap
         </div>
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-[#EDEEEC] mb-6">
-          From product validation to the default capital layer.
+          From Product Validation to the Default Capital Layer.
         </h2>
         <p className="text-base md:text-xl text-gray-500 dark:text-[#9B9BA3] max-w-3xl mx-auto leading-relaxed">
-          Credibility comes from real business, not announcements. Partner
-          integrations are published as they go live.
+          Credibility comes from real business. Partner integrations are
+          published as they go live.
         </p>
       </Reveal>
 

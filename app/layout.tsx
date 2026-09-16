@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "LeverAcc: The Capital Layer of Hyperliquid | 5x Leverage Trading",
   description:
-    "LeverAcc is the Capital Layer of Hyperliquid — shared account, lending, credit risk and settlement infrastructure giving trading apps and perpetual traders 5x buying power at 0.1% daily interest.",
+    "LeverAcc is the Capital Layer of Hyperliquid: shared account, lending, credit risk and settlement infrastructure giving trading apps and perpetual traders 5x buying power at 0.1% daily interest.",
   alternates: {
     canonical: "/",
   },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "LeverAcc: The Capital Layer of Hyperliquid",
     description:
-      "Shared capital infrastructure for every trading app on Hyperliquid — 5x buying power for traders, partners and LPs, powered by pre-funded vaults and a credit risk engine.",
+      "Shared capital infrastructure for every trading app on Hyperliquid: 5x buying power for traders, partners and LPs, powered by pre-funded vaults and a credit risk engine.",
     url: "/",
     siteName: "LeverAcc",
     images: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "LeverAcc — The Capital Layer of Hyperliquid",
+          alt: "LeverAcc: The Capital Layer of Hyperliquid",
       },
     ],
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "LeverAcc: The Capital Layer of Hyperliquid",
     description:
-      "Shared capital infrastructure for trading apps on Hyperliquid — 5x buying power at 0.1% daily interest.",
+      "Shared capital infrastructure for trading apps on Hyperliquid: 5x buying power at 0.1% daily interest.",
     images: ["/og.png"],
   },
 };

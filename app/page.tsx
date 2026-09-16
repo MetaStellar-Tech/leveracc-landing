@@ -42,7 +42,7 @@ const SectionFAQ = dynamic(() => import("@/components/SectionFAQ"), {
 const faqEntities = [
   {
     "@type": "Question",
-    name: "Is LeverAcc a Perp DEX ?",
+    name: "Is LeverAcc a Perp DEX?",
     acceptedAnswer: {
       "@type": "Answer",
       text: "No, LeverAcc is a liquidity and capital efficiency layer built on top of Perp DEXs, designed to maximize users' capital efficiency. Simply put, LeverAcc acts as middleware that can plug into any Perp DEX.",
@@ -66,10 +66,10 @@ const faqEntities = [
   },
   {
     "@type": "Question",
-    name: "Do I need collateral assets to borrow funds from LeverAcc? What is the borrowing interest rate?",
+    name: "How much can I borrow from LeverAcc? What is the borrowing interest rate?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Borrowing from the LeverAcc Vault does not require any collateral. The borrowable fund is matched solely based on your own funds (up to 4x, but an initial borrowing limit will be in place to ensure system stability). Borrow from LeverAcc at an interest rate of 0.1% daily.",
+      text: "Your borrowable amount is matched solely based on your own funds, up to 4x (an initial borrowing limit applies to keep the system stable). Borrow from LeverAcc at an interest rate of 0.1% daily.",
     },
   },
   {
@@ -77,15 +77,15 @@ const faqEntities = [
     name: "How does my product integrate with LeverAcc?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Apply through our partner channel. After a credit review, you integrate accounts, lending, credit risk and settlement through a single SDK/API surface — your UI and strategy stay fully yours. Full guides live in the documentation.",
+      text: "Apply through our partner channel. After a credit review, you integrate accounts, lending, credit risk and settlement through a single SDK/API surface, and your UI and strategy stay fully yours. Full guides live in the documentation.",
     },
   },
   {
     "@type": "Question",
-    name: "What does LeverAcc handle — and what does it leave to partners?",
+    name: "What does LeverAcc handle, and what do partners keep?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "We provide the capital layer: accounts, borrowing, credit risk and settlement. Partners keep full ownership of strategy, signals and user experience. We never compete with the apps we serve — no strategies, no signals, no investment advice.",
+      text: "We provide the capital layer: accounts, borrowing, credit risk and settlement. Partners keep full ownership of strategy, signals and user experience. We never compete with the apps we serve and offer no strategies, signals or investment advice of our own.",
     },
   },
   {
@@ -93,7 +93,7 @@ const faqEntities = [
     name: "How is LP capital protected?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Borrowing is uncollateralized but credit-managed: limits are set per account by the credit engine, a dynamic circuit breaker modulates risk in real time, and a trader can only ever lose their own principal — never LP funds.",
+      text: "Borrowing is credit-managed: limits are set per account by the credit engine, a dynamic circuit breaker modulates risk in real time, and a trader can only ever lose their own principal, never LP funds.",
     },
   },
   {
@@ -114,7 +114,7 @@ const organizationSchema = {
   url: "https://leveracc.xyz",
   logo: "https://leveracc.xyz/576x576-transparent-bg-transparent-fill.png",
   description:
-    "LeverAcc is the Capital Layer of Hyperliquid — shared capital infrastructure providing accounts, lending, credit risk management and settlement for trading apps and 5x buying power for perpetual traders.",
+    "LeverAcc is the Capital Layer of Hyperliquid: shared capital infrastructure providing accounts, lending, credit risk management and settlement for trading apps and 5x buying power for perpetual traders.",
   foundingDate: "2024",
   sameAs: [
     "https://x.com/leveracc_xyz",
@@ -145,7 +145,7 @@ const softwareApplicationSchema = {
     priceCurrency: "USD",
   },
   description:
-    "Shared capital infrastructure for trading apps on Hyperliquid — AI trading, copy trading, quant teams and bots get 5x buying power with low rates and fast execution.",
+    "Shared capital infrastructure for trading apps on Hyperliquid: AI trading, copy trading, quant teams and bots get 5x buying power with low rates and fast execution.",
   provider: {
     "@type": "Organization",
     "@id": "https://leveracc.xyz/#organization",

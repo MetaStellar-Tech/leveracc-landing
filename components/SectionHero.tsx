@@ -63,14 +63,14 @@ const SectionHero: React.FC = () => {
         <h1 className="relative z-10 text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-black dark:text-[#EDEEEC] mb-8 leading-[1.1]">
           <span className="block">The Capital Layer of Hyperliquid.</span>
           <span className="block bg-gradient-to-r from-[#0099ff] to-cyan-400 bg-clip-text text-transparent pb-2">
-            5x power for every trading app.
+            5x Power for Every Trading App.
           </span>
         </h1>
 
         <p className="relative z-10 text-base md:text-lg text-gray-600 dark:text-[#A1A1AA] max-w-3xl mb-12 leading-relaxed">
-          LeverAcc is shared capital infrastructure — account, lending, credit
-          risk and settlement — powering AI trading, copy trading, quant teams
-          and bots. Same capital, 5x buying power.
+          LeverAcc is shared capital infrastructure for AI trading, copy
+          trading, quant teams and bots: accounts, lending, credit risk and
+          settlement in one layer. Same capital, 5x buying power.
         </p>
 
         <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">

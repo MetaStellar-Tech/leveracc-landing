@@ -41,11 +41,11 @@ const SectionEcosystem: React.FC = () => {
           The Product
         </div>
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-[#EDEEEC] mb-6">
-          One capital layer. Every trading app.
+          One Capital Layer. Every Trading App.
         </h2>
         <p className="text-base md:text-xl text-gray-500 dark:text-[#9B9BA3] max-w-3xl mx-auto leading-relaxed">
           Trading apps shouldn&apos;t have to build lending desks. LeverAcc
-          provides the financial rails — your app provides the experience.
+          provides the financial rails, and your app owns the experience.
         </p>
       </Reveal>
 
@@ -172,16 +172,16 @@ const SectionEcosystem: React.FC = () => {
         <div className="grid sm:grid-cols-3 gap-4">
           {[
             {
-              title: "Partners own the strategy",
-              desc: "AI, copy, quant or social — the product and its signals stay yours.",
+              title: "Partners Own the Strategy",
+              desc: "AI, copy, quant or social: the product and its signals stay yours.",
             },
             {
-              title: "LeverAcc manages the credit",
+              title: "LeverAcc Manages the Credit",
               desc: "Accounts, borrowing, limits and settlement run on shared rails.",
             },
             {
-              title: "Hyperliquid executes the trade",
-              desc: "Public, transparent, on-chain — on the deepest perp books.",
+              title: "Hyperliquid Executes the Trade",
+              desc: "Public, transparent, on-chain execution on the deepest perp books.",
             },
           ].map(({ title, desc }) => (
             <div

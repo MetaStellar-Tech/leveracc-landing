@@ -10,7 +10,7 @@ const SectionBuilder: React.FC = () => {
       {/* Section Header */}
       <div className="text-center mb-16 px-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-6">
-          Official Platform — the first app built on LeverAcc
+          Official Platform, the First App Built on LeverAcc
         </div>
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-[#EDEEEC] mb-6">
           The Geometry of Leverage.

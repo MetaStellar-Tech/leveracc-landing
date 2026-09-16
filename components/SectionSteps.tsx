@@ -15,7 +15,7 @@ const SectionSteps: React.FC = () => {
         className="text-center mb-16"
       >
         <h2 className="text-3xl md:text-5xl font-bold mb-4 dark:text-[#EDEEEC]">
-          How does it work?
+          How Does It Work?
         </h2>
         <p className="text-gray-500 dark:text-[#838389] font-medium text-base md:text-lg">
           I know what you&apos;re thinking... Here&apos;s a simple step-by-step
@@ -54,7 +54,7 @@ const SectionSteps: React.FC = () => {
                 <div className="space-y-3">
                   <div>
                     <div className="text-[10px] text-gray-400 dark:text-gray-500 font-medium mb-1">
-                      YOUR COLLATERAL
+                      YOUR FUNDS
                     </div>
                     <div className="h-2 w-16 bg-gray-200 dark:bg-gray-700 rounded-full">
                     </div>
@@ -97,7 +97,7 @@ const SectionSteps: React.FC = () => {
 
               {/* Floating Badge */}
               <div className="absolute top-4 right-8 bg-black dark:bg-white text-white dark:text-black text-[10px] font-bold px-3 py-1.5 rounded-full rotate-[5deg] shadow-lg z-20">
-                Uncollateralized
+                Credit-Based
               </div>
             </div>
           </div>
@@ -107,11 +107,11 @@ const SectionSteps: React.FC = () => {
             </span>
             <div>
               <h3 className="text-lg md:text-xl font-bold mb-2 dark:text-[#EDEEEC]">
-                Initiate a borrowing request
+                Initiate a Borrowing Request
               </h3>
               <p className="text-gray-500 dark:text-[#838389] leading-relaxed text-xs md:text-sm">
-                Before executing perps trades, apply for an uncollateralized
-                loan from the vault (up to 4x of your own funds).
+                Before executing perps trades, apply for a credit-based loan
+                from the vault (up to 4x of your own funds).
               </p>
             </div>
           </div>
@@ -188,11 +188,11 @@ const SectionSteps: React.FC = () => {
             </span>
             <div>
               <h3 className="text-lg md:text-xl font-bold mb-2 dark:text-[#EDEEEC]">
-                Loan funds received
+                Loan Funds Received
               </h3>
               <p className="text-gray-500 dark:text-[#838389] leading-relaxed text-xs md:text-sm">
                 The system transfers funds to your account at lightning speed,
-                making them available immediately - no waiting required.
+                ready to use immediately, with no waiting required.
               </p>
             </div>
           </div>
@@ -260,11 +260,11 @@ const SectionSteps: React.FC = () => {
             </span>
             <div>
               <h3 className="text-lg md:text-xl font-bold mb-2 dark:text-[#EDEEEC]">
-                Trade perps as before
+                Trade Perps as Before
               </h3>
               <p className="text-gray-500 dark:text-[#838389] leading-relaxed text-xs md:text-sm">
-                Place orders in a familiar UI/UX with enhanced buying power, and
-                enjoying better profit expectations at the same risk level.
+                Place orders in a familiar UI/UX with enhanced buying power,
+                and enjoy better profit expectations at the same risk level.
               </p>
             </div>
           </div>

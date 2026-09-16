@@ -6,13 +6,13 @@ const responsibilities = [
   {
     icon: User,
     role: "Traders",
-    desc: "Risk their own principal only. The maximum loss is the capital they put in — never LP funds.",
+    desc: "Risk their own principal only. The maximum loss is the capital they put in, never LP funds.",
     accent: "text-blue-500 dark:text-blue-400",
     chip: "bg-blue-500/10 border-blue-500/20",
   },
   {
     icon: Bot,
-    role: "Partners",
+    role: "Trading Apps",
     desc: "Own the strategy and its performance. LeverAcc never touches signals, sizing or advice.",
     accent: "text-purple-500 dark:text-purple-400",
     chip: "bg-purple-500/10 border-purple-500/20",
@@ -28,16 +28,16 @@ const responsibilities = [
 
 const principles = [
   {
-    title: "Credit risk, not trading risk",
-    desc: "No borrowing, no intervention. The moment borrowing starts, the credit engine — not a trading desk — takes over.",
+    title: "Credit Risk Only",
+    desc: "Nothing changes while you trade your own funds. The moment borrowing starts, the credit engine takes over risk management.",
   },
   {
-    title: "Adaptive circuit breaker",
+    title: "Adaptive Circuit Breaker",
     desc: "Stop-loss thresholds modulate in real time via β coefficients to protect 100% of LP capital.",
   },
   {
-    title: "Uncollateralized, credit-managed",
-    desc: "Borrow up to 4x against your own funds, with limits set per account by the risk engine.",
+    title: "Credit-Managed Borrowing",
+    desc: "Borrow up to 4x on top of your own funds, with limits set per account by the risk engine.",
   },
 ];
 
@@ -50,11 +50,12 @@ const SectionRisk: React.FC = () => {
           Risk & Liquidity
         </div>
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-[#EDEEEC] mb-6">
-          LP capital safety comes first.
+          LP Capital Safety Comes First.
         </h2>
         <p className="text-base md:text-xl text-gray-500 dark:text-[#9B9BA3] max-w-3xl mx-auto leading-relaxed">
           One principle above everything: LPs never take uncontrollable risk.
-          LeverAcc manages credit risk — not trading risk.
+          LeverAcc manages credit risk, while trading outcomes stay with
+          traders.
         </p>
       </Reveal>
 
@@ -100,8 +101,8 @@ const SectionRisk: React.FC = () => {
       <Reveal delay={150} className="mt-10 text-center">
         <p className="text-sm md:text-base text-gray-500 dark:text-[#9B9BA3] mb-5 inline-flex items-center gap-2 justify-center">
           <Coins size={16} className="text-green-500 dark:text-green-400" />
-          Deposit into vaults and earn from real borrowing demand — target
-          ~10%-15% APY.
+          Deposit into vaults and earn from real borrowing demand, with a
+          target APY of ~10%-15%.
         </p>
         <div>
           <a

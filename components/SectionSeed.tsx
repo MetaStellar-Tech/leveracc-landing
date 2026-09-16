@@ -21,7 +21,7 @@ const tracks = [
   {
     icon: Sparkles,
     name: "Seed KOLs",
-    desc: "Run the real borrowing flow end to end — funded by the program — and share your honest experience with your audience.",
+    desc: "Run the real borrowing flow end to end, funded by the program, and share your honest experience with your audience.",
     requirement: "Crypto audience · authentic reviews only",
   },
 ];
@@ -35,11 +35,11 @@ const SectionSeed: React.FC = () => {
           Seed Program
         </div>
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-[#EDEEEC] mb-6">
-          Help us build the first capital layer.
+          Help Us Build the First Capital Layer.
         </h2>
         <p className="text-base md:text-xl text-gray-500 dark:text-[#9B9BA3] max-w-3xl mx-auto leading-relaxed">
           We&apos;re onboarding a small first cohort of users, partners and
-          creators. Real usage, real feedback — no paid endorsements.
+          creators. Real usage, real feedback, no paid endorsements.
         </p>
       </Reveal>
 

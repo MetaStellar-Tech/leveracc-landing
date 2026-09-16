@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
           </h2>
           <p className="text-base md:text-xl text-blue-50/80 mb-10 max-w-3xl mx-auto drop-shadow-md font-light">
             Trade with 5x power, provide liquidity, or build your app on the
-            capital layer — pick your side.
+            capital layer. Pick your side.
           </p>
 
           <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4">
@@ -95,12 +95,14 @@ const Footer: React.FC = () => {
                 <ArrowUpRight size={18} />
               </button>
             </div>
-            <Link
-              href="/#partners"
+            <a
+              href="https://app.leveracc.xyz/en/partners"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-white/30 text-white font-bold text-base md:text-lg hover:bg-white/10 hover:-translate-y-0.5 transition-all whitespace-nowrap"
             >
               Become a Partner
-            </Link>
+            </a>
             <a
               href="https://leveracc.gitbook.io/leveracc-docs/"
               target="_blank"
@@ -152,6 +154,22 @@ const Footer: React.FC = () => {
         <Link href="/blog" className="hover:text-black dark:hover:text-white transition-colors">
           Blog
         </Link>
+        <a
+          href="https://leveracc.gitbook.io/leveracc-docs/resources/privacy-policy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-black dark:hover:text-white transition-colors"
+        >
+          Privacy Policy
+        </a>
+        <a
+          href="https://leveracc.gitbook.io/leveracc-docs/resources/term-of-use"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-black dark:hover:text-white transition-colors"
+        >
+          Terms
+        </a>
       </div>
 
       {/* Bottom Links */}
@@ -171,30 +189,7 @@ const Footer: React.FC = () => {
           © MetaStellar Technology Ltd. All Rights Reserved.
         </div>
 
-        <div className="flex flex-col md:flex-row items-center gap-6">
-          <div className="flex gap-6">
-            <a
-              href="https://leveracc.gitbook.io/leveracc-docs/resources/privacy-policy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-black dark:hover:text-white transition-colors"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="https://leveracc.gitbook.io/leveracc-docs/resources/term-of-use"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-black dark:hover:text-white transition-colors"
-            >
-              Terms
-            </a>
-          </div>
-
-          <div className="hidden md:block w-px h-4 bg-gray-300 dark:bg-gray-700 mx-2">
-          </div>
-
-          <div className="flex items-center gap-5">
+        <div className="flex items-center gap-5">
             {/* X (Twitter) */}
             <a
               href="https://x.com/leveracc_xyz"
@@ -255,7 +250,6 @@ const Footer: React.FC = () => {
               </svg>
             </a>
           </div>
-        </div>
       </div>
     </footer>
   );

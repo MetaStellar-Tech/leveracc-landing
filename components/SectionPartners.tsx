@@ -28,7 +28,7 @@ const partnerTypes = [
   {
     icon: Copy,
     name: "Copy Trading",
-    line: "Followers copy the strategy — and multiply their buying power with it.",
+    line: "Followers copy the strategy and multiply their buying power with it.",
   },
   {
     icon: Sigma,
@@ -48,7 +48,7 @@ const partnerTypes = [
   {
     icon: Megaphone,
     name: "KOLs & Communities",
-    line: "Offer your community real financial capability, not just signals.",
+    line: "Give your community real financial capability on top of your signals.",
   },
 ];
 
@@ -63,8 +63,8 @@ const benefits = [
 const integrationSteps = [
   {
     step: "01",
-    title: "Apply & credit review",
-    desc: "Tell us about your product. The credit engine sets borrowing limits for your users — no collateral models for you to build.",
+    title: "Apply & Credit Review",
+    desc: "Tell us about your product. The credit engine sets borrowing limits for every user, so your team never has to build risk models.",
   },
   {
     step: "02",
@@ -73,7 +73,7 @@ const integrationSteps = [
   },
   {
     step: "03",
-    title: "Go live on Hyperliquid",
+    title: "Go Live on Hyperliquid",
     desc: "Your users trade with up to 5x buying power. You keep the relationship, the volume and the fees.",
   },
 ];
@@ -103,11 +103,11 @@ const SectionPartners: React.FC = () => {
           For Partners
         </div>
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-[#EDEEEC] mb-6">
-          Give your product a capital engine.
+          Give Your Product a Capital Engine.
         </h2>
         <p className="text-base md:text-xl text-gray-500 dark:text-[#9B9BA3] max-w-3xl mx-auto leading-relaxed">
           The best strategies on Hyperliquid hit the same ceiling: user capital.
-          LeverAcc removes it — so you can scale AUM, volume and retention
+          LeverAcc removes it so you can scale AUM, volume and retention
           without becoming a lender.
         </p>
       </Reveal>
@@ -150,7 +150,7 @@ const SectionPartners: React.FC = () => {
       <div id="developers" className="scroll-mt-24 mt-24">
         <Reveal className="text-center mb-12">
           <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-[#EDEEEC] mb-4">
-            Live in three steps.
+            Live in Three Steps.
           </h3>
           <p className="text-sm md:text-base text-gray-500 dark:text-[#9B9BA3] max-w-2xl mx-auto">
             One integration unlocks shared liquidity, credit management and
@@ -267,7 +267,7 @@ const SectionPartners: React.FC = () => {
           className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-blue-600 text-white font-bold text-base hover:opacity-90 hover:-translate-y-0.5 transition-all"
         >
           <Users size={17} />
-          Become a Partner — Talk to the Team
+          Become a Partner
           <ArrowUpRight size={16} />
         </a>
       </Reveal>
