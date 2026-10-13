@@ -53,7 +53,7 @@ const SectionRisk: React.FC = () => {
           Funder Capital Safety Comes First.
         </h2>
         <p className="text-base md:text-xl text-gray-500 dark:text-[#9B9BA3] max-w-3xl mx-auto leading-relaxed">
-          One principle above everything: Funders never take uncontrollable risk.
+          One principle above everything: funders never take uncontrollable risk.
           LeverAcc manages credit risk, while trading outcomes stay with
           traders.
         </p>
