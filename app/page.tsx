@@ -90,10 +90,10 @@ const faqEntities = [
   },
   {
     "@type": "Question",
-    name: "How is LP capital protected?",
+    name: "How is funder capital protected?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Borrowing is credit-managed: limits are set per account by the credit engine, a dynamic circuit breaker modulates risk in real time, and a trader can only ever lose their own principal, never LP funds.",
+      text: "Borrowing is credit-managed: limits are set per account by the credit engine, a dynamic circuit breaker modulates risk in real time, and a trader can only ever lose their own principal, never funders' capital.",
     },
   },
   {

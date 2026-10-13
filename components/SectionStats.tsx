@@ -82,7 +82,7 @@ const SectionStats: React.FC = () => {
     { label: "Max Buying Power", value: "5x" },
     { label: "Daily Interest Rate", value: "0.1%" },
     { label: "High Execution Speed", value: "< 50ms" },
-    { label: "Target LPs APY", value: "~10%-15%", highlight: true },
+    { label: "Target Funder APY", value: "~10%-15%", highlight: true },
   ];
 
   const sectionRef = useRef<HTMLDivElement>(null);
