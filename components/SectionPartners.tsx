@@ -80,7 +80,7 @@ const integrationSteps = [
 
 const weProvide = [
   "Account infrastructure",
-  "Capital & lending vaults",
+  "Capital & fund vaults",
   "Credit risk engine",
   "Settlement",
   "SDK / API access",
@@ -108,7 +108,7 @@ const SectionPartners: React.FC = () => {
         <p className="text-base md:text-xl text-gray-500 dark:text-[#9B9BA3] max-w-3xl mx-auto leading-relaxed">
           The best strategies on Hyperliquid hit the same ceiling: user capital.
           LeverAcc removes it so you can scale AUM, volume and retention
-          without becoming a lender.
+          without becoming a funder.
         </p>
       </Reveal>
 

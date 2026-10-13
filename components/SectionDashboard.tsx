@@ -110,7 +110,7 @@ const SectionDashboard: React.FC = () => {
             </h3>
             <p className="text-[#838389] leading-relaxed text-base md:text-lg mb-12">
               Stop-loss thresholds modulate dynamically via real-time β
-              coefficients. 100% LP capital preservation ensured by adaptive
+              coefficients. 100% funder capital preservation ensured by adaptive
               risk protocols.
             </p>
           </div>

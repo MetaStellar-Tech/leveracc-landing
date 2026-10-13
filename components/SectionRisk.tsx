@@ -6,7 +6,7 @@ const responsibilities = [
   {
     icon: User,
     role: "Traders",
-    desc: "Risk their own principal only. The maximum loss is the capital they put in, never LP funds.",
+    desc: "Risk their own principal only. The maximum loss is the capital they put in, never funders' capital.",
     accent: "text-blue-500 dark:text-blue-400",
     chip: "bg-blue-500/10 border-blue-500/20",
   },
@@ -33,7 +33,7 @@ const principles = [
   },
   {
     title: "Adaptive Circuit Breaker",
-    desc: "Stop-loss thresholds modulate in real time via β coefficients to protect 100% of LP capital.",
+    desc: "Stop-loss thresholds modulate in real time via β coefficients to protect 100% of funder capital.",
   },
   {
     title: "Credit-Managed Borrowing",
@@ -50,10 +50,10 @@ const SectionRisk: React.FC = () => {
           Risk & Liquidity
         </div>
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-[#EDEEEC] mb-6">
-          LP Capital Safety Comes First.
+          Funder Capital Safety Comes First.
         </h2>
         <p className="text-base md:text-xl text-gray-500 dark:text-[#9B9BA3] max-w-3xl mx-auto leading-relaxed">
-          One principle above everything: LPs never take uncontrollable risk.
+          One principle above everything: Funders never take uncontrollable risk.
           LeverAcc manages credit risk, while trading outcomes stay with
           traders.
         </p>
@@ -97,7 +97,7 @@ const SectionRisk: React.FC = () => {
         </div>
       </Reveal>
 
-      {/* LP CTA */}
+      {/* Funder CTA */}
       <Reveal delay={150} className="mt-10 text-center">
         <p className="text-sm md:text-base text-gray-500 dark:text-[#9B9BA3] mb-5 inline-flex items-center gap-2 justify-center">
           <Coins size={16} className="text-green-500 dark:text-green-400" />
@@ -112,7 +112,7 @@ const SectionRisk: React.FC = () => {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-[#D3DAFE] font-bold text-sm md:text-base hover:bg-gray-100 dark:hover:bg-gray-800 hover:-translate-y-0.5 transition-all"
           >
             <ShieldCheck size={16} />
-            How LP Protection Works
+            How Funder Protection Works
           </a>
         </div>
       </Reveal>

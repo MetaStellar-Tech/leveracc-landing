@@ -32,7 +32,7 @@ const phases = [
     points: [
       "The standard capital rails on Hyperliquid",
       "Serving the majority of trading apps",
-      "Deepest LP + credit data network",
+      "Deepest funder + credit data network",
     ],
     active: false,
   },

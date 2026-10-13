@@ -135,7 +135,7 @@ const Footer: React.FC = () => {
           For Partners
         </Link>
         <Link href="/#risk" className="hover:text-black dark:hover:text-white transition-colors">
-          Risk & LP Safety
+          Risk & Funder Safety
         </Link>
         <Link href="/#roadmap" className="hover:text-black dark:hover:text-white transition-colors">
           Roadmap

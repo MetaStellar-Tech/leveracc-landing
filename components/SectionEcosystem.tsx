@@ -26,7 +26,7 @@ const tradingApps = [
 
 const capabilities = [
   { icon: User, label: "Unified Account" },
-  { icon: Coins, label: "Lending Vault" },
+  { icon: Coins, label: "Fund Vault" },
   { icon: ShieldCheck, label: "Credit Risk Engine" },
   { icon: ArrowLeftRight, label: "Settlement" },
   { icon: Code2, label: "SDK / API" },

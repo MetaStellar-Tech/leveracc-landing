@@ -3,7 +3,7 @@ export function Stats() {
     { label: "Total Volume", value: "$4.2B+" },
     { label: "Vault Liquidity", value: "$850M" },
     { label: "Positions Secured", value: "24.5K" },
-    { label: "LPs APY", value: "24.8%", className: "text-blue-400" },
+    { label: "Funder APY", value: "24.8%", className: "text-blue-400" },
   ];
 
   return (

@@ -28,7 +28,7 @@ const SectionComparison: React.FC = () => {
           Win-Win for Network Contributors.
         </h2>
         <p className="text-base md:text-xl text-gray-500 dark:text-[#838389] max-w-3xl mx-auto leading-relaxed">
-          Traders gain buying power, trading apps gain distribution, and LPs
+          Traders gain buying power, trading apps gain distribution, and funders
           gain a new yield channel.
         </p>
       </motion.div>
@@ -205,7 +205,7 @@ const SectionComparison: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* LPs Card - Light Theme */}
+        {/* Funders Card - Light Theme */}
         <motion.div
           initial={{ opacity: 0, x: 30 }} // Slide in from right
           whileInView={{ opacity: 1, x: 0 }}

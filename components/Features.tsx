@@ -65,7 +65,7 @@ export function Features() {
             </h3>
             <p className="text-sm text-gray-400 mb-8 leading-relaxed">
               Auto-deleveraging protocols trigger instantly upon volatility
-              spikes. 100% LP capital protection guarantees via smart contract
+              spikes. 100% funder capital protection guarantees via smart contract
               enforcement.
             </p>
 

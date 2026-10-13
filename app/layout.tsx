@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "LeverAcc: The Capital Layer of Hyperliquid",
     description:
-      "Shared capital infrastructure for every trading app on Hyperliquid: 5x buying power for traders, partners and LPs, powered by pre-funded vaults and a credit risk engine.",
+      "Shared capital infrastructure for every trading app on Hyperliquid: 5x buying power for traders, partners and funders, powered by pre-funded vaults and a credit risk engine.",
     url: "/",
     siteName: "LeverAcc",
     images: [

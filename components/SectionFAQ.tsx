@@ -32,8 +32,8 @@ const partnerFaqs = [
     a: "We provide the capital layer: accounts, borrowing, credit risk and settlement. Partners keep full ownership of strategy, signals and user experience. We never compete with the apps we serve and offer no strategies, signals or investment advice of our own.",
   },
   {
-    q: "How is LP capital protected?",
-    a: "Borrowing is credit-managed: limits are set per account by the credit engine, a dynamic circuit breaker modulates risk in real time, and a trader can only ever lose their own principal, never LP funds.",
+    q: "How is funder capital protected?",
+    a: "Borrowing is credit-managed: limits are set per account by the credit engine, a dynamic circuit breaker modulates risk in real time, and a trader can only ever lose their own principal, never funders' capital.",
   },
   {
     q: "Which products can build on LeverAcc?",
