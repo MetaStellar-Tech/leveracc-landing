@@ -249,8 +249,8 @@ const SectionComparison: React.FC = () => {
                     Passive Yield Generation
                   </h4>
                   <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm leading-relaxed">
-                    Deposit funds into vaults to provide liquidity for perpetual
-                    traders and enjoy a substantial APY.
+                    Supply USDC to the Fund Vault to fund perpetual traders and
+                    enjoy a substantial APY.
                   </p>
                 </div>
               </div>

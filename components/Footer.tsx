@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
             Ready to Break Boundaries?
           </h2>
           <p className="text-base md:text-xl text-blue-50/80 mb-10 max-w-3xl mx-auto drop-shadow-md font-light">
-            Trade with 5x power, provide liquidity, or build your app on the
+            Trade with 5x power, supply to the Fund Vault, or build your app on the
             capital layer. Pick your side.
           </p>
 
@@ -109,7 +109,7 @@ const Footer: React.FC = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-white/30 text-white font-bold text-base md:text-lg hover:bg-white/10 hover:-translate-y-0.5 transition-all whitespace-nowrap"
             >
-              Provide Liquidity
+              Supply USDC
             </a>
           </div>
 
