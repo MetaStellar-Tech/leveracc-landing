@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "LeverAcc",
     images: [
       {
-        url: "/og.jpg",
+        url: "/og.jpg?v=f374de94",
         width: 1200,
         height: 630,
           alt: "LeverAcc: The Capital Layer of Hyperliquid",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "LeverAcc: The Capital Layer of Hyperliquid",
     description:
       "Shared capital infrastructure for trading apps on Hyperliquid: 5x buying power at ~0.005-0.15% daily interest.",
-    images: ["/og.jpg"],
+    images: ["/og.jpg?v=f374de94"],
   },
 };
 
