@@ -11,8 +11,6 @@ import DeferredSection from "@/components/DeferredSection";
 import SectionEcosystem from "@/components/SectionEcosystem";
 import SectionPartners from "@/components/SectionPartners";
 import SectionRisk from "@/components/SectionRisk";
-import SectionRoadmap from "@/components/SectionRoadmap";
-import SectionSeed from "@/components/SectionSeed";
 
 const SectionBuilder = dynamic(() => import("@/components/SectionBuilder"), {
   ssr: false,
@@ -69,7 +67,7 @@ const faqEntities = [
     name: "How much can I borrow from LeverAcc? What is the borrowing interest rate?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Your borrowable amount is matched solely based on your own funds, up to 4x (an initial borrowing limit applies to keep the system stable). Borrow from LeverAcc at an interest rate of 0.1% daily.",
+      text: "Your borrowable amount is matched solely based on your own funds, up to 4x (an initial borrowing limit applies to keep the system stable). Borrow from LeverAcc at a daily interest rate of ~0.005-0.15%.",
     },
   },
   {
@@ -287,10 +285,6 @@ const App: React.FC = () => {
           <DeferredSection placeholderClassName="min-h-[620px]">
             <SectionComparison />
           </DeferredSection>
-
-          <SectionRoadmap />
-
-          <SectionSeed />
 
           <DeferredSection placeholderClassName="min-h-[860px]">
             <SectionFAQ />

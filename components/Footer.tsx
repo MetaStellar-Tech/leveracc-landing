@@ -137,12 +137,14 @@ const Footer: React.FC = () => {
         <Link href="/#risk" className="hover:text-black dark:hover:text-white transition-colors">
           Risk & Funder Safety
         </Link>
-        <Link href="/#roadmap" className="hover:text-black dark:hover:text-white transition-colors">
+        <a
+          href="https://leveracc.gitbook.io/leveracc-docs/resources/roadmap"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-black dark:hover:text-white transition-colors"
+        >
           Roadmap
-        </Link>
-        <Link href="/#seed" className="hover:text-black dark:hover:text-white transition-colors">
-          Seed Program
-        </Link>
+        </a>
         <a
           href="https://leveracc.gitbook.io/leveracc-docs/"
           target="_blank"
@@ -185,7 +187,7 @@ const Footer: React.FC = () => {
           LeverAcc
         </div>
 
-        <div className="text-xs md:text-sm text-gray-400 dark:text-gray-500 text-center md:absolute md:w-full md:h-full flex items-center justify-center">
+        <div className="text-xs md:text-sm text-gray-400 dark:text-gray-500 text-center md:absolute md:w-full md:h-full flex items-center justify-center pointer-events-none">
           © MetaStellar Technology Ltd. All Rights Reserved.
         </div>
 

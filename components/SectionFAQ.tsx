@@ -18,7 +18,7 @@ const traderFaqs = [
   },
   {
     q: "How much can I borrow from LeverAcc? What is the borrowing interest rate?",
-    a: "Your borrowable amount is matched solely based on your own funds, up to 4x (an initial borrowing limit applies to keep the system stable). Borrow from LeverAcc at an interest rate of 0.1% daily.",
+    a: "Your borrowable amount is matched solely based on your own funds, up to 4x (an initial borrowing limit applies to keep the system stable). Borrow from LeverAcc at a daily interest rate of ~0.005-0.15%.",
   },
 ];
 
