@@ -102,7 +102,7 @@ const SectionRisk: React.FC = () => {
         <p className="text-sm md:text-base text-gray-500 dark:text-[#9B9BA3] mb-5 inline-flex items-center gap-2 justify-center">
           <Coins size={16} className="text-green-500 dark:text-green-400" />
           Supply USDC to the Fund Vault and earn from real borrowing demand, with a
-          target APY of ~10%-15%.
+          target APY of ~10-15%.
         </p>
         <div>
           <a

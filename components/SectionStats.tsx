@@ -80,9 +80,9 @@ const AnimatedCounter = ({
 const SectionStats: React.FC = () => {
   const metrics = [
     { label: "Max Buying Power", value: "5x" },
-    { label: "Daily Interest Rate", value: "0.1%" },
+    { label: "Daily Interest Rate", value: "~0.005-0.15%", compact: true },
     { label: "High Execution Speed", value: "< 50ms" },
-    { label: "Target Funder APY", value: "~10%-15%", highlight: true },
+    { label: "Target Funder APY", value: "~10-15%", highlight: true },
   ];
 
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -122,7 +122,11 @@ const SectionStats: React.FC = () => {
             </span>
             <AnimatedCounter
               value={metric.value}
-              className="text-xl md:text-4xl font-bold tracking-tight inline-block"
+              className={`${
+                metric.compact
+                  ? "text-lg md:text-3xl lg:text-2xl xl:text-3xl"
+                  : "text-xl md:text-4xl"
+              } font-bold tracking-tight inline-block whitespace-nowrap`}
               highlight={metric.highlight}
             />
           </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import {
   ArrowDown,
   Bot,
@@ -138,8 +139,13 @@ const SectionEcosystem: React.FC = () => {
             <div className="w-full max-w-3xl">
               <div className="rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-gray-50 dark:bg-[#0c111d]/80 px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 flex items-center justify-center font-black text-sm">
-                    H
+                  <div className="w-9 h-9 rounded-full bg-[#072723] flex items-center justify-center">
+                    <Image
+                      src="/hyperliquid-logo.svg"
+                      alt="Hyperliquid logo"
+                      width={24}
+                      height={24}
+                    />
                   </div>
                   <div>
                     <div className="font-bold text-gray-900 dark:text-white text-sm md:text-base">
