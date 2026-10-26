@@ -8,6 +8,7 @@ type Frontmatter = {
   title?: string;
   description?: string;
   date?: string;
+  updated?: string;
 };
 
 export type BlogPost = {
@@ -15,6 +16,7 @@ export type BlogPost = {
   title: string;
   description: string;
   date: string;
+  updated?: string;
   content: string;
   html: string;
 };
@@ -54,6 +56,8 @@ const parseFrontmatter = (raw: string): { frontmatter: Frontmatter; content: str
       frontmatter.description = value;
     } else if (key === "date") {
       frontmatter.date = value;
+    } else if (key === "updated") {
+      frontmatter.updated = value;
     }
   }
 
@@ -105,6 +109,7 @@ export const getAllBlogPosts = (): BlogPost[] => {
       title,
       description,
       date,
+      updated: frontmatter.updated,
       content,
       html: renderMarkdownToHtml(content),
     };
@@ -129,6 +134,7 @@ export const getBlogPostBySlug = (slug: string): BlogPost | null => {
     title: frontmatter.title ?? getPostTitleFromSlug(slug),
     description: frontmatter.description ?? "No description provided.",
     date,
+    updated: frontmatter.updated,
     content,
     html: renderMarkdownToHtml(content),
   };

@@ -3,15 +3,13 @@ import "@fontsource/inter";
 import "@fontsource/plus-jakarta-sans/800.css";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ??
-  "https://leveracc.xyz";
+import { OG_IMAGE, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: "LeverAcc: The Capital Layer of Hyperliquid | 5x Leverage Trading",
   description:
-    "LeverAcc is the Capital Layer of Hyperliquid: shared account, lending, credit risk and settlement infrastructure giving trading apps and perpetual traders 5x buying power at ~0.005-0.15% daily interest.",
+    "LeverAcc is the Capital Layer of Hyperliquid: lending, credit risk and settlement giving trading apps and traders 5x buying power at ~0.005-0.15% a day.",
   alternates: {
     canonical: "/",
   },
@@ -28,10 +26,10 @@ export const metadata: Metadata = {
     siteName: "LeverAcc",
     images: [
       {
-        url: "/og.jpg?v=f374de94",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
-          alt: "LeverAcc: The Capital Layer of Hyperliquid",
+        alt: "LeverAcc: The Capital Layer of Hyperliquid",
       },
     ],
   },
@@ -39,8 +37,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "LeverAcc: The Capital Layer of Hyperliquid",
     description:
-      "Shared capital infrastructure for trading apps on Hyperliquid: 5x buying power at ~0.005-0.15% daily interest.",
-    images: ["/og.jpg?v=f374de94"],
+      "Shared capital infrastructure for trading apps on Hyperliquid: 5x buying power at ~0.005-0.15% a day.",
+    images: [OG_IMAGE],
   },
 };
 

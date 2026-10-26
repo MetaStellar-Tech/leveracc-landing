@@ -3,12 +3,27 @@ import Link from "next/link";
 import { getAllBlogPosts } from "@/lib/blog";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { OG_IMAGE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Blog | LeverAcc",
   description: "LeverAcc updates, educational guides, and technical write-ups for DeFi traders.",
   alternates: {
     canonical: "/blog",
+  },
+  openGraph: {
+    type: "website",
+    title: "Blog | LeverAcc",
+    description: "LeverAcc updates, educational guides, and technical write-ups for DeFi traders.",
+    url: "/blog",
+    siteName: "LeverAcc",
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "LeverAcc Blog" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | LeverAcc",
+    description: "LeverAcc updates, educational guides, and technical write-ups for DeFi traders.",
+    images: [OG_IMAGE],
   },
 };
 

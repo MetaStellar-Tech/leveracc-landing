@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
                 Partners
               </Link>
               <a
-                href="https://leveracc.gitbook.io/leveracc-docs/"
+                href="https://leveracc.gitbook.io/leveracc-docs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-gray-900 dark:hover:text-gray-200 transition-colors"
@@ -146,7 +146,7 @@ const Navbar: React.FC = () => {
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-2 pointer-events-none"
         }`}
-        aria-hidden={!isMenuOpen}
+        inert={!isMenuOpen}
       >
         <div className="px-4 py-4 flex flex-col gap-2">
           <Link
@@ -157,7 +157,7 @@ const Navbar: React.FC = () => {
             Partners
           </Link>
           <a
-            href="https://leveracc.gitbook.io/leveracc-docs/"
+            href="https://leveracc.gitbook.io/leveracc-docs"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white font-medium"

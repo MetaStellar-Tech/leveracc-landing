@@ -96,7 +96,7 @@ const SectionHero: React.FC = () => {
         </div>
 
         <Link
-          href="https://leveracc.gitbook.io/leveracc-docs/"
+          href="https://leveracc.gitbook.io/leveracc-docs"
           target="_blank"
           rel="noopener noreferrer"
           className="relative z-10 mt-6 inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-[#838389] hover:text-gray-900 dark:hover:text-[#EDEEEC] transition-colors"

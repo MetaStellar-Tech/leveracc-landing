@@ -1,0 +1,32 @@
+# LeverAcc
+
+> LeverAcc is the Capital Layer of Hyperliquid: shared accounts, lending, credit risk management and settlement that let trading apps give their users up to 5x buying power. Traders borrow up to 4x their own USDC capital and only ever risk that capital; funders supply USDC to the Fund Vault and earn the interest traders pay. Orders execute on Hyperliquid; financing and settlement contracts run on HyperEVM mainnet.
+
+Key numbers: up to 5x buying power (borrow up to 4x own capital); borrow rate ~0.005–0.15% per day, set by vault utilization; target funder APY ~10–15%.
+
+LeverAcc does not offer trading strategies, signals or investment advice; those come from partner products. LeverAcc is not available in Restricted Regions (see the Terms of Use).
+
+## Main pages
+
+- [Home](https://www.leveracc.xyz/): what LeverAcc is, who it is for, risk model and FAQ
+- [Blog](https://www.leveracc.xyz/blog): product updates and explainers
+- [Launch App](https://app.leveracc.xyz/): the LeverAcc reference app
+
+## Documentation
+
+- [Docs index for LLMs](https://leveracc.gitbook.io/leveracc-docs/llms.txt): every docs page, also available as Markdown
+- [What is LeverAcc](https://leveracc.gitbook.io/leveracc-docs/getting-started/what-is-leveracc)
+- [Borrowing & Buying Power](https://leveracc.gitbook.io/leveracc-docs/how-it-works/borrowing)
+- [Risk Management](https://leveracc.gitbook.io/leveracc-docs/how-it-works/risk-management)
+- [Fees & Rates](https://leveracc.gitbook.io/leveracc-docs/how-it-works/fees-and-rates)
+- [Fund Vault](https://leveracc.gitbook.io/leveracc-docs/for-funders/fund-vault)
+- [Partner Overview](https://leveracc.gitbook.io/leveracc-docs/for-partners/overview)
+- [Security & Audits](https://leveracc.gitbook.io/leveracc-docs/security/security-and-audits)
+- [Contract Addresses](https://leveracc.gitbook.io/leveracc-docs/resources/contract-addresses)
+- [Terms of Use](https://leveracc.gitbook.io/leveracc-docs/resources/term-of-use)
+
+## Community
+
+- [X](https://x.com/leveracc_xyz)
+- [Telegram](https://t.me/leveracc_fans)
+- [GitHub](https://github.com/MetaStellar-Tech)
