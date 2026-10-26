@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
               Become a Partner
             </a>
             <a
-              href="https://leveracc.gitbook.io/leveracc-docs/"
+              href="https://leveracc.gitbook.io/leveracc-docs"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-white/30 text-white font-bold text-base md:text-lg hover:bg-white/10 hover:-translate-y-0.5 transition-all whitespace-nowrap"
@@ -146,7 +146,7 @@ const Footer: React.FC = () => {
           Roadmap
         </a>
         <a
-          href="https://leveracc.gitbook.io/leveracc-docs/"
+          href="https://leveracc.gitbook.io/leveracc-docs"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-black dark:hover:text-white transition-colors"

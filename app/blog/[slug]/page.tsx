@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
       siteName: "LeverAcc",
       images: [
         {
-          url: "/og.png",
+          url: "/og.jpg?v=f374de94",
           width: 1200,
           height: 630,
           alt: post.title,
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: ["/og.png"],
+      images: ["/og.jpg?v=f374de94"],
     },
   };
 }
@@ -72,12 +72,15 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     description: post.description,
     datePublished: post.date,
     dateModified: post.date,
+    image: `${siteUrl}/og.jpg?v=f374de94`,
     author: {
       "@type": "Organization",
+      "@id": "https://leveracc.xyz/#organization",
       name: "LeverAcc",
     },
     publisher: {
       "@type": "Organization",
+      "@id": "https://leveracc.xyz/#organization",
       name: "LeverAcc",
       logo: {
         "@type": "ImageObject",

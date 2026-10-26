@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import Reveal from "./Reveal";
 
-const DOCS_URL = "https://leveracc.gitbook.io/leveracc-docs/";
+const DOCS_URL = "https://leveracc.gitbook.io/leveracc-docs";
 const COMMUNITY_URL = "https://t.me/leveracc_fans";
 
 const partnerTypes = [

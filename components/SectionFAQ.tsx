@@ -1,47 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { partnerFaqs, traderFaqs, type Faq } from "@/lib/faq";
 
-const traderFaqs = [
-  {
-    q: "Is LeverAcc a Perp DEX?",
-    a: "No, LeverAcc is a liquidity and capital efficiency layer built on top of Perp DEXs, designed to maximize users' capital efficiency. Simply put, LeverAcc acts as middleware that can plug into any Perp DEX.",
-  },
-  {
-    q: "Which Perp DEX has LeverAcc integrated currently?",
-    a: "As the first step, LeverAcc will prioritize integrating Hyperliquid, more integrations are coming soon.",
-  },
-  {
-    q: "Where can I use LeverAcc for trading?",
-    a: "Currently, you can trade using our TG Bot or Web App. All trades happen on Hyperliquid, ensuring they are public, transparent, and verifiable on-chain.",
-  },
-  {
-    q: "How much can I borrow from LeverAcc? What is the borrowing interest rate?",
-    a: "Your borrowable amount is matched solely based on your own funds, up to 4x (an initial borrowing limit applies to keep the system stable). Borrow from LeverAcc at a daily interest rate of ~0.005-0.15%.",
-  },
-];
-
-const partnerFaqs = [
-  {
-    q: "How does my product integrate with LeverAcc?",
-    a: "Apply through our partner channel. After a credit review, you integrate accounts, lending, credit risk and settlement through a single SDK/API surface, and your UI and strategy stay fully yours. Full guides live in the documentation.",
-  },
-  {
-    q: "What does LeverAcc handle, and what do partners keep?",
-    a: "We provide the capital layer: accounts, borrowing, credit risk and settlement. Partners keep full ownership of strategy, signals and user experience. We never compete with the apps we serve and offer no strategies, signals or investment advice of our own.",
-  },
-  {
-    q: "How is funder capital protected?",
-    a: "Borrowing is credit-managed: limits are set per account by the credit engine, a dynamic circuit breaker modulates risk in real time, and a trader can only ever lose their own principal, never funders' capital.",
-  },
-  {
-    q: "Which products can build on LeverAcc?",
-    a: "Anything that trades on Hyperliquid: AI trading agents, copy-trading platforms, quant strategies, trading studios and Telegram bots. If your users have strategies, LeverAcc gives them the capital to scale them.",
-  },
-];
-
-const FaqList: React.FC<{ faqs: typeof traderFaqs }> = ({ faqs }) => {
+const FaqList: React.FC<{ faqs: Faq[]; idPrefix: string }> = ({ faqs, idPrefix }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {
@@ -50,38 +12,42 @@ const FaqList: React.FC<{ faqs: typeof traderFaqs }> = ({ faqs }) => {
 
   return (
     <div className="divide-y divide-gray-200 dark:divide-gray-700">
-      {faqs.map((faq, i) => (
-        <div key={i} className="py-6">
-          <button
-            onClick={() => toggle(i)}
-            className="w-full flex items-center justify-between text-left group"
-          >
-            <span className="text-base md:text-lg font-medium text-gray-900 dark:text-[#EDEEEC] group-hover:text-black dark:group-hover:text-gray-200">
-              {faq.q}
-            </span>
-            <ChevronDown
-              className={`text-gray-400 dark:text-[#0099FF] transition-transform duration-300 shrink-0 ${
-                openIndex === i ? "rotate-180" : ""
+      {faqs.map((faq, i) => {
+        const isOpen = openIndex === i;
+        const panelId = `${idPrefix}-answer-${i}`;
+        return (
+          <div key={i} className="py-6">
+            <button
+              onClick={() => toggle(i)}
+              className="w-full flex items-center justify-between text-left group"
+              aria-expanded={isOpen}
+              aria-controls={panelId}
+            >
+              <span className="text-base md:text-lg font-medium text-gray-900 dark:text-[#EDEEEC] group-hover:text-black dark:group-hover:text-gray-200">
+                {faq.q}
+              </span>
+              <ChevronDown
+                className={`text-gray-400 dark:text-[#0099FF] transition-transform duration-300 shrink-0 ${
+                  isOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {/* 答案始终在 HTML 里（收起时只是视觉折叠），保证爬虫和 FAQPage JSON-LD 对得上 */}
+            <div
+              id={panelId}
+              className={`grid transition-all duration-300 ease-in-out ${
+                isOpen ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0 mt-0"
               }`}
-            />
-          </button>
-          <AnimatePresence>
-            {openIndex === i && (
-              <motion.div
-                initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                animate={{ height: "auto", opacity: 1, marginTop: 16 }}
-                exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="overflow-hidden"
-              >
+            >
+              <div className="overflow-hidden">
                 <p className="text-sm md:text-base text-gray-600 dark:text-[#9B9BA3] leading-relaxed pr-8">
                   {faq.a}
                 </p>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      ))}
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -98,12 +64,12 @@ const SectionFAQ: React.FC = () => {
       <div className="mb-4 text-xs font-bold uppercase tracking-widest text-blue-500 dark:text-blue-400">
         For traders
       </div>
-      <FaqList faqs={traderFaqs} />
+      <FaqList faqs={traderFaqs} idPrefix="faq-trader" />
 
       <div className="mt-14 mb-4 text-xs font-bold uppercase tracking-widest text-blue-500 dark:text-blue-400">
         For partners & developers
       </div>
-      <FaqList faqs={partnerFaqs} />
+      <FaqList faqs={partnerFaqs} idPrefix="faq-partner" />
 
       <div className="text-center mt-14 text-sm md:text-base text-gray-500 dark:text-[#838389]">
         Still have questions?{" "}

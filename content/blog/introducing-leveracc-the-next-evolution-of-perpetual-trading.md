@@ -1,11 +1,8 @@
 ---
 title: "Introducing LeverAcc: The Next Evolution of Perpetual Trading"
 date: "2026-03-27"
-description: "If you've traded on a perpetual DEX before, you already know the friction. You bring capital, the protocol gives you leverage against that capital, and your position size is essentially capped by what"
+description: "How LeverAcc lets perpetual traders on Hyperliquid borrow up to 4x their own capital for 5x buying power, how the trader and liquidity provider sides work, and why capital efficiency matters."
 ---
-
-# Introducing LeverAcc: The Next Evolution of Perpetual Trading
-
 
 If you've traded on a perpetual DEX before, you already know the friction. You bring capital, the protocol gives you leverage against that capital, and your position size is essentially capped by what you're willing to lock up. Want more exposure? Deposit more. Want to stay nimble? Accept smaller positions.
 
@@ -35,7 +32,7 @@ When a trader prepares to open a leveraged position on a supported perpetual DEX
 
 There is nothing to manage separately and no waiting for manual approvals. This injection happens programmatically at the execution layer as a seamless part of the trade flow.
 
-This is a radical departure from traditional margin lending. Capital is there exactly when you need it and can be repaid whenever you're ready. A simple 0.1% daily interest rate is the only cost you carry, a negligible amount for any successful high-conviction trade.
+This is a radical departure from traditional margin lending. Capital is there exactly when you need it and can be repaid whenever you're ready. A daily interest rate of roughly 0.005–0.15% is the only cost you carry, a negligible amount for any successful high-conviction trade.
 
 The Liquidity Provider Side
 
@@ -115,8 +112,6 @@ The space has moved steadily toward more efficient capital utilization: concentr
 LeverAcc fits squarely into that trajectory. By injecting capital at the execution layer rather than requiring traders to source it themselves, the protocol removes one of the most persistent friction points in on-chain leverage trading.
 
 Capital efficiency clearly matters in DeFi. The question is where the most impactful interventions happen. LeverAcc's answer: at the moment of trade execution, before the position hits the exchange.
-
-## Key Differentiators at a Glance
 
 ## What's Next for LeverAcc?
 

@@ -10,6 +10,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog",
   },
+  openGraph: {
+    type: "website",
+    title: "Blog | LeverAcc",
+    description: "LeverAcc updates, educational guides, and technical write-ups for DeFi traders.",
+    url: "/blog",
+    siteName: "LeverAcc",
+  },
 };
 
 export default function BlogPage() {

@@ -11,6 +11,8 @@ import DeferredSection from "@/components/DeferredSection";
 import SectionEcosystem from "@/components/SectionEcosystem";
 import SectionPartners from "@/components/SectionPartners";
 import SectionRisk from "@/components/SectionRisk";
+import SectionFAQ from "@/components/SectionFAQ";
+import { allFaqs } from "@/lib/faq";
 
 const SectionBuilder = dynamic(() => import("@/components/SectionBuilder"), {
   ssr: false,
@@ -32,77 +34,14 @@ const SectionComparison = dynamic(() => import("@/components/SectionComparison")
   loading: () => null,
 });
 
-const SectionFAQ = dynamic(() => import("@/components/SectionFAQ"), {
-  ssr: false,
-  loading: () => null,
-});
-
-const faqEntities = [
-  {
-    "@type": "Question",
-    name: "Is LeverAcc a Perp DEX?",
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: "No, LeverAcc is a liquidity and capital efficiency layer built on top of Perp DEXs, designed to maximize users' capital efficiency. Simply put, LeverAcc acts as middleware that can plug into any Perp DEX.",
-    },
+const faqEntities = allFaqs.map((faq) => ({
+  "@type": "Question",
+  name: faq.q,
+  acceptedAnswer: {
+    "@type": "Answer",
+    text: faq.a,
   },
-  {
-    "@type": "Question",
-    name: "Which Perp DEX has LeverAcc integrated currently?",
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: "As the first step, LeverAcc will prioritize integrating Hyperliquid, more integrations are coming soon.",
-    },
-  },
-  {
-    "@type": "Question",
-    name: "Where can I use LeverAcc for trading?",
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: "Currently, you can trade using our TG Bot or Web App. All trades happen on Hyperliquid, ensuring they are public, transparent, and verifiable on-chain.",
-    },
-  },
-  {
-    "@type": "Question",
-    name: "How much can I borrow from LeverAcc? What is the borrowing interest rate?",
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: "Your borrowable amount is matched solely based on your own funds, up to 4x (an initial borrowing limit applies to keep the system stable). Borrow from LeverAcc at a daily interest rate of ~0.005-0.15%.",
-    },
-  },
-  {
-    "@type": "Question",
-    name: "How does my product integrate with LeverAcc?",
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: "Apply through our partner channel. After a credit review, you integrate accounts, lending, credit risk and settlement through a single SDK/API surface, and your UI and strategy stay fully yours. Full guides live in the documentation.",
-    },
-  },
-  {
-    "@type": "Question",
-    name: "What does LeverAcc handle, and what do partners keep?",
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: "We provide the capital layer: accounts, borrowing, credit risk and settlement. Partners keep full ownership of strategy, signals and user experience. We never compete with the apps we serve and offer no strategies, signals or investment advice of our own.",
-    },
-  },
-  {
-    "@type": "Question",
-    name: "How is funder capital protected?",
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: "Borrowing is credit-managed: limits are set per account by the credit engine, a dynamic circuit breaker modulates risk in real time, and a trader can only ever lose their own principal, never funders' capital.",
-    },
-  },
-  {
-    "@type": "Question",
-    name: "Which products can build on LeverAcc?",
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: "Anything that trades on Hyperliquid: AI trading agents, copy-trading platforms, quant strategies, trading studios and Telegram bots. If your users have strategies, LeverAcc gives them the capital to scale them.",
-    },
-  },
-];
+}));
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -116,7 +55,7 @@ const organizationSchema = {
   foundingDate: "2024",
   sameAs: [
     "https://x.com/leveracc_xyz",
-    "https://leveracc.gitbook.io/leveracc-docs/",
+    "https://leveracc.gitbook.io/leveracc-docs",
     "https://github.com/MetaStellar-Tech",
     "https://t.me/leveracc_fans",
   ],
@@ -147,28 +86,6 @@ const softwareApplicationSchema = {
   provider: {
     "@type": "Organization",
     "@id": "https://leveracc.xyz/#organization",
-  },
-};
-
-const productSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "@id": "https://leveracc.xyz/#product",
-  name: "LeverAcc",
-  description:
-    "The Capital Layer of Hyperliquid: shared account, lending, credit risk and settlement infrastructure giving traders and trading apps 5x buying power.",
-  brand: {
-    "@type": "Brand",
-    name: "LeverAcc",
-  },
-  category: "DeFi Trading Platform",
-  url: "https://leveracc.xyz/",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-    availability: "https://schema.org/InStock",
-    url: "https://app.leveracc.xyz/",
   },
 };
 
@@ -232,10 +149,6 @@ const App: React.FC = () => {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
-      />
-      <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       <script
@@ -286,9 +199,8 @@ const App: React.FC = () => {
             <SectionComparison />
           </DeferredSection>
 
-          <DeferredSection placeholderClassName="min-h-[860px]">
-            <SectionFAQ />
-          </DeferredSection>
+          {/* FAQ 直接渲染进首屏 HTML：与 FAQPage JSON-LD 对应的问答必须在页面上可见 */}
+          <SectionFAQ />
         </div>
       </main>
 
