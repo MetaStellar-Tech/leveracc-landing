@@ -4,8 +4,7 @@ import { notFound } from "next/navigation";
 import { getBlogPostBySlug, getBlogPostSlugs } from "@/lib/blog";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://leveracc.xyz";
+import { OG_IMAGE, SITE_URL } from "@/lib/site";
 
 type BlogDetailPageProps = {
   params: Promise<{
@@ -28,7 +27,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
   }
 
   return {
-    title: `${post.title} | LeverAcc Blog`,
+    title: `${post.title} | LeverAcc`,
     description: post.description,
     alternates: {
       canonical: `/blog/${post.slug}`,
@@ -41,7 +40,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
       siteName: "LeverAcc",
       images: [
         {
-          url: "/og.png",
+          url: OG_IMAGE,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -52,7 +51,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: ["/og.png"],
+      images: [OG_IMAGE],
     },
   };
 }
@@ -71,20 +70,23 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     headline: post.title,
     description: post.description,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updated ?? post.date,
+    image: `${SITE_URL}${OG_IMAGE}`,
     author: {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
       name: "LeverAcc",
     },
     publisher: {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
       name: "LeverAcc",
       logo: {
         "@type": "ImageObject",
-        url: `${siteUrl}/576x576-transparent-bg-transparent-fill.png`,
+        url: `${SITE_URL}/576x576-transparent-bg-transparent-fill.png`,
       },
     },
-    mainEntityOfPage: `${siteUrl}/blog/${post.slug}`,
+    mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
   };
 
   const breadcrumbSchema = {
@@ -95,19 +97,19 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: `${siteUrl}/`,
+        item: `${SITE_URL}/`,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blog",
-        item: `${siteUrl}/blog`,
+        item: `${SITE_URL}/blog`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: post.title,
-        item: `${siteUrl}/blog/${post.slug}`,
+        item: `${SITE_URL}/blog/${post.slug}`,
       },
     ],
   };

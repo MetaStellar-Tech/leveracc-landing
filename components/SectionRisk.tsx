@@ -106,7 +106,7 @@ const SectionRisk: React.FC = () => {
         </p>
         <div>
           <a
-            href="https://leveracc.gitbook.io/leveracc-docs/"
+            href="https://leveracc.gitbook.io/leveracc-docs"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-[#D3DAFE] font-bold text-sm md:text-base hover:bg-gray-100 dark:hover:bg-gray-800 hover:-translate-y-0.5 transition-all"

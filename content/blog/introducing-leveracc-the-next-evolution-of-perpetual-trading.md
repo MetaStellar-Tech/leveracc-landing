@@ -1,11 +1,9 @@
 ---
 title: "Introducing LeverAcc: The Next Evolution of Perpetual Trading"
 date: "2026-03-27"
-description: "If you've traded on a perpetual DEX before, you already know the friction. You bring capital, the protocol gives you leverage against that capital, and your position size is essentially capped by what"
+description: "How LeverAcc gives perpetual traders up to 5x buying power on Hyperliquid by lending at execution, funded by a USDC vault for a target 10–15% APY."
+updated: "2026-10-26"
 ---
-
-# Introducing LeverAcc: The Next Evolution of Perpetual Trading
-
 
 If you've traded on a perpetual DEX before, you already know the friction. You bring capital, the protocol gives you leverage against that capital, and your position size is essentially capped by what you're willing to lock up. Want more exposure? Deposit more. Want to stay nimble? Accept smaller positions.
 
@@ -35,7 +33,7 @@ When a trader prepares to open a leveraged position on a supported perpetual DEX
 
 There is nothing to manage separately and no waiting for manual approvals. This injection happens programmatically at the execution layer as a seamless part of the trade flow.
 
-This is a radical departure from traditional margin lending. Capital is there exactly when you need it and can be repaid whenever you're ready. A simple 0.1% daily interest rate is the only cost you carry, a negligible amount for any successful high-conviction trade.
+This is a radical departure from traditional margin lending. Capital is there exactly when you need it and can be repaid whenever you're ready. A daily interest rate of ~0.005–0.15%, set by vault utilization, is the only borrowing cost you carry, a negligible amount for any successful high-conviction trade.
 
 The Liquidity Provider Side
 
@@ -116,8 +114,6 @@ LeverAcc fits squarely into that trajectory. By injecting capital at the executi
 
 Capital efficiency clearly matters in DeFi. The question is where the most impactful interventions happen. LeverAcc's answer: at the moment of trade execution, before the position hits the exchange.
 
-## Key Differentiators at a Glance
-
 ## What's Next for LeverAcc?
 
 LeverAcc is early. The protocol is in active development: the team is building out DEX integrations, refining vault mechanics, and expanding supported assets and trading pairs.
@@ -130,7 +126,7 @@ For traders and LPs who want to follow the build, leveracc.xyz is where updates 
 
 LeverAcc solves a specific, well-defined problem: traders on perpetual DEXes are constrained by their own capital, and that constraint limits what they can do even when their conviction is high.
 
-By sitting at the execution layer and injecting up to 4x a trader's funds before the position hits the DEX, LeverAcc gives traders 5x effective buying power on top of their own funds. Liquidity providers fund that capital injection and earn 10–15% APY in return.
+By sitting at the execution layer and injecting up to 4x a trader's funds before the position hits the DEX, LeverAcc gives traders 5x effective buying power on top of their own funds. Liquidity providers fund that capital injection and earn interest in return, at a target APY of 10–15%.
 
 It's not a new exchange. It's not a yield farm. It's a capital efficiency layer, and that's a category DeFi has needed for a while.
 

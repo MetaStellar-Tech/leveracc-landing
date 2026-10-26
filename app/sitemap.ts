@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllBlogPosts } from "@/lib/blog";
+import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllBlogPosts();
@@ -7,13 +8,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const coreRoutes: MetadataRoute.Sitemap = [
     {
-      url: "https://leveracc.xyz/",
-      lastModified: latestPostDate,
+      // No reliable content date for the homepage, so no lastModified rather than a wrong one.
+      url: `${SITE_URL}/`,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: "https://leveracc.xyz/blog",
+      url: `${SITE_URL}/blog`,
       lastModified: latestPostDate,
       changeFrequency: "weekly",
       priority: 0.9,
@@ -21,8 +22,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `https://leveracc.xyz/blog/${post.slug}`,
-    lastModified: post.date,
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: post.updated ?? post.date,
     changeFrequency: "weekly",
     priority: 0.8,
   }));
